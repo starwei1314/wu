@@ -16,7 +16,7 @@ headerHtml += '<li class="fr"><a href="#">阅读与活动</a></li>';
 headerHtml += '<li class="fr"><a href="#">科研支持</a></li>';
 headerHtml += '<li class="fr"><a href="#">学习支持</a></li>';
 headerHtml += '<li class="fr"><a href="#">借阅服务</a></li>';
-headerHtml += '<li class="fr active"><a href="#">资源</a></li>';
+headerHtml += '<li class="fr activing"><a href="#">资源</a></li>';
 headerHtml += '<li class="fr"><a href="#">概况</a></li>';
 headerHtml += '</ul>';
 headerHtml += '</div>';
