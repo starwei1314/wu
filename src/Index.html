@@ -8,50 +8,33 @@
     <title>武汉大学图书馆</title>
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugin/css/reset.css">
+    <link rel="stylesheet" href="plugin/fonts/iconfont.css">
     <link rel="stylesheet" href="plugin/css/common.css">
+    <link rel="stylesheet" href="plugin/css/mislider.css">
+    <link rel="stylesheet" href="plugin/css/mislider-skin-cameo.css">
+    <link rel="stylesheet" href="plugin/css/lyz.calendar.css">
     <link rel="stylesheet" type="text/css" href="styles/Index.css" />
+
 </head>
 
 <body>
     <div class="move hidden-lg">
         <!-- 暂时留给移动端头部 -->
     </div>
-    <div class="head_top visible-lg"></div>
+    <!-- <div class="head_top visible-lg" id='top'></div> -->
     <div class="header visible-lg"></div>
     <!-- 轮播图部分 -->
-    <div class="banner ">
+    <div class="banner">
+        <img src="images/swiperbanner.png" alt="">
         <div class="coustomer visible-lg">
             <img src="images/customer.png" alt="">
-        </div>
-        <div id="carousel-example-generic" class="carousel slide visible-lg" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators visible-lg">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active">1</li>
-                <li data-target="#carousel-example-generic" data-slide-to="1">2</li>
-                <li data-target="#carousel-example-generic" data-slide-to="2">3</li>
+            <ol class="banner-mao">
+                <li class="now"><a href="#top">1</a></li>
+                <li><a href="#news">2</a></li>
+                <li><a href="#hot">3</a></li>
+                <li><a href="#special">4</a></li>
+                <li><a href="#read">5</a></li>
             </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="images/swiperbanner.png" alt="...">
-                    <div class="carousel-caption">
-                        ...
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/swiperbanner.png" alt="...">
-                    <div class="carousel-caption">
-                        ...
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="images/swiperbanner.png" alt="...">
-                    <div class="carousel-caption">
-                        ...
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="center w visible-lg ">
@@ -118,6 +101,7 @@
             </div>
         </div>
     </div>
+    <!-- 服务菜单部分 -->
     <div class="serve-box  w">
         <div class="serve">
             <div class="row">
@@ -207,7 +191,8 @@
             </div>
         </div>
     </div>
-    <div class="news w">
+    <!-- 新闻部分 -->
+    <div class="news w" id='news'>
         <div class="row">
             <div class="news-title">新闻公告</div>
             <div class="col-lg-6 col-sm-12">
@@ -288,16 +273,23 @@
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="today">
                             <div>
-                                <div class="news_top">
-                                    <ul>
+                                <div class="news_top clearfix">
+                                    <ul class="clearfix fl ">
                                         <li>3</li>
                                         <li>4</li>
                                         <li>5</li>
                                         <li>6</li>
                                         <li>7</li>
                                     </ul>
+                                    <!-- 接入jQuery时间控件 -->
+                                    <div class="fr timedate">
+                                        <input id="txtEndDate" class="datepicker" placeholder="选择时间" style="width:170px;padding:7px 10px;border:1px solid #ccc;" />
+                                        <!-- <input type="text" > -->
+                                    </div>
                                 </div>
-                                <div class="news_foot"></div>
+                                <div class="news_foot">
+                                    <img src="images/today.png" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -305,10 +297,462 @@
             </div>
         </div>
     </div>
+    <!-- 热门服务部分 -->
+    <div class="hotserve w" id='hot'>
+        <p class="hot-title">热门服务</p>
+        <div class="role">
+            <ul class="clearfix serve-main">
+                <li class="serve-item">
+                    <p class="iconfont icon-xuesheng-copy">新生</p>
+                    <div class="serve-wailian clearfix">
+                        <ul class="fl">
+                            <li><a href="#">馆长寄语</a></li>
+                            <li><a href="#">新生游戏</a></li>
+                            <li><a href="#">新生手册</a></li>
+                            <li><a href="#">借书还书</a></li>
+                            <li><a href="#">上网自习</a></li>
+                        </ul>
+                        <ul class="fr">
+                            <li><a href="#">英语学习</a></li>
+                            <li><a href="#">多媒体资源</a></li>
+                            <li><a href="#">精彩活动</a></li>
+                            <li><a href="#">新生微课</a></li>
+                            <li><a href="#">自助服务指南</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="serve-item">
+                    <p class="iconfont icon-boshihouchuzhanshenqing-copy">博生</p>
+                    <div class="hotserve-wailian">
+                        <ul class="fl">
+                            <li><a href="#"> 阅读推荐</a></li>
+                            <li><a href="#"> 借阅服务</a></li>
+                            <li><a href="#"> 文献传递</a></li>
+                            <li><a href="#"> 网络课堂</a></li>
+                            <li><a href="#"> 常用数据库</a></li>
+                            <li><a href="#"> 上网自习</a></li>
+                        </ul>
+                        <ul class="fr">
+                            <li><a href="#"> 研修室预约</a></li>
+                            <li><a href="#"> 你问我答</a></li>
+                            <li><a href="#"> 失物招领</a></li>
+                            <li><a href="#"> 我要荐购</a></li>
+                            <li><a href="#"> 加入我们</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="serve-item">
+                    <p class="iconfont icon-jiaoshi-copy">教职工</p>
+                    <div class="hotserve-wailian">
+                        <ul class="fl">
+                            <li><a href="#">学科服务平台</a></li>
+                            <li><a href="#">文献传递</a></li>
+                            <li><a href="#">借阅服务</a></li>
+                            <li><a href="#">数据库资源</a></li>
+                            <li><a href="#">论文收录引用</a></li>
+                            <li><a href="#">文献管理工具</a></li>
+                        </ul>
+                        <ul class="fr">
+                            <li><a href="#">武大名师库</a></li>
+                            <li><a href="#">武大文库</a></li>
+                            <li><a href="#">嵌入式教学</a></li>
+                            <li><a href="#">我要荐购</a></li>
+                            <li><a href="#">科技查新</a></li>
+                            <li><a href="#">投稿指南</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="serve-item">
+                    <p class="iconfont icon-xiaoyouxitong-copy">校友</p>
+                    <div class="hotserve-wailian">
+                        <ul class="fl">
+                            <li><a href="#"> 武大名师库</a></li>
+                            <li><a href="#"> 武大文库</a></li>
+                            <li><a href="#"> 印象图书馆</a></li>
+                            <li><a href="#"> 你问我答</a></li>
+                        </ul>
+                        <ul class="fr">
+                            <li><a href="#"> 认识图书馆</a></li>
+                            <li><a href="#"> 利用图书馆</a></li>
+                            <li><a href="#"> 武大校友总会</a></li>
+                            <li><a href="#"> 捐赠</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="wailian-extend">
+            <div class="extend-1">
+                <ul>
+                    <li class="extend-item">
+                        <h4>图书借阅</h4>
+                        <ol>
+                            <li> <a href="#">馆藏分布</a> </li>
+                            <li> <a href="#">借阅权限</a> </li>
+                            <li> <a href="#">如何借还书</a> </li>
+                            <li> <a href="#">逾期与赔偿</a> </li>
+                            <li> <a href="#">资源荐购</a> </li>
+                            <li> <a href="#">馆际借阅</a> </li>
+                            <li> <a href="#">借阅服务FAQ</a> </li>
+                        </ol>
+                    </li>
+                    <li class="extend-item">
+                        <h4>教学与培训</h4>
+                        <ol>
+                            <li> <a href="#">小布微课</a> </li>
+                            <li> <a href="#">毕业指导 </a> </li>
+                            <li> <a href="#">学习助手</a> </li>
+                            <li> <a href="#">实用软件培训</a> </li>
+                            <li> <a href="#">数据库在线课堂</a> </li>
+                            <li> <a href="#">专场讲座</a> </li>
+
+                        </ol>
+                    </li>
+                    <li class="extend-item">
+                        <h4>多媒体资源</h4>
+                        <ol>
+                            <li> <a href="#">超星学术视频 </a> </li>
+                            <li> <a href="#">知识视界-视频教育资源库 </a> </li>
+                            <li> <a href="#">武汉大学图书馆多媒体中心 </a> </li>
+                            <li> <a href="#">随书光盘  </a> </li>
+                        </ol>
+                    </li>
+
+                    <li class="extend-item">
+                        <h4>校外访问</h4>
+                        <ol>
+                            <li> <a href="#"> 浏览器代理设置  </a> </li>
+                            <li> <a href="#"> 定制版浏览器下载  </a> </li>
+                            <li> <a href="#"> 校外访问FAQ  </a> </li>
+                        </ol>
+                    </li>
+
+                    <li class="extend-item">
+                        <h4>学科分析报告</h4>
+                        <ol>
+                            <li> <a href="#"> 武汉大学SCIE/SSCI/AHCI论文动态</a> </li>
+                            <li> <a href="#"> 武汉大学国际论文统计与分析</a> </li>
+                            <li> <a href="#"> ESI学科动态与学科发展态势分析服务</a> </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="extend-2">
+                <ul>
+                    <li class="extend-item">
+                        <h4>阅读推广</h4>
+                        <ol>
+                            <li> <a href="#"> 年度阅读报告</a> </li>
+                            <li> <a href="#">  本科生学年阅读报告</a> </li>
+                            <li> <a href="#">  武汉大学读书节</a> </li>
+                            <li> <a href="#">  武汉大学文化活动月</a> </li>
+                        </ol>
+                    </li>
+                    <li class="extend-item">
+                        <h4>设备设施</h4>
+                        <ol>
+                            <li> <a href="#">3D打印服务</a> </li>
+                            <li> <a href="#">自助文印 </a> </li>
+                        </ol>
+                    </li>
+                    <li class="extend-item">
+                        <h4>学位论文</h4>
+
+                        <ol>
+                            <li> <a href="#">本校博硕士论文库 </a> </li>
+                            <li> <a href="#">中国学位论文库 </a> </li>
+                            <li> <a href="#">PQDT （ProQuest学位论文） </a> </li>
+                        </ol>
+                    </li>
+
+                    <li class="extend-item">
+                        <h4>电子图书</h4>
+                        <ol>
+                            <li> <a href="#"> Apabi电子教学参考书 </a> </li>
+                            <li> <a href="#"> CADAL电子图书 </a> </li>
+                            <li> <a href="#"> 超星中文电子图书 </a> </li>
+                        </ol>
+                    </li>
+
+                    <li class="extend-item">
+                        <h4>实用工具软件</h4>
+                        <ol>
+                            <li> <a href="#">图书分类号查询 </a> </li>
+                            <li> <a href="#"> 联创自助打印系统驱动  </a> </li>
+                            <li> <a href="#"> NoteExpress务 </a> </li>
+                            <li><a href="#">  SPSS(32位   64位） </a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="extend-3">
+                <ul>
+                    <li class="extend-item">
+                        <h4>加入我们</h4>
+                        <ol>
+                            <li> <a href="#">招聘信息</a> </li>
+                            <li> <a href="#"> 合作学生社团</a> </li>
+                            <li> <a href="#"> 志愿者服务</a> </li>
+                            <li> <a href="#"> 捐赠</a> </li>
+                        </ol>
+                    </li>
+                    <li class="extend-item">
+                        <h4>学位论文提交</h4>
+                        <ol>
+                            <li> <a href="#"> 图书分类号查询</a> </li>
+                            <li> <a href="#"> 电子版学位论文提交系统 </a> </li>
+                            <li> <a href="#"> 已通过论文名单查询</a> </li>
+
+                        </ol>
+                    </li>
+                    <li class="extend-item">
+                        <h4>学术科研支持</h4>
+                        <ol>
+                            <li> <a href="#">武汉大学科研数据管理</a> </li>
+                            <li> <a href="#">武汉大学机构知识库</a> </li>
+                            <li> <a href="#">高影响力国际学术期刊投稿指南 </a> </li>
+                            <li> <a href="#">科技查新 </a> </li>
+                            <li> <a href="#">查收查引 </a> </li>
+                        </ol>
+                    </li>
+                    <li class="extend-item"></li>
+                    <li class="extend-item"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="special-serve w" id='special'>
+        <div class="special-title">特色资源</div>
+        <div class="special-box">
+            <ul class="clearfix">
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""> <span>武汉大学文库</span> </a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+                <li>
+                    <a href="#"><img src="images/specialresource.png" alt=""><span>武汉大学文库</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 阅读推荐 -->
+    <div class="reader w" id='read'>
+        <div class="reader-title">阅读推荐</div>
+        <div class="reader-tab">
+            <div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#newbook" aria-controls="newbook" role="tab" data-toggle="tab">新书通报</a></li>
+                    <li role="presentation"><a href="#recommendbook" aria-controls="recommendbook" role="tab" data-toggle="tab">推荐书目</a></li>
+                    <li role="presentation"><a href="#otherresource" aria-controls="otherresource" role="tab" data-toggle="tab">其他资源</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="newbook">
+                        <div class="htmleaf-container">
+
+                            <figure>
+                                <div class="mis-stage">
+                                    <!-- The element to select and apply miSlider to - the class is optional -->
+                                    <ol class="mis-slider">
+                                        <!-- The slider element - the class is optional -->
+                                        <li class="mis-slide">
+                                            <!-- A slide element - the class is optional -->
+                                            <a href="#" class="mis-container">
+                                                <!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+                                                <figure>
+                                                    <!-- Slide content - whatever you want -->
+                                                    <img src="images/legend-1.jpg" alt="Pink Water Lillies">
+                                                    <figcaption>
+                                                        <h4>心理营养</h4>
+                                                        <p>作者：成果</p>
+                                                        <p>浏览次数：117</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </li>
+                                        <li class="mis-slide">
+                                            <a href="#" class="mis-container">
+                                                <figure>
+                                                    <img src="images/legend-2.jpg" alt="Pond with Lillies">
+                                                    <figcaption>
+                                                        <h4>心理营养</h4>
+                                                        <p>作者：成果</p>
+                                                        <p>浏览次数：117</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </li>
+                                        <li class="mis-slide">
+                                            <a href="#" class="mis-container">
+                                                <figure>
+                                                    <img src="images/legend-3.jpg" alt="Hidden Pond">
+                                                    <figcaption>
+                                                        <h4>心理营养</h4>
+                                                        <p>作者：成果</p>
+                                                        <p>浏览次数：117</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </li>
+                                        <li class="mis-slide">
+                                            <a href="#" class="mis-container">
+                                                <figure>
+                                                    <img src="images/legend-4.jpg" alt="Shrine">
+                                                    <figcaption>
+                                                        <h4>心理营养</h4>
+                                                        <p>作者：成果</p>
+                                                        <p>浏览次数：117</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </li>
+                                        <li class="mis-slide">
+                                            <a href="#" class="mis-container">
+                                                <figure>
+                                                    <img src="images/legend-5.jpg" alt="White Water Lillies">
+                                                    <figcaption>
+                                                        <h4>心理营养</h4>
+                                                        <p>作者：成果</p>
+                                                        <p>浏览次数：117</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </li>
+                                        <li class="mis-slide">
+                                            <a href="#" class="mis-container">
+                                                <figure>
+                                                    <img src="images/legend-6.jpg" alt="Garden Walkway">
+                                                    <figcaption>
+                                                        <h4>心理营养</h4>
+                                                        <p>作者：成果</p>
+                                                        <p>浏览次数：117</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </li>
+                                        <li class="mis-slide">
+                                            <a href="#" class="mis-container">
+                                                <figure>
+                                                    <img src="images/legend-7.jpg" alt="Lilly with Bee">
+                                                    <figcaption>
+                                                        <h4>心理营养</h4>
+                                                        <p>作者：成果</p>
+                                                        <p>浏览次数：117</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="recommendbook">...2</div>
+                    <div role="tabpanel" class="tab-pane" id="otherresource">...3</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <div class="footer visible-lg"></div>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/common.js"></script>
+    <!-- <script src="js/common.js"></script> -->
+    <script src="plugin/js/lyz.calendar.min.js"></script>
+    <script type="text/javascript" src="plugin/js/modernizr-custom.js"></script>
+    <script src="plugin/js/mislider.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(document).ready(function() {
+                //jquery load方法加载公共头部
+                $(".header").load("header.html", function() { //加载完成后设置高亮
+                    // $("#navigation_1").attr("style", "color: red");
+                    $("#navigation_1").addClass("activing").siblings().removeClass('activing')
+                });
+                $(".footer").load("footer.html");
+            });
+            $('.banner-mao').on('click', 'li', function() {
+                $(this).addClass('now')
+                $(this).siblings().removeClass('now')
+            })
+            $('.serve > .row').on('click', 'div', function() {
+                    $(this).addClass('action')
+                    $(this).siblings().removeClass('action')
+                })
+                //时间控件
+            $("#txtEndDate").calendar({
+
+                controlId: "divDate", // 弹出的日期控件ID，默认: $(this).attr("id") + "Calendar"
+
+                speed: 200, // 三种预定速度之一的字符串("slow", "normal", or "fast")或表示动画时长的毫秒数值(如：1000),默认：200
+
+                complement: true, // 是否显示日期或年空白处的前后月的补充,默认：true
+
+                readonly: true, // 目标对象是否设为只读，默认：true
+
+                // upperLimit: new Date(), // 日期上限，默认：NaN(不限制)
+
+                lowerLimit: new Date("2011/01/01"), // 日期下限，默认：NaN(不限制)
+
+                callback: function() { // 点击选择日期后的回调函数
+
+                    // alert("您选择的日期是：" + $("#txtEndDate").val());
+
+                }
+            });
+
+            //书本轮播组件
+            var slider = $('.mis-stage').miSlider({
+                //  The height of the stage in px. Options: false or positive integer. false = height is calculated using maximum slide heights. Default: false
+                stageHeight: 330,
+                //  Number of slides visible at one time. Options: false or positive integer. false = Fit as many as possible.  Default: 1
+                slidesOnStage: false,
+                //  The location of the current slide on the stage. Options: 'left', 'right', 'center'. Defualt: 'left'
+                slidePosition: 'center',
+                //  The slide to start on. Options: 'beg', 'mid', 'end' or slide number starting at 1 - '1','2','3', etc. Defualt: 'beg'
+                slideStart: 'mid',
+                //  The relative percentage scaling factor of the current slide - other slides are scaled down. Options: positive number 100 or higher. 100 = No scaling. Defualt: 100
+                slideScaling: 150,
+                //  The vertical offset of the slide center as a percentage of slide height. Options:  positive or negative number. Neg value = up. Pos value = down. 0 = No offset. Default: 0
+                offsetV: -5,
+                //  Center slide contents vertically - Boolean. Default: false
+                centerV: true,
+                //  Opacity of the prev and next button navigation when not transitioning. Options: Number between 0 and 1. 0 (transparent) - 1 (opaque). Default: .5
+                navButtonsOpacity: 1
+            });
+        })
+    </script>
 </body>
 
 </html>
