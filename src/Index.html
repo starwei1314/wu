@@ -8,8 +8,8 @@
     <title>武汉大学图书馆</title>
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugin/css/reset.css">
-    <link rel="stylesheet" href="plugin/fonts/iconfont.css">
     <link rel="stylesheet" href="plugin/css/common.css">
+    <link rel="stylesheet" href="plugin/fonts/iconfont.css">
     <link rel="stylesheet" href="plugin/css/mislider.css">
     <link rel="stylesheet" href="plugin/css/mislider-skin-cameo.css">
     <link rel="stylesheet" href="plugin/css/lyz.calendar.css">
@@ -23,8 +23,8 @@
     </div>
     <!-- <div class="head_top visible-lg" id='top'></div> -->
     <div class="header visible-lg"></div>
-    <!-- 轮播图部分 -->
-    <div class="banner">
+    <!-- 广告图部分 -->
+    <div class="banner visible-lg">
         <img src="images/swiperbanner.png" alt="">
         <div class="coustomer visible-lg">
             <img src="images/customer.png" alt="">
@@ -65,7 +65,7 @@
                                 <li><a href="#">Separated link</a></li>
                             </ul>
                         </div>
-                        <div class="search_box fl"><input type="text" placeholder="请输入关键词"><span> <img src="images/search.png" alt=""> 查询</span></div>
+                        <div class="search_box fl"><input type="text" placeholder="请输入关键词"><span> <img src="images/search.png" alt="" > 查询</span></div>
                     </div>
                     <div class="data_base">
                         <p>常用数据库: <span></span></p>
@@ -102,7 +102,7 @@
         </div>
     </div>
     <!-- 服务菜单部分 -->
-    <div class="serve-box  w">
+    <div class="serve-box  visible-lg w">
         <div class="serve">
             <div class="row">
                 <div class="col-lg-2 action">
@@ -192,7 +192,7 @@
         </div>
     </div>
     <!-- 新闻部分 -->
-    <div class="news w" id='news'>
+    <div class="news visible-lg w" id='news'>
         <div class="row">
             <div class="news-title">新闻公告</div>
             <div class="col-lg-6 col-sm-12">
@@ -298,7 +298,7 @@
         </div>
     </div>
     <!-- 热门服务部分 -->
-    <div class="hotserve w" id='hot'>
+    <div class="hotserve visible-lg w" id='hot'>
         <p class="hot-title">热门服务</p>
         <div class="role">
             <ul class="clearfix serve-main">
@@ -381,7 +381,7 @@
                 </li>
             </ul>
         </div>
-        <div class="wailian-extend">
+        <div class="wailian-extend visible-lg">
             <div class="extend-1">
                 <ul>
                     <li class="extend-item">
@@ -521,7 +521,7 @@
             </div>
         </div>
     </div>
-    <div class="special-serve w" id='special'>
+    <div class="special-serve visible-lg w" id='special'>
         <div class="special-title">特色资源</div>
         <div class="special-box">
             <ul class="clearfix">
@@ -565,7 +565,7 @@
         </div>
     </div>
     <!-- 阅读推荐 -->
-    <div class="reader w" id='read'>
+    <div class="reader visible-lg w" id='read'>
         <div class="reader-title">阅读推荐</div>
         <div class="reader-tab">
             <div>
@@ -707,10 +707,14 @@
                 $(this).siblings().removeClass('now')
             })
             $('.serve > .row').on('click', 'div', function() {
-                    $(this).addClass('action')
-                    $(this).siblings().removeClass('action')
-                })
-                //时间控件
+                $(this).addClass('action')
+                $(this).siblings().removeClass('action')
+            })
+
+            function search() {
+                console.log(22222)
+            }
+            //时间控件
             $("#txtEndDate").calendar({
 
                 controlId: "divDate", // 弹出的日期控件ID，默认: $(this).attr("id") + "Calendar"
@@ -749,7 +753,8 @@
                 //  Center slide contents vertically - Boolean. Default: false
                 centerV: true,
                 //  Opacity of the prev and next button navigation when not transitioning. Options: Number between 0 and 1. 0 (transparent) - 1 (opaque). Default: .5
-                navButtonsOpacity: 1
+                navButtonsOpacity: 1,
+                navButtonsShow: true,
             });
         })
     </script>

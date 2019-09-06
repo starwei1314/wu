@@ -1,0 +1,341 @@
+body {
+  background-color: #f7f9f9;
+}
+.main {
+  .main-tab {
+    cursor: pointer;
+    p {
+      margin: 25px 0;
+      font-size: 14px;
+      font-family: Source Han Sans CN;
+      font-weight: 300;
+      color: rgba(170, 170, 170, 1);
+    }
+  }
+  .main-user {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+    border-radius: 4px;
+    padding: 21px 41px;
+    margin-bottom: 18px;
+    .profile {
+      span {
+        font-size: 20px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        img {
+          vertical-align: middle;
+        }
+        &.updata {
+          font-size: 14px;
+          font-family: PingFang SC;
+          font-weight: 400;
+          margin-left: 10px;
+          a {
+            color: rgba(42, 133, 113, 1);
+            display: inline-block;
+            width: 75px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            border: 1px solid rgba(42, 133, 113, 1);
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+    div {
+      .profile-left {
+        p {
+          font-size: 20px;
+          font-family: Source Han Sans CN;
+          font-weight: 400;
+          color: rgba(51, 51, 51, 1);
+          &:nth-child(2) {
+            font-size: 14px;
+            font-family: Source Han Sans CN;
+            font-weight: 300;
+            color: rgba(153, 153, 153, 1);
+          }
+        }
+        .touxiang {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          background: skyblue;
+          margin-right: 20px;
+        }
+        ul > li {
+          font-size: 17px;
+          font-family: Source Han Sans CN;
+          font-weight: 400;
+          color: rgba(254, 0, 0, 1);
+          span {
+            font-size: 14px;
+            font-family: Source Han Sans CN;
+            font-weight: 300;
+            color: rgba(153, 153, 153, 1);
+            margin-right: 10px;
+          }
+          img {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    .profile-right {
+      ul {
+        margin-left: 20px;
+        li {
+          float: left;
+          margin-left: 10px;
+          width: 120px;
+          height: 174px;
+          background: rgba(247, 249, 249, 1);
+          border-radius: 4px;
+          text-align: center;
+          padding: 34px 0 21px 0;
+          position: relative;
+          div {
+            font-size: 18px;
+            font-family: PingFang SC;
+            font-weight: bold;
+            color: #999999;
+            span {
+              font-size: 24px;
+              font-family: PingFang SC;
+              font-weight: bold;
+              color: rgba(51, 51, 51, 1);
+              margin-right: 5px;
+            }
+          }
+          .messageicon {
+            margin-bottom: 14px;
+          }
+          p {
+            font-size: 14px;
+            font-family: Source Han Sans CN;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+            margin-top: 13px;
+            opacity: 0.99;
+          }
+          .more {
+            position: absolute;
+            top: 5px;
+            right: 12px;
+          }
+        }
+      }
+    }
+  }
+  .main-serve {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+    border-radius: 4px;
+    margin-bottom: 19px;
+    ul > li {
+      float: left;
+      width: 171px;
+      height: 150px;
+      border-right: 1px solid rgba(230, 240, 238, 1);
+      text-align: center;
+      &:nth-last-child(1) {
+        border-right: none;
+      }
+      &.action {
+        background: rgba(230, 240, 238, 1);
+        box-shadow: 0px 2px 6px 0px rgba(129, 200, 200, 0.5);
+        border-radius: 4px;
+      }
+      .serve-center {
+        height: 100%;
+        padding-top: 22px;
+        a {
+          height: 100%;
+          display: block;
+        }
+        p {
+          margin-top: 13px;
+          font-size: 16px;
+          font-family: Source Han Sans CN;
+          font-weight: 400;
+          color: rgba(51, 51, 51, 1);
+          margin-top: 13px;
+        }
+      }
+    }
+  }
+  .main-table {
+    padding: 18px 38px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+    border-radius: 4px;
+    .table-head {
+      font-size: 22px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: rgba(51, 51, 51, 1);
+      margin-bottom: 19px;
+      img {
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+    .table {
+      table {
+        border-collapse: collapse;
+      }
+
+      .detail_tb {
+        width: 100%;
+      }
+
+      .detail_tb .fied_header {
+        line-height: 54px;
+        border-left: none;
+        height: 54px;
+        background: rgba(42, 133, 113, 1);
+      }
+
+      .detail_tb .fied_header th {
+        text-align: center;
+        font-size: 16px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        &:nth-child(1) {
+          text-align: unset;
+        }
+      }
+
+      .detail_tb .fied_header th input {
+        vertical-align: middle;
+        margin: 12px 5px 0 10px;
+        vertical-align: unset;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(138, 197, 184, 1);
+        border-radius: 2px;
+      }
+
+      .detail_tb tr {
+        height: 44px;
+        line-height: 44px;
+        border-left: none;
+        display: block;
+        margin-top: 4px;
+        background-color: rgba(247, 249, 249, 1);
+        &.now {
+          height: 70px;
+          line-height: 70px;
+          background-color: rgba(239, 245, 244, 1);
+        }
+      }
+
+      .detail_tb tr td {
+        text-align: center;
+        font-size: 14px;
+        font-family: Source Han Sans CN;
+        font-weight: 300;
+        color: rgba(51, 51, 51, 1);
+        button {
+          width: 58px;
+          height: 30px;
+          background: rgba(255, 255, 255, 1);
+          border: 1px solid rgba(42, 133, 113, 1);
+          border-radius: 4px;
+          font-size: 14px;
+          font-family: Source Han Sans CN;
+          font-weight: 400;
+          color: rgba(42, 133, 113, 1);
+          text-align: center;
+          line-height: 30px;
+        }
+      }
+      .detail_tb tr td input {
+        float: left;
+        margin: 12px 5px 0 10px;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(138, 197, 184, 1);
+        border-radius: 2px;
+      }
+      .detail_tb tr td span {
+        float: left;
+      }
+    }
+  }
+  .data-display {
+    margin-top: 19px;
+
+    .data-left {
+      .data-top {
+        border-bottom: 4px solid #f4f7fb;
+      }
+    }
+    .data-left,
+    .data-right {
+      width: 48%;
+      height: 335px;
+      box-shadow: 0px 2px 9px 1px rgba(204, 204, 204, 0.5);
+      background-color: #f7f9f9;
+    }
+    .data-top {
+      font-size: 22px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: rgba(51, 51, 51, 1);
+      padding: 13px 42px;
+      span {
+        font-size: 20px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(199, 207, 224, 1);
+        float: right;
+      }
+      img {
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+    .data-right {
+    }
+  }
+  .book-display {
+    margin-top: 19px;
+    margin-bottom: 76px;
+    .book-left,
+    .book-right {
+      height: 501px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+      border-radius: 4px;
+      .book-top{
+        font-size: 22px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        padding: 13px 42px;
+        border-bottom: 1px solid rgba(225,238,236,1);
+        img {
+          vertical-align: middle;
+          margin-right: 10px;
+        }
+      }
+    }
+    .book-left {
+      width: 65%;
+      ul{
+        li{
+          float: left;
+          .book-intro{
+            border:1px solid rgba(173,224,213,1);
+          }
+        }
+      }
+    }
+    .book-right {
+      width: 33%;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新闻公告</title>
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugin/css/reset.css">
+    <link rel="stylesheet" href="plugin/css/common.css">
+    <link rel="stylesheet" href="styles/mylibray.css">
+</head>
+
+<body>
+    <div class="header visible-lg"></div>
+    <div class="main w">
+        <div class="mian-nav">
+            <p><a href="Index.html"> 首页 </a> / 新闻公告 / <span class="firstmenu">通知公告 </span> / <span class="secondmenu">二级菜单</span></p>
+        </div>
+        <div class="main-user">
+            <!-- 侧边栏 -->
+
+        </div>
+    </div>
+    <div class="footer visible-lg"></div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="plugin/js/remPc.js"></script> -->
+    <script>
+        $(function() {
+            $(document).ready(function() {
+                // rem()
+                //jquery load方法加载公共头部
+                $(".header").load("header.html", function() { //加载完成后设置高亮
+                    $("#navigation_3").addClass("activing").siblings().removeClass('activing')
+                });
+                $(".footer").load("footer.html");
+            });
+        })
+    </script>
+</body>
+
+</html>
