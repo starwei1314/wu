@@ -1,284 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
      -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>我的图书馆</title>
-    <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugin/css/reset.css">
-    <link rel="stylesheet" href="plugin/css/common.css">
-    <link rel="stylesheet" href="styles/mylibray.css">
-</head>
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="plugin/css/reset.css" />
+    <link rel="stylesheet" href="plugin/css/common.css" />
+    <link rel="stylesheet" href="styles/mylibray.css" />
+  </head>
 
-<body>
+  <body>
     <div class="header visible-lg"></div>
     <div class="main w">
-        <div class="main-tab">
-            <p><a href="Index.html"> 首页 </a> / 我的图书馆</p>
+      <div class="main-tab">
+        <p><a href="Index.html"> 首页 </a> / 我的图书馆</p>
+      </div>
+      <div class="main-user">
+        <div class="profile">
+          <span
+            ><img src="images/mylibray/gerenxinxi.png" alt="" /> 个人信息</span
+          >
+          <span class="updata"> <a href="#">更新资料</a> </span>
         </div>
-        <div class="main-user">
-            <div class="profile">
-                <span><img src="images/mylibray/gerenxinxi.png" alt=""> 个人信息</span>
-                <span class="updata"> <a href="#">更新资料</a> </span>
-            </div>
+        <div class="clearfix">
+          <div class="profile-left fl">
+            <p>欢迎来到我的图书馆</p>
+            <p>
+              上次登录 <span>2019/02/02</span> 您已经
+              <span>8</span> 天没有到馆了
+            </p>
             <div class="clearfix">
-                <div class="profile-left fl">
-                    <p>欢迎来到我的图书馆</p>
-                    <p>上次登录 <span>2019/02/02</span> 您已经 <span>8</span> 天没有到馆了</p>
-                    <div class="clearfix">
-                        <div class="fl touxiang"><img src="" alt=""></div>
-                        <div class="fl">
-                            <ul>
-                                <li><span>读者姓名</span> 张三刀</li>
-                                <li> <span>读者等级</span> <img src="images/mylibray/dengji.png" alt=""><img src="images/mylibray/dengji.png" alt=""></li>
-                                <li> <span>证卡有效期</span> 2019-9-11过期</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-right fl">
-                    <ul class="clearfix">
-                        <li>
-                            <div class="messageicon"><img src="images/mylibray/xiaoxi.png" alt=""></div>
-                            <div><span>4</span>条</div>
-                            <p>消息通知</p>
-                            <div class="more">
-                                <a href="#"><img src="images/mylibray/more.png" alt=""></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="messageicon"><img src="images/mylibray/qiankuan.png" alt=""></div>
-                            <div><span>4</span>元</div>
-                            <p>当前欠款</p>
-                            <div class="more">
-                                <a href="#"><img src="images/mylibray/more.png" alt=""></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="messageicon"><img src="images/mylibray/jieyue.png" alt=""></div>
-                            <div><span>4</span>本</div>
-                            <p>当前借阅</p>
-                            <div class="more">
-                                <a href="#"><img src="images/mylibray/more.png" alt=""></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="messageicon"><img src="images/mylibray/yuyue.png" alt=""></div>
-                            <div><span>4</span>本</div>
-                            <p>图书预约</p>
-                            <div class="more">
-                                <a href="#"><img src="images/mylibray/more.png" alt=""></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="messageicon"><img src="images/mylibray/xiaoxi.png" alt=""></div>
-                            <div><span>4</span>条</div>
-                            <p>消息通知</p>
-                            <div class="more">
-                                <a href="#"><img src="images/mylibray/more.png" alt=""></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="messageicon"><img src="images/mylibray/xiaoxi.png" alt=""></div>
-                            <div><span>4</span>条</div>
-                            <p>消息通知</p>
-                            <div class="more">
-                                <a href="#"><img src="images/mylibray/more.png" alt=""></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+              <div class="fl touxiang"><img src="" alt="" /></div>
+              <div class="fl">
+                <ul>
+                  <li><span>读者姓名</span> 张三刀</li>
+                  <li>
+                    <span>读者等级</span>
+                    <img src="images/mylibray/dengji.png" alt="" /><img
+                      src="images/mylibray/dengji.png"
+                      alt=""
+                    />
+                  </li>
+                  <li><span>证卡有效期</span> 2019-9-11过期</li>
+                </ul>
+              </div>
             </div>
-        </div>
-        <div class="main-serve">
-            <ul class="clearfix ">
-                <li class="action">
-                    <div class="serve-center">
-                        <a href="#">
-                            <img src="images/mylibray/dangqianjieyue.png" alt="">
-                            <p>当前借阅</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="serve-center">
-                        <a href="#">
-                            <img src="images/mylibray/lishijieyue.png" alt="">
-                            <p>历史借阅</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="serve-center">
-                        <a href="#">
-                            <img src="images/mylibray/zuoweiyuyue.png" alt="">
-                            <p>座位预约</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="serve-center">
-                        <a href="#">
-                            <img src="images/mylibray/yanjiushi.png" alt="">
-                            <p>研修室预约</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="serve-center">
-                        <a href="#">
-                            <img src="images/mylibray/tushujiangou.png" alt="">
-                            <p>图书荐购</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="serve-center">
-                        <a href="#">
-                            <img src="images/mylibray/dianziziyuan.png" alt="">
-                            <p>电子资源</p>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="serve-center">
-                        <a href="#">
-                            <img src="images/mylibray/wenxianchuandi.png" alt="">
-                            <p>文献传递</p>
-                        </a>
-                    </div>
-                </li>
+          </div>
+          <div class="profile-right fl">
+            <ul class="clearfix">
+              <li>
+                <div class="messageicon">
+                  <img src="images/mylibray/xiaoxi.png" alt="" />
+                </div>
+                <div><span>4</span>条</div>
+                <p>消息通知</p>
+                <div class="more">
+                  <a href="#"><img src="images/mylibray/more.png" alt=""/></a>
+                </div>
+              </li>
+              <li>
+                <div class="messageicon">
+                  <img src="images/mylibray/qiankuan.png" alt="" />
+                </div>
+                <div><span>4</span>元</div>
+                <p>当前欠款</p>
+                <div class="more">
+                  <a href="#"><img src="images/mylibray/more.png" alt=""/></a>
+                </div>
+              </li>
+              <li>
+                <div class="messageicon">
+                  <img src="images/mylibray/jieyue.png" alt="" />
+                </div>
+                <div><span>4</span>本</div>
+                <p>当前借阅</p>
+                <div class="more">
+                  <a href="#"><img src="images/mylibray/more.png" alt=""/></a>
+                </div>
+              </li>
+              <li>
+                <div class="messageicon">
+                  <img src="images/mylibray/yuyue.png" alt="" />
+                </div>
+                <div><span>4</span>本</div>
+                <p>图书预约</p>
+                <div class="more">
+                  <a href="#"><img src="images/mylibray/more.png" alt=""/></a>
+                </div>
+              </li>
+              <li>
+                <div class="messageicon">
+                  <img src="images/mylibray/xiaoxi.png" alt="" />
+                </div>
+                <div><span>4</span>条</div>
+                <p>消息通知</p>
+                <div class="more">
+                  <a href="#"><img src="images/mylibray/more.png" alt=""/></a>
+                </div>
+              </li>
+              <li>
+                <div class="messageicon">
+                  <img src="images/mylibray/xiaoxi.png" alt="" />
+                </div>
+                <div><span>4</span>条</div>
+                <p>消息通知</p>
+                <div class="more">
+                  <a href="#"><img src="images/mylibray/more.png" alt=""/></a>
+                </div>
+              </li>
             </ul>
+          </div>
         </div>
-        <div class="main-table">
-            <div class="table-head "> <img src="images/mylibray/xujie.png" alt=""> 续借/已借</div>
-            <div class="table">
-                <table class="detail_tb">
-                    <thead>
-                        <tr class="fied_header">
-                            <th width="100"><input type="checkbox" value="number" id="number">全选</th>
-                            <th width="600">书名</th>
-                            <th width="300">还书时间</th>
-                            <th width="200">操作</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbody">
-                        <tr>
-                            <td width="100"><input type="checkbox" value="" id=""><span></span></td>
-                            <td width="600">张三</td>
-                            <td width="300">2019/07/05</td>
-                            <td width="200"><button>续借</button></td>
+      </div>
+      <div class="main-serve">
+        <ul class="clearfix ">
+          <li class="action">
+            <div class="serve-center">
+              <a href="#">
+                <img src="images/mylibray/dangqianjieyue.png" alt="" />
+                <p>当前借阅</p>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="serve-center">
+              <a href="#">
+                <img src="images/mylibray/lishijieyue.png" alt="" />
+                <p>历史借阅</p>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="serve-center">
+              <a href="#">
+                <img src="images/mylibray/zuoweiyuyue.png" alt="" />
+                <p>座位预约</p>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="serve-center">
+              <a href="#">
+                <img src="images/mylibray/yanjiushi.png" alt="" />
+                <p>研修室预约</p>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="serve-center">
+              <a href="#">
+                <img src="images/mylibray/tushujiangou.png" alt="" />
+                <p>图书荐购</p>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="serve-center">
+              <a href="#">
+                <img src="images/mylibray/dianziziyuan.png" alt="" />
+                <p>电子资源</p>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="serve-center">
+              <a href="#">
+                <img src="images/mylibray/wenxianchuandi.png" alt="" />
+                <p>文献传递</p>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="main-table">
+        <div class="table-head ">
+          <img src="images/mylibray/xujie.png" alt="" /> 续借/已借
+        </div>
+        <div class="table">
+          <table class="detail_tb">
+            <thead>
+              <tr class="fied_header">
+                <th width="100">
+                  <input type="checkbox" value="number" id="number" />全选
+                </th>
+                <th width="600">书名</th>
+                <th width="300">还书时间</th>
+                <th width="200">操作</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <tr>
+                <td width="100">
+                  <input type="checkbox" value="" id="" /><span></span>
+                </td>
+                <td width="600">张三</td>
+                <td width="300">2019/07/05</td>
+                <td width="200"><button>续借</button></td>
+              </tr>
+              <tr class="now">
+                <td width="100">
+                  <input type="checkbox" value="" id="" /><span></span>
+                </td>
+                <td width="600">张四</td>
+                <td width="300">2019/07/05</td>
+                <td width="200"><button>续借</button></td>
+              </tr>
+              <tr>
+                <td width="100">
+                  <input type="checkbox" value="" id="" /><span></span>
+                </td>
+                <td width="600">张四</td>
+                <td width="300">2019/07/05</td>
+                <td width="200"><button>续借</button></td>
+              </tr>
+            </tbody>
 
-                        </tr>
-                        <tr class="now">
-                            <td width="100"><input type="checkbox" value="" id=""><span></span></td>
-                            <td width="600">张四</td>
-                            <td width="300">2019/07/05</td>
-                            <td width="200"><button>续借</button></td>
-                        </tr>
-                        <tr>
-                            <td width="100"><input type="checkbox" value="" id=""><span></span></td>
-                            <td width="600">张四</td>
-                            <td width="300">2019/07/05</td>
-                            <td width="200"><button>续借</button></td>
-                        </tr>
-                        <tbody>
-                </table>
-            </div>
+            <tbody></tbody>
+          </table>
         </div>
-        <div class="data-display clearfix">
-            <div class="data-left fl">
-                <div class="data-top">
-                    <img src="images/mylibray/yueduleixing.png" alt="">阅读类型
-                    <span>单位 ：本</span>
-                </div>
-                <div class="data-main"></div>
-            </div>
-            <div class="data-right fr">
-                <div class="data-top">
-                    <img src="images/mylibray/shichang.png" alt="">在馆时间
-                    <span>单位 ：小时</span>
-                </div>
-                <div class="data-main"></div>
-            </div>
+      </div>
+      <div class="data-display clearfix">
+        <div class="data-left fl">
+          <div class="data-top">
+            <img src="images/mylibray/yueduleixing.png" alt="" />阅读类型
+            <span>单位 ：本</span>
+          </div>
+          <div class="data-main">
+            <div id="main" style="width: 500px;height:250px;"></div>
+          </div>
         </div>
-        <div class="book-display clearfix">
-            <div class="book-left fl">
-                <div class="book-top">
-                    <img src="images/mylibray/yueduleixing.png" alt=""> 热门推荐
-
-                </div>
-                <div class="book-main">
-                    <ul class="clearfix">
-                        <li>
-                            <a href="#" class=" book-intro">
-                                <figure>
-                                    <img src="images/mylibray/book1.png" alt="White Water Lillies">
-                                    <figcaption>
-                                        <h4>心理营养</h4>
-                                        <p>作者：成果</p>
-                                        <p>浏览次数：117</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="book-right fr">
-                <div class="book-top">
-                    <img src="images/mylibray/shichang.png" alt=""> 搜索排行
-                </div>
-                <div class="book-main"></div>
-            </div>
+        <div class="data-right fr">
+          <div class="data-top">
+            <img src="images/mylibray/shichang.png" alt="" />在馆时间
+            <span>单位 ：小时</span>
+          </div>
+          <div class="data-main">
+            
+          </div>
         </div>
+      </div>
+      <div class="book-display clearfix">
+        <div class="book-left fl">
+          <div class="book-top">
+            <img src="images/mylibray/yueduleixing.png" alt="" /> 热门推荐
+          </div>
+          <div class="book-main">
+            <ul class="clearfix">
+              <li>
+                  <figure class=" book-intro">
+                    <img
+                      src="images/mylibray/book1.png"
+                      alt="White Water Lillies"
+                    />
+                    <figcaption>
+                      <h4>心理营养</h4>
+                      <p>作者：成果</p>
+                      <p>浏览次数：117</p>
+                    </figcaption>
+                  </figure>
+              </li>
+              <li>
+                  <figure class=" book-intro">
+                    <img
+                      src="images/mylibray/book1.png"
+                      alt="White Water Lillies"
+                    />
+                    <figcaption>
+                      <h4>心理营养</h4>
+                      <p>作者：成果</p>
+                      <p>浏览次数：117</p>
+                    </figcaption>
+                  </figure>
+              </li>
+              <li class="choosenow">
+                  <figure class=" book-intro">
+                    <img
+                      src="images/mylibray/book1.png"
+                      alt="White Water Lillies"
+                    />
+                    <figcaption>
+                      <h4>心理营养</h4>
+                      <p>作者：成果</p>
+                      <p>浏览次数：117</p>
+                    </figcaption>
+                  </figure>
+              </li>
+              <li>
+                  <figure class=" book-intro">
+                    <img
+                      src="images/mylibray/book1.png"
+                      alt="White Water Lillies"
+                    />
+                    <figcaption>
+                      <h4>心理营养</h4>
+                      <p>作者：成果</p>
+                      <p>浏览次数：117</p>
+                    </figcaption>
+                  </figure>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="book-right fr">
+          <div class="book-top">
+            <img src="images/mylibray/paihang.png" alt="" /> 搜索排行
+          </div>
+          <div class="book-table">
+              <table>
+                  <thead>
+                      <th width="20%">排名</th>
+                      <th width="50%">搜索关键词</th>
+                      <th width='30%'>搜索次数</th>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>1</td>
+                          <td> <a href="#">乌合之众</a> </td>
+                          <td>2,263</td>
+                      </tr>
+                      <tr>
+                          <td>2</td>
+                          <td> <a href="#">自卑与超越</a> </td>
+                          <td>2,121</td>
+                      </tr>
+                      <tr>
+                          <td>3</td>
+                          <td><a href="#">显微镜下</a></td>
+                          <td>1,233</td>
+                      </tr>
+                      <tr>
+                          <td>4</td>
+                          <td><a href="#">局外人</a></td>
+                          <td>1,211</td>
+                      </tr>
+                      <tr>
+                          <td>5</td>
+                          <td><a href="#">或者</a></td>
+                          <td>1,002</td>
+                      </tr>
+                      <tr>
+                          <td>6</td>
+                          <td><a href="#">诗经</a></td>
+                          <td>952</td>
+                      </tr>
+                      <tr>
+                          <td>7</td>
+                          <td><a href="#">赐福</a></td>
+                          <td>845</td>
+                      </tr>
+                      <tr>
+                          <td>8</td>
+                          <td><a href="#">九月</a></td>
+                          <td>724</td>
+                      </tr>
+                      <tr>
+                          <td>9</td>
+                          <td><a href="#">唐璜</a></td>
+                          <td>612</td>
+                      </tr>
+                      <tr>
+                          <td>10</td>
+                          <td><a href="#">呐喊</a></td>
+                          <td>155</td>
+                      </tr>   
+                  </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="footer visible-lg"></div>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts-en.common.min.js"></script>
     <!-- <script src="plugin/js/remPc.js"></script> -->
     <script>
-        $(function() {
-            $(document).ready(function() {
-                // rem()
-                //jquery load方法加载公共头部
-                $(".header").load("header.html", function() { //加载完成后设置高亮
-                    // $("#navigation_1").attr("style", "color: red");
-                    $("#navigation_2").addClass("activing").siblings().removeClass('activing')
-                });
-                $(".footer").load("footer.html");
-            });
-            $(".main-serve>ul").on('click', "li", function() {
-                    $(this).addClass("action").siblings().removeClass('action')
+      $(function() {
+        $(document).ready(function() {
+          // rem()
 
-                })
-                // 表格全选反选
-            $("#number").click(function() {
-                var isChecked = $("#number").prop("checked");
-                $("#tbody input").prop("checked", isChecked);
-            })
+          //jquery load方法加载公共头部
+          $(".header").load("header.html", function() {
+            //加载完成后设置高亮
+            $("#navigation_2")
+              .addClass("activing")
+              .siblings()
+              .removeClass("activing");
+              //echarts图表js
+              var myChart = echarts.init(document.getElementById('main'));
 
-            // 单独选项控制全选
-            $("#tbody input").click(function() {
-                var allLength = $("#tbody input").length;
-                var checkedLength = $("#tbody input:checked").length;
-                if (allLength == checkedLength) {
-                    $("#number").prop("checked", true);
-                } else {
-                    $("#number").prop("checked", false);
+// 指定图表的配置项和数据
+var option = {
+    tooltip: {
+        trigger: 'item',
+        // formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['谷歌','必应','其他']
+    },
+    series: [
+        {
+            name:'',
+            type:'pie',
+            radius: ['40%', '55%'],
+            label: {
+                normal: {
+                    // formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                    backgroundColor: '#eee',
+                    borderColor: '#aaa',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    // shadowBlur:3,
+                    // shadowOffsetX: 2,
+                    // shadowOffsetY: 2,
+                    // shadowColor: '#999',
+                    // padding: [0, 7],
+                    // rich: {
+                    //     a: {
+                    //         color: '#999',
+                    //         lineHeight: 22,
+                    //         align: 'center'
+                    //     },
+                    //     abg: {
+                    //         backgroundColor: '#333',
+                    //         width: '100%',
+                    //         align: 'right',
+                    //         height: 22,
+                    //         borderRadius: [4, 4, 0, 0]
+                    //     },
+                    //     hr: {
+                    //         borderColor: '#aaa',
+                    //         width: '100%',
+                    //         borderWidth: 0.5,
+                    //         height: 0
+                    //     },
+                    //     b: {
+                    //         fontSize: 16,
+                    //         lineHeight: 33
+                    //     },
+                    //     per: {
+                    //         color: '#eee',
+                    //         backgroundColor: '#334455',
+                    //         padding: [2, 4],
+                    //         borderRadius: 2
+                    //     }
+                    // }
                 }
-            });
-            //点击其中一项时，高亮显示
-            $("#tbody").on('click', "tr", function() {
-                $(this).addClass("now").siblings().removeClass('now')
-            })
-        })
-    </script>
-</body>
+            },
+            data:[
+                {value:251, name:'谷歌'},
+                {value:147, name:'必应'},
+                {value:102, name:'其他'}
+            ]
+        }
+    ]
+};
 
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+          });
+          $(".footer").load("footer.html");
+        });
+        $(".main-serve>ul").on("click", "li", function() {
+          $(this)
+            .addClass("action")
+            .siblings()
+            .removeClass("action");
+        });
+        // 表格全选反选
+        $("#number").click(function() {
+          var isChecked = $("#number").prop("checked");
+          $("#tbody input").prop("checked", isChecked);
+        });
+
+        // 单独选项控制全选
+        $("#tbody input").click(function() {
+          var allLength = $("#tbody input").length;
+          var checkedLength = $("#tbody input:checked").length;
+          if (allLength == checkedLength) {
+            $("#number").prop("checked", true);
+          } else {
+            $("#number").prop("checked", false);
+          }
+        });
+        //点击其中一项时，高亮显示
+        $("#tbody").on("click", "tr", function() {
+          $(this)
+            .addClass("now")
+            .siblings()
+            .removeClass("now");
+        });
+        $(".book-main>ul").on("click", "li", function() {
+          $(this)
+            .addClass("choosenow")
+            .siblings()
+            .removeClass("choosenow");
+        });
+        
+      });
+    </script>
+  </body>
 </html>
