@@ -68,7 +68,7 @@ gulp.task('jwserver', function(done) {
         name: 'jw',
         root: './src/',
         port: 4500,
-        host: '192.168.199.126',
+        host: '192.168.16.52',
         livereload: true
     })
     done()

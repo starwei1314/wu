@@ -53,17 +53,21 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="libraryCatalog">
                     <div class="search clearfix">
-                        <div class="dropdown fl">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                     全面搜索
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
+                        <div class="select fl">
+                            <!--存放选择的值-->
+                            <span class="selectVal" onselectstart="return false">全面搜索</span>
+                            <!--放置icon-->
+                            <i class="xl-icon"></i>
+                            <!--选择项-->
+                            <div class="selectList">
+                                <div class="listA-all">
+                                    <a href="javascript:;" class="listA">全面搜索</a>
+                                    <a href="javascript:;" class="listA">选择项2</a>
+                                    <a href="javascript:;" class="listA">选择项3</a>
+                                    <a href="javascript:;" class="listA">选择项4</a>
+                                    <a href="javascript:;" class="listA">选择项5</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="search_box fl"><input type="text" placeholder="请输入关键词"><span> <img src="images/search.png" alt="" > 查询</span></div>
                     </div>
@@ -707,9 +711,29 @@
                 $(this).siblings().removeClass('now')
             })
             $('.serve > .row').on('click', 'div', function() {
-                $(this).addClass('action')
-                $(this).siblings().removeClass('action')
-            })
+                    $(this).addClass('action')
+                    $(this).siblings().removeClass('action')
+                })
+                //搜索栏运行
+                /*----------------------------------
+                        点击展开移出区域隐藏列表
+                  ----------------------------------*/
+                //外层select框
+            var oDropDown = $('.select');
+            //选择列表项
+            var oChangeA = $('.listA');
+            oDropDown.click(function() {
+                $(this).find('.selectList').toggle().siblings('.xl-icon').toggleClass('sq-icon');
+            });
+
+            oDropDown.mouseleave(function() {
+                $(this).find('.selectList').hide().siblings('.xl-icon').removeClass('sq-icon');
+            });
+
+            oChangeA.click(function() {
+                var oVal = $(this).text();
+                $(this).parents('.listA-all').parents('.selectList').siblings('.selectVal').text(oVal).siblings('.xl-icon').toggleClass('sq-icon');
+            });
 
             function search() {
                 console.log(22222)

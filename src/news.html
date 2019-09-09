@@ -9,34 +9,165 @@
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugin/css/reset.css">
     <link rel="stylesheet" href="plugin/css/common.css">
-    <link rel="stylesheet" href="styles/mylibray.css">
+    <link rel="stylesheet" href="plugin/css/pagination.css">
+    <link rel="stylesheet" href="styles/news.css">
 </head>
 
 <body>
     <div class="header visible-lg"></div>
     <div class="main w">
-        <div class="mian-nav">
+        <div class="main-nav">
             <p><a href="Index.html"> 首页 </a> / 新闻公告 / <span class="firstmenu">通知公告 </span> / <span class="secondmenu">二级菜单</span></p>
         </div>
-        <div class="main-user">
+        <div class="main-user clearfix">
             <!-- 侧边栏 -->
+            <div class="subNavBox fl">
+                <h1>新闻中心</h1>
+                <div>
+                    <div class="subNav ">新闻中心</div>
+                    <ul class="navContent ">
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">新闻管理</a></li>
+                    </ul>
+                    <div class="subNav">关于我们</div>
+                    <ul class="navContent">
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">新闻管理</a></li>
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">新闻管理</a></li>
+                    </ul>
+                    <div class="subNav">业务系统</div>
+                    <ul class="navContent">
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">新闻管理</a></li>
+                    </ul>
+                    <div class="subNav">招商加盟</div>
+                    <ul class="navContent">
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">新闻管理</a></li>
+                        <li><a href="#">添加新闻</a></li>
+                        <li><a href="#">新闻管理</a></li>
+                    </ul>
+                </div>
 
+            </div>
+            <div class="titleContent fl">
+                <div class="titleSearch">
+                    <div class="search clearfix">
+                        <div class="select fl">
+                            <!--存放选择的值-->
+                            <span class="selectVal" onselectstart="return false">全面搜索</span>
+                            <!--放置icon-->
+                            <i class="xl-icon"></i>
+                            <!--选择项-->
+                            <div class="selectList">
+                                <div class="listA-all">
+                                    <a href="javascript:;" class="listA">全面搜索</a>
+                                    <a href="javascript:;" class="listA">选择项2</a>
+                                    <a href="javascript:;" class="listA">选择项3</a>
+                                    <a href="javascript:;" class="listA">选择项4</a>
+                                    <a href="javascript:;" class="listA">选择项5</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_box fl"><input type="text" placeholder="请输入关键词"><span> 查询</span></div>
+                    </div>
+                </div>
+                <div class="titleList">
+                    <div class="list_top">新闻中心</div>
+                    <div class="list_body">
+                        <ul>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                            <li><a href="#"> 揭晓丨你的专属毕业纪念册，快来领取<span>2019/07/07</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="list_foot">
+                        <div id="pagination" class="pagination"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer visible-lg"></div>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="plugin/js/remPc.js"></script> -->
+    <script src="plugin/js/pagination.js"></script>
     <script>
         $(function() {
             $(document).ready(function() {
-                // rem()
                 //jquery load方法加载公共头部
                 $(".header").load("header.html", function() { //加载完成后设置高亮
                     $("#navigation_3").addClass("activing").siblings().removeClass('activing')
                 });
                 $(".footer").load("footer.html");
             });
+            //搜索栏运行
+            /*----------------------------------
+                    点击展开移出区域隐藏列表
+              ----------------------------------*/
+            //外层select框
+            var oDropDown = $('.select');
+            //选择列表项
+            var oChangeA = $('.listA');
+            oDropDown.click(function() {
+                $(this).find('.selectList').toggle().siblings('.xl-icon').toggleClass('sq-icon');
+            });
+
+            oDropDown.mouseleave(function() {
+                $(this).find('.selectList').hide().siblings('.xl-icon').removeClass('sq-icon');
+            });
+
+            oChangeA.click(function() {
+                var oVal = $(this).text();
+                $(this).parents('.listA-all').parents('.selectList').siblings('.selectVal').text(oVal).siblings('.xl-icon').toggleClass('sq-icon');
+            });
+            //侧边栏运行
+            $(".subNav").click(function() {
+                $(".list_top").text($(this).text())
+                $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+                $(this).toggleClass("currentDt").siblings(".subNav").removeClass("currentDt")
+                $(this).next(".navContent").slideToggle(300).siblings(".navContent").slideUp(500)
+            })
+            $(".navContent").on("click", "li", function() {
+                    $(this).toggleClass("currentDd").siblings().removeClass("currentDd")
+                    $(this).parent().siblings().children().removeClass("currentDd")
+                })
+                //翻页功能,初始化翻页插件
+            new Page({
+                id: 'pagination',
+                pageTotal: Math.ceil(20 / 10) || 1,
+                //必填,总页数
+                pageAmount: 10,
+                //每页多少条
+                dataTotal: 20,
+                //总共多少条数据
+                curPage: 1,
+                //初始页码,不填默认为1
+                pageSize: Math.ceil(20 / 10) || 1,
+                //分页个数,不填默认为5
+                showPageTotalFlag: false,
+                //是否显示数据统计,不填默认不显示
+                showSkipInputFlag: false,
+                //是否支持跳转,不填默认不显示
+                getPage: function getPage(page) {
+                    //获取当前页数,并发送请求
+
+                }
+            });
+
+
         })
     </script>
 </body>
