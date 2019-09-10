@@ -39,15 +39,27 @@
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: rgba(51, 51, 51, 1);
-      background: url(../images/jiantou1.jpg) no-repeat;
+      background: url(../images/youjiantou.png) no-repeat;
       background-position: 95% 50%;
+      a{
+        font-size:18px;
+font-family:Source Han Sans CN;
+font-weight:400;
+color:rgba(51,51,51,1);
+      }
     }
     .subNav:hover {
-      color: rgba(42, 133, 113, 1);
+      a{
+        color: rgba(42, 133, 113, 1);
+      }
+      
       border-left: 4px solid rgba(42, 133, 113, 1);
       &.currentDd {
-        color: #fff;
+        
         border-left: none;
+        a{
+          color:#fff;
+        }
       }
     }
     .currentDd {
@@ -55,21 +67,9 @@
       color: #fff;
     }
     .currentDt {
-      background-image: url(../images/jiantou.jpg);
+      background-image: url(../images/jiantouxia.png);
     }
-    .navContent {
-      display: none;
-      padding: 5px;
-      border-bottom: solid 1px #e5e3da;
-    }
-    .navContent li a {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-      color: #333;
-    }
+    
     .titleContent {
       width: 76%;
       margin-left: 1%;
@@ -168,7 +168,17 @@
           top: 58px;
         }
         .search_box {
+          position: relative;
           margin-left: 10px;
+          i{
+              position: absolute;
+              top: 50%;
+              margin-top: -12px;
+              margin-left: 20px;
+          }
+          .icon-sousuo:before {
+            color: #CCCCCC;
+        }
           input {
             width: 500px;
             height: 50px;

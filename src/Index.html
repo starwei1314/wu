@@ -3,30 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>武汉大学图书馆</title>
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugin/css/reset.css">
+    <link rel="stylesheet" media="screen and (max-device-width:1200px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-device-width:1200px)" type="text/css" href="plugin/css/reset.css" />
     <link rel="stylesheet" href="plugin/css/common.css">
     <link rel="stylesheet" href="plugin/fonts/iconfont.css">
     <link rel="stylesheet" href="plugin/css/mislider.css">
     <link rel="stylesheet" href="plugin/css/mislider-skin-cameo.css">
     <link rel="stylesheet" href="plugin/css/lyz.calendar.css">
-    <link rel="stylesheet" type="text/css" href="styles/Index.css" />
-
+    <link rel="stylesheet" media="screen and (max-device-width:1200px)" type="text/css" href="styles/mobileIndex.css" />
+    <link rel="stylesheet" media="screen and (min-device-width:1200px)" type="text/css" href="styles/Index.css" />
 </head>
 
 <body>
-    <div class="move hidden-lg">
-        <!-- 暂时留给移动端头部 -->
+    <div class="move">
+        <div class="logo">
+            <img src="./images/logo.png" alt="">
+        </div>
+        <button></button>
     </div>
     <!-- <div class="head_top visible-lg" id='top'></div> -->
-    <div class="header visible-lg"></div>
+    <div class="header "></div>
     <!-- 广告图部分 -->
-    <div class="banner visible-lg">
-        <img src="images/swiperbanner.png" alt="">
-        <div class="coustomer visible-lg">
+    <div class="banner ">
+        <!-- <img src="images/swiperbanner.png" alt=""> -->
+        <div class="coustomer ">
             <img src="images/customer.png" alt="">
             <ol class="banner-mao">
                 <li class="now"><a href="#top">1</a></li>
@@ -37,76 +41,79 @@
             </ol>
         </div>
     </div>
-    <div class="center w visible-lg ">
-        <!-- 搜索框部分 -->
-        <div class="tab_search w">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#libraryCatalog" aria-controls="libraryCatalog" role="tab" data-toggle="tab">馆藏目录</a></li>
-                <li role="presentation"><a href="#academicSearch" aria-controls="academicSearch" role="tab" data-toggle="tab">珞珈学术搜索</a></li>
-                <li role="presentation"><a href="#ebook" aria-controls="ebook" role="tab" data-toggle="tab">电子书刊</a></li>
-                <li role="presentation"><a href="#dataBase" aria-controls="dataBase" role="tab" data-toggle="tab">数据库</a></li>
-                <li role="presentation"><a href="#scholars" aria-controls="scholars" role="tab" data-toggle="tab">百度学术</a></li>
-                <li role="presentation"><a href="#siteSearch" aria-controls="siteSearch" role="tab" data-toggle="tab">站内搜索</a></li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="libraryCatalog">
-                    <div class="search clearfix">
-                        <div class="select fl">
-                            <!--存放选择的值-->
-                            <span class="selectVal" onselectstart="return false">全面搜索</span>
-                            <!--放置icon-->
-                            <i class="xl-icon"></i>
-                            <!--选择项-->
-                            <div class="selectList">
-                                <div class="listA-all">
-                                    <a href="javascript:;" class="listA">全面搜索</a>
-                                    <a href="javascript:;" class="listA">选择项2</a>
-                                    <a href="javascript:;" class="listA">选择项3</a>
-                                    <a href="javascript:;" class="listA">选择项4</a>
-                                    <a href="javascript:;" class="listA">选择项5</a>
+    <div class="main w">
+        <div class="center w ">
+            <!-- 搜索框部分 -->
+            <div class="tab_search w">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#libraryCatalog" aria-controls="libraryCatalog" role="tab" data-toggle="tab">馆藏目录</a></li>
+                    <li role="presentation"><a href="#academicSearch" aria-controls="academicSearch" role="tab" data-toggle="tab">珞珈学术搜索</a></li>
+                    <li role="presentation"><a href="#ebook" aria-controls="ebook" role="tab" data-toggle="tab">电子书刊</a></li>
+                    <li role="presentation"><a href="#dataBase" aria-controls="dataBase" role="tab" data-toggle="tab">数据库</a></li>
+                    <li role="presentation"><a href="#scholars" aria-controls="scholars" role="tab" data-toggle="tab">百度学术</a></li>
+                    <li role="presentation"><a href="#siteSearch" aria-controls="siteSearch" role="tab" data-toggle="tab">站内搜索</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="libraryCatalog">
+                        <div class="search clearfix">
+                            <div class="select fl">
+                                <!--存放选择的值-->
+                                <span class="selectVal" onselectstart="return false">全面搜索</span>
+                                <!--放置icon-->
+                                <i class="xl-icon"></i>
+                                <!--选择项-->
+                                <div class="selectList">
+                                    <div class="listA-all">
+                                        <a href="javascript:;" class="listA">全面搜索</a>
+                                        <a href="javascript:;" class="listA">选择项2</a>
+                                        <a href="javascript:;" class="listA">选择项3</a>
+                                        <a href="javascript:;" class="listA">选择项4</a>
+                                        <a href="javascript:;" class="listA">选择项5</a>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="search_box fl"><input type="text" placeholder="请输入关键词"><span> <img src="images/search.png" alt="" > 查询</span></div>
                         </div>
-                        <div class="search_box fl"><input type="text" placeholder="请输入关键词"><span> <img src="images/search.png" alt="" > 查询</span></div>
-                    </div>
-                    <div class="data_base">
-                        <p>常用数据库: <span></span></p>
-                    </div>
-                    <div class="wailian">
-                        <div class="clearfix">
-                            <p class="fl">中文：</p>
-                            <ul class="clearfix fl">
-                                <li>知网</li>
-                                <li>万方</li>
-                                <li>北大法宝</li>
-                                <li>读秀</li>
-                                <li>人民日报</li>
-                            </ul>
+                        <div class="data_base">
+                            <p>常用数据库: <span></span></p>
                         </div>
-                        <div class="clearfix">
-                            <p class="fl">外文：</p>
-                            <ul class="clearfix fl">
-                                <li>SCI</li>
-                                <li>Scopus</li>
-                                <li>JSTOR</li>
-                                <li>lexis</li>
-                                <li>heinonline</li>
-                            </ul>
+                        <div class="wailian">
+                            <div class="clearfix">
+                                <p class="fl">中文：</p>
+                                <ul class="clearfix fl">
+                                    <li>知网</li>
+                                    <li>万方</li>
+                                    <li>北大法宝</li>
+                                    <li>读秀</li>
+                                    <li>人民日报</li>
+                                </ul>
+                            </div>
+                            <div class="clearfix">
+                                <p class="fl">外文：</p>
+                                <ul class="clearfix fl">
+                                    <li>SCI</li>
+                                    <li>Scopus</li>
+                                    <li>JSTOR</li>
+                                    <li>lexis</li>
+                                    <li>heinonline</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                    <div role="tabpanel" class="tab-pane" id="academicSearch">...</div>
+                    <div role="tabpanel" class="tab-pane" id="ebook">...</div>
+                    <div role="tabpanel" class="tab-pane" id="dataBase">...</div>
+                    <div role="tabpanel" class="tab-pane" id="scholars">...</div>
+                    <div role="tabpanel" class="tab-pane" id="siteSearch">...</div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="academicSearch">...</div>
-                <div role="tabpanel" class="tab-pane" id="ebook">...</div>
-                <div role="tabpanel" class="tab-pane" id="dataBase">...</div>
-                <div role="tabpanel" class="tab-pane" id="scholars">...</div>
-                <div role="tabpanel" class="tab-pane" id="siteSearch">...</div>
             </div>
         </div>
     </div>
+
     <!-- 服务菜单部分 -->
-    <div class="serve-box  visible-lg w">
+    <div class="serve-box   w">
         <div class="serve">
             <div class="row">
                 <div class="col-lg-2 action">
@@ -196,7 +203,7 @@
         </div>
     </div>
     <!-- 新闻部分 -->
-    <div class="news visible-lg w" id='news'>
+    <div class="news  w" id='news'>
         <div class="row">
             <div class="news-title">新闻公告</div>
             <div class="col-lg-6 col-sm-12">
@@ -302,7 +309,7 @@
         </div>
     </div>
     <!-- 热门服务部分 -->
-    <div class="hotserve visible-lg w" id='hot'>
+    <div class="hotserve  w" id='hot'>
         <p class="hot-title">热门服务</p>
         <div class="role">
             <ul class="clearfix serve-main">
@@ -367,7 +374,7 @@
                     </div>
                 </li>
                 <li class="serve-item">
-                    <p class="iconfont icon-xiaoyouxitong-copy">校友</p>
+                    <p class="iconfont icon-xiaoyouxitong-copy-copy">校友</p>
                     <div class="hotserve-wailian">
                         <ul class="fl">
                             <li><a href="#"> 武大名师库</a></li>
@@ -385,7 +392,7 @@
                 </li>
             </ul>
         </div>
-        <div class="wailian-extend visible-lg">
+        <div class="wailian-extend ">
             <div class="extend-1">
                 <ul>
                     <li class="extend-item">
@@ -525,7 +532,7 @@
             </div>
         </div>
     </div>
-    <div class="special-serve visible-lg w" id='special'>
+    <div class="special-serve  w" id='special'>
         <div class="special-title">特色资源</div>
         <div class="special-box">
             <ul class="clearfix">
@@ -569,7 +576,7 @@
         </div>
     </div>
     <!-- 阅读推荐 -->
-    <div class="reader visible-lg w" id='read'>
+    <div class="reader  w" id='read'>
         <div class="reader-title">阅读推荐</div>
         <div class="reader-tab">
             <div>
@@ -689,15 +696,28 @@
             </div>
         </div>
     </div>
-    <div class="footer visible-lg"></div>
+    <div class="footer"></div>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="js/common.js"></script> -->
     <script src="plugin/js/lyz.calendar.min.js"></script>
     <script type="text/javascript" src="plugin/js/modernizr-custom.js"></script>
     <script src="plugin/js/mislider.js"></script>
+
     <script type="text/javascript">
         $(function() {
+            (function() {
+                if (window.screen.width < 1200) {
+                    loadJs('js/rem.js')
+                }
+            })()
+
+            function loadJs(src) {
+                var head = document.getElementsByTagName('head')[0];
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.src = src;
+                head.appendChild(s);
+            }
             $(document).ready(function() {
                 //jquery load方法加载公共头部
                 $(".header").load("header.html", function() { //加载完成后设置高亮

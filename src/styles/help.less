@@ -1,0 +1,113 @@
+.main {
+  min-width: 1200px;
+  .navSub {
+    width: 17%;
+    min-width: 248px;
+    .subNavBox {
+      width: 100%;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+      border-radius: 4px;
+      padding-top: 20px;
+      h1 {
+        text-align: center;
+        font-size: 24px;
+        font-family: Source Han Sans CN;
+        font-weight: bold;
+        color: rgba(42, 133, 113, 1);
+        border-bottom: solid 1px #e5e3da;
+        padding: 27px 26px;
+      }
+      img {
+        width: 90%;
+        display: inline-block;
+        margin-left: 4%;
+      }
+      // 重置侧边栏禁止点击状态
+      .noneContent {
+        background: none;
+        pointer-events: none;
+        cursor: not-allowed;
+        &:hover {
+          color: black;
+          border-left: none;
+        }
+      }
+    }
+    .subNav {
+      border-bottom: solid 1px #e5e3da;
+      padding: 13px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: rgba(51, 51, 51, 1);
+      background: url(../images/youjiantou.png) no-repeat;
+      background-position: 6% 50%;
+      text-indent: 2em;
+    }
+    .subNav:hover {
+      color: rgba(42, 133, 113, 1);
+      border-left: 4px solid rgba(42, 133, 113, 1);
+      &.currentDd {
+        color: #fff;
+        border-left: none;
+      }
+    }
+    .currentDd {
+      background-color: rgba(42, 133, 113, 1);
+      color: #fff;
+    }
+    .currentDt {
+      background-image: url(../images/jiantouxia.png);
+    }
+    .navContent {
+      display: none;
+      padding: 5px;
+      border-bottom: solid 1px #e5e3da;
+    }
+    .navContent li a {
+      display: block;
+      padding: 15px;
+      text-align: left;
+      padding-left: 40px;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+  .mainContent {
+    width: 79%;
+    min-width: 948px;
+    padding-top: 82px;
+    h1 {
+      font-size: 34px;
+      font-family: Source Han Sans CN;
+      font-weight: bold;
+      color: rgba(51, 51, 51, 1);
+      text-align: center;
+    }
+    .content {
+        margin-left: 320px;
+      h2 {
+          margin-top: 35px;
+        font-size: 24px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+      }
+      ul{
+          margin-top: 27px;
+          li{
+              float: left;
+              margin-right: 30px;
+              a{
+                font-size:16px;
+                font-family:Source Han Sans CN;
+                font-weight:400;
+                color:rgba(42,133,113,1);
+              }
+          }
+      }
+    }
+  }
+}

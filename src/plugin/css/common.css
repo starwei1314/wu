@@ -2,6 +2,7 @@
 
 .header {
     width: 100%;
+    min-width: 1200px;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 6px 6px 0px rgba(204, 204, 204, 0.3);
 }
@@ -9,11 +10,6 @@
 .head_top {
     width: 100%;
     background-color: rgba(246, 246, 246, 1);
-}
-
-.w {
-    width: 1200px;
-    margin: auto;
 }
 
 .top_head {
@@ -78,8 +74,10 @@
 
 .footer {
     width: 100%;
+    min-width: 1200px;
     height: 219px;
     background: rgba(0, 0, 0, 0.7);
+    margin-top: 80px;
 }
 
 .footer p {

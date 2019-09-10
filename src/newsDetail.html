@@ -9,11 +9,119 @@
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugin/css/reset.css">
     <link rel="stylesheet" href="plugin/css/common.css">
+    <link rel="stylesheet" href="plugin/fonts/iconfont.css">
     <link rel="stylesheet" href="styles/newsDetail.css">
 </head>
 
 <body>
     <div class="header visible-lg"></div>
+    <div class="main w">
+        <div class="main-nav">
+            <p><a href="Index.html"> 首页 </a> / 新闻公告 / <span class="firstmenu">通知公告 </span> / <span class="secondmenu">二级菜单</span></p>
+        </div>
+        <div class="main-user clearfix">
+            <!-- 侧边栏 -->
+            <div class="subNavBox fl">
+                <h1>新闻中心</h1>
+                <div>
+                    <div class="subNav ">通知公告</div>
+
+                    <div class="subNav">资源动态</div>
+
+                    <div class="subNav">培训与活动</div>
+
+                    <div class="subNav">珞珈阅读广场</div>
+
+                </div>
+
+            </div>
+            <div class="titleContent fl">
+                <div class="titleSearch">
+                    <div class="search clearfix">
+                        <div class="select fl">
+                            <!--存放选择的值-->
+                            <span class="selectVal" onselectstart="return false">全面搜索</span>
+                            <!--放置icon-->
+                            <i class="xl-icon"></i>
+                            <!--选择项-->
+                            <div class="selectList">
+                                <div class="listA-all">
+                                    <a href="javascript:;" class="listA">全面搜索</a>
+                                    <a href="javascript:;" class="listA">通知公告</a>
+                                    <a href="javascript:;" class="listA">资源动态</a>
+                                    <a href="javascript:;" class="listA">培训与活动</a>
+                                    <a href="javascript:;" class="listA">珞珈阅读广场</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_box fl"><i class="iconfont icon-sousuo"></i><input type="text" placeholder="请输入关键词"><span> 查询</span></div>
+                    </div>
+                </div>
+                <div class="titleList">
+                    <div class="list_top">新闻中心</div>
+                    <div class="list_body">
+                        <div class="artice_title">
+                            关于工学分馆临时闭馆的通知
+                        </div>
+                        <div class="artice_time clearfix">
+                            <span class="fl">发布时间：2019/7/8 15:40:00</span>
+                            <span class="fr"> <i class="iconfont icon-yanjing "></i> 浏览次数    513</span>
+                        </div>
+                        <div class="artice">
+                            <p>
+                                各位读者：</br>
+                                接学校水电管理中心通知，为确保学校二次供水水质达到国家规定生活用水标准，将于 2019年7月9日（星期二）对工学部水池进行清洗消毒，届时工学部图书馆及周边教学楼均临时停水。受此影响工学分馆7月9日7：00起临时闭馆，17：30起恢复正常开放。由此带来的不便，请读者谅解！
+                                </br>
+                                图书馆 2019年7月8日
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer visible-lg"></div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function() {
+            $(document).ready(function() {
+                //jquery load方法加载公共头部
+                $(".header").load("header.html", function() { //加载完成后设置高亮
+                    $("#navigation_3").addClass("activing").siblings().removeClass('activing')
+                });
+                $(".footer").load("footer.html");
+            });
+            //搜索栏运行
+            /*----------------------------------
+                    点击展开移出区域隐藏列表
+              ----------------------------------*/
+            //外层select框
+            var oDropDown = $('.select');
+            //选择列表项
+            var oChangeA = $('.listA');
+            oDropDown.click(function() {
+                $(this).find('.selectList').toggle().siblings('.xl-icon').toggleClass('sq-icon');
+            });
+
+            oDropDown.mouseleave(function() {
+                $(this).find('.selectList').hide().siblings('.xl-icon').removeClass('sq-icon');
+            });
+
+            oChangeA.click(function() {
+                var oVal = $(this).text();
+                $(this).parents('.listA-all').parents('.selectList').siblings('.selectVal').text(oVal).siblings('.xl-icon').toggleClass('sq-icon');
+            });
+            //侧边栏运行
+            $(".subNav").click(function() {
+                $(".list_top").text($(this).text())
+                $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+
+            })
+        })
+    </script>
 </body>
 
 </html>

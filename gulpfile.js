@@ -63,10 +63,10 @@ gulp.task('build', function(done) {
 
 
 
-gulp.task('jwserver', function(done) {
+gulp.task('wdserver', function(done) {
     connect.server({
-        name: 'jw',
-        root: './src/',
+        name: 'wd',
+        root: './src',
         port: 4500,
         host: '192.168.16.52',
         livereload: true
@@ -124,4 +124,4 @@ gulp.task('watching', async() => {
 })
 
 
-gulp.task('dev', gulp.series('watching', 'jwserver'));
+gulp.task('dev', gulp.series('watching', 'wdserver'));
