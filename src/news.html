@@ -140,9 +140,12 @@
                 //是否支持跳转,不填默认不显示
                 getPage: function getPage(page) {
                     //获取当前页数,并发送请求
-
+                    console.log($(this))
+                    $(this)[0].curPage = page
+                    console.log($(this)[0].curPage)
                 }
             });
+
         })
     </script>
 </body>

@@ -1,15 +1,13 @@
-.move{
-  img{
-    display: none;
-  }
-}
-.main{
+.main {
   position: relative;
+}
+.mobile{
+  display: none;
 }
 .banner {
   width: 100%;
   min-width: 1200px;
-  height:603px;
+  height: 603px;
   background-image: url("../images/swiperbanner.png");
   background-size: cover;
   position: relative;
@@ -21,36 +19,36 @@
     img {
       height: 63px;
     }
-    ol{
-      li{
-         width: 24px;
-         height: 24px;
-         line-height: 24px;
-         border-radius: 50%;
-         text-indent: 0;
-         font-size: 12px;
-         font-family: Source Han Sans CN;
-         font-weight: 400;
-         text-align: center;
-         border: 1px solid rgba(42, 133, 113, 1);
-         color: rgba(42, 133, 113, 1);
-         background-color: #fff;
-         &.now{
+    ol {
+      li {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+        text-indent: 0;
+        font-size: 12px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        text-align: center;
+        border: 1px solid rgba(42, 133, 113, 1);
+        color: rgba(42, 133, 113, 1);
+        background-color: #fff;
+        &.now {
           font-size: 12px;
           font-family: Source Han Sans CN;
           font-weight: 400;
           color: rgba(255, 255, 255, 1);
           background: rgba(42, 133, 113, 1);
-         }
-         a{
+        }
+        a {
           display: block;
           width: 100%;
           height: 100%;
-      }
-         }
+        }
       }
     }
   }
+}
 .center {
   position: absolute;
   left: 50%;
@@ -268,8 +266,10 @@
     .row {
       margin-left: 0;
       margin-right: 0;
-
       .col-lg-2 {
+        a {
+          display: block;
+        }
         text-align: center;
         padding: 10px 0px;
         border-right: 1px solid rgba(238, 238, 238, 1);
@@ -309,6 +309,7 @@
         }
         &:last-child {
           border-bottom: none;
+          margin-top: 11px;
           p {
             padding-top: 0px;
           }
@@ -318,7 +319,6 @@
   }
 }
 .news {
-  
   .news-title {
     font-size: 36px;
     font-family: Source Han Sans CN;
@@ -418,7 +418,7 @@
     .tab-content {
       .news_top {
         margin-top: 10px;
-        .timedate{
+        .timedate {
           position: relative;
         }
         ul > li {
@@ -451,7 +451,7 @@
 // 热门服务部分
 .hotserve {
   margin-top: 100px;
-  padding-bottom: 76px;
+  padding-bottom: 56px;
   .hot-title {
     font-size: 36px;
     font-family: Source Han Sans CN;
@@ -467,10 +467,9 @@
       .serve-item {
         width: 288px;
         padding: 20px;
-     
-        background:rgba(255,255,255,1);
-box-shadow:0px 1px 18px 2px rgba(179,206,199,0.5);
-border-radius:4px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 1px 18px 2px rgba(179, 206, 199, 0.5);
+        border-radius: 4px;
         p {
           font-size: 22px;
           font-family: Source Han Sans CN;
@@ -538,15 +537,27 @@ border-radius:4px;
         padding-left: 20px;
         margin-bottom: 50px;
         flex-grow: 1;
+        
         a {
           display: block;
           position: relative;
+          img{
+            width: 100%;
+          }
+          .shade{
+            width: 100%;
+            height: 100%;
+            background-color: #333333;
+            opacity: 0.5;
+            position: absolute;
+          }
           span {
-            width: 120px;
+            width: 151px;
+            text-align: center;
             position: absolute;
             bottom: 30px;
             left: 50%;
-           margin-left: -70px;
+            margin-left: -70px;
             font-size: 20px;
             font-family: Microsoft YaHei;
             font-weight: bold;
@@ -558,10 +569,10 @@ border-radius:4px;
   }
 }
 //阅读推荐
-.reader{
+.reader {
   margin-top: 100px;
   margin-bottom: 100px;
-  .reader-title{
+  .reader-title {
     font-size: 36px;
     font-family: Source Han Sans CN;
     font-weight: bold;
@@ -570,34 +581,38 @@ border-radius:4px;
     margin-bottom: 20px;
   }
   .reader-tab {
-    .nav-tabs{
-      margin-bottom: 20px;
+    .nav-tabs {
+      margin-bottom: 30px;
+      display: inline-block;
     }
-    .tab-content{height: 360px;}
-   .nav-tabs > li > a{
-    font-size:22px;
-    font-family:Source Han Sans CN;
-    font-weight:400;
-    color:rgba(51,51,51,1);
-   }
-      .nav-tabs > li.active {
-        background: rgba(42, 133, 113, 1);
-        border-bottom: 1px solid rgba(42, 133, 113, 1);
-      }
-      .nav-tabs > li.active > a {
-        background: rgba(42, 133, 113, 1);
-        font-size:22px;
-font-family:Source Han Sans CN;
-font-weight:400;
-color:rgba(255,255,255,1);
-        
-      }
-      .nav-tabs > li.active > a,
-      .nav-tabs > li.active > a:focus,
-      .nav-tabs > li.active > a:hover {
-        border: none;
-        border-bottom: 1px solid rgba(42, 133, 113, 1);
-      }
+.navCenter{
+  text-align: center;
+}
+    .tab-content {
+      height: 360px;
     }
-  
+    .nav-tabs > li > a {
+      font-size: 22px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: rgba(51, 51, 51, 1);
+    }
+    .nav-tabs > li.active {
+      background: rgba(42, 133, 113, 1);
+      border-bottom: 1px solid rgba(42, 133, 113, 1);
+    }
+    .nav-tabs > li.active > a {
+      background: rgba(42, 133, 113, 1);
+      font-size: 22px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+    }
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active > a:focus,
+    .nav-tabs > li.active > a:hover {
+      border: none;
+      border-bottom: 1px solid rgba(42, 133, 113, 1);
+    }
+  }
 }

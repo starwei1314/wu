@@ -138,6 +138,12 @@ a {
     -webkit-backface-visibility: hidden;
 }
 
+a:focus,
+:hover,
+:active {
+    text-decoration: none;
+}
+
 li {
     list-style: none;
 }
@@ -172,4 +178,12 @@ body {
 body {
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
 }
