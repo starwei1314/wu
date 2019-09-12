@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="plugin/css/reset.css">
+    <link rel="stylesheet" href="styles/donate.css">
+</head>
+
+<body>
+    <div class="main clearfix ">
+        <div class="navSub fl">
+            <div class="subNavBox">
+                <a href="Index.html"><img src="images/logo.png" alt=""></a>
+                <h1>捐赠图书</h1>
+                <div>
+                    <div class="subNav"><a href="#">捐赠管理办法</a> </div>
+                    <div class="subNav"><a href="#">捐赠专题报道/自习/研修</a></div>
+                    <div class="subNav"><a href="#">捐赠目录查询</a> </div>
+                    <div class="subNav"> <a href="#">学生爱心捐赠</a></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="mainContent fl">
+            <h1>捐赠</h1>
+            <div class="content">
+                <ul>
+                    <li>
+                        <h2>欢迎捐赠</h2>
+                        <div class="artice">
+                            <p class="content_artice">
+                                武汉大学图书馆自成立以来，一直深受广大友好人士的关心和支持，许多知名机构、著名学者，以及广大校友、普通读者都热心地向我馆赠送各类作品。我馆对这些捐赠文献悉心收藏与整理，除了纳入普通书刊借阅体系外，还特设武汉大学文库、港台书库等进行专项收藏和管理。这些捐赠文献极大地丰富了我馆馆藏，在此我们向赠予者致以深深的谢意，同时也欢迎更多的友好人士向我馆赠送优秀作品。
+                            </p>
+                            <p class="address">
+
+                                联系人：任晓燕 <br> 联系邮箱： xyren@lib.whu.edu.cn<br> 联系电话： 027-68753885 <br> 通信地址： 中国湖北省武汉市武昌区珞珈山武汉大学图书馆采访部文献赠送交换处（图书馆总馆D栋102）<br> 邮 编：430072<br>
+
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h2>欢迎捐赠</h2>
+                        <div class="artice">
+                            <p class="content_artice">
+                                武汉大学图书馆自成立以来，一直深受广大友好人士的关心和支持，许多知名机构、著名学者，以及广大校友、普通读者都热心地向我馆赠送各类作品。我馆对这些捐赠文献悉心收藏与整理，除了纳入普通书刊借阅体系外，还特设武汉大学文库、港台书库等进行专项收藏和管理。这些捐赠文献极大地丰富了我馆馆藏，在此我们向赠予者致以深深的谢意，同时也欢迎更多的友好人士向我馆赠送优秀作品。
+                            </p>
+                            <p class="address">
+
+                                联系人：任晓燕 <br> 联系邮箱： xyren@lib.whu.edu.cn<br> 联系电话： 027-68753885 <br> 通信地址： 中国湖北省武汉市武昌区珞珈山武汉大学图书馆采访部文献赠送交换处（图书馆总馆D栋102）<br> 邮 编：430072<br>
+
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <h2>欢迎捐赠</h2>
+                        <div class="artice">
+                            <p class="content_artice">
+                                武汉大学图书馆自成立以来，一直深受广大友好人士的关心和支持，许多知名机构、著名学者，以及广大校友、普通读者都热心地向我馆赠送各类作品。我馆对这些捐赠文献悉心收藏与整理，除了纳入普通书刊借阅体系外，还特设武汉大学文库、港台书库等进行专项收藏和管理。这些捐赠文献极大地丰富了我馆馆藏，在此我们向赠予者致以深深的谢意，同时也欢迎更多的友好人士向我馆赠送优秀作品。
+                            </p>
+                            <p class="address">
+
+                                联系人：任晓燕 <br> 联系邮箱： xyren@lib.whu.edu.cn<br> 联系电话： 027-68753885 <br> 通信地址： 中国湖北省武汉市武昌区珞珈山武汉大学图书馆采访部文献赠送交换处（图书馆总馆D栋102）<br> 邮 编：430072<br>
+
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script>
+        $(function() {
+            //侧边栏运行
+            // 重置侧边栏禁止点击状态
+            var navList = $('.navContent')
+            for (var i = 0; i < navList.length; i++) {
+                if (navList.eq(i).children().length == 0) {
+                    $(".subNav").eq(i).addClass("noneContent")
+                }
+            }
+            //禁止结束
+            $(".subNav").click(function() {
+                $(".list_top").text($(this).text())
+                $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+            })
+        })
+    </script>
+</body>
+
+</html>

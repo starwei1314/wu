@@ -5,6 +5,10 @@
     background: rgba(246, 246, 246, 1);
 }
 
+.moveLogo {
+    display: none;
+}
+
 button {
     display: none;
 }
@@ -84,6 +88,8 @@ button {
     min-width: 1200px;
     height: 219px;
     background: rgba(0, 0, 0, 0.7);
+    background: url(../../images/footer.png);
+    background-size: cover;
     margin-top: 80px;
 }
 
