@@ -3,21 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>武汉大学图书馆</title>
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen and (max-device-width:1200px)" href="plugin/css/mobile-bootstrap-datetimerpicker.min.css">
-    <link rel="stylesheet" media="screen and (min-device-width:1200px)" href="plugin/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" media="screen and (max-device-width:1200px)" href="plugin/css/mobileReset.css">
-    <link rel="stylesheet" media="screen and (min-device-width:1200px)" type="text/css" href="plugin/css/reset.css" />
-    <link rel="stylesheet" media="screen and (max-device-width:1200px)" href="plugin/css/mobileCommon.css">
-    <link rel="stylesheet" media="screen and (min-device-width:1200px)" href="plugin/css/common.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobile-bootstrap-datetimerpicker.min.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
     <link rel="stylesheet" href="plugin/fonts/iconfont.css">
-    <link rel="stylesheet" media="screen and (min-device-width:1200px)" href="plugin/css/mislider.css">
-    <link rel="stylesheet" media="screen and (min-device-width:1200px)" href="plugin/css/mislider-skin-cameo.css">
-    <link rel="stylesheet" media="screen and (max-device-width:1200px)" type="text/css" href="styles/mobileIndex.css" />
-    <link rel="stylesheet" media="screen and (min-device-width:1200px)" type="text/css" href="styles/Index.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/mislider.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/mislider-skin-cameo.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileIndex.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/Index.css" />
 </head>
 
 <body>
@@ -695,7 +695,9 @@
     </div>
     <div class="footer"></div>
     <div class="mobile">武汉大学图书馆 Copyright©2018 鄂ICP备09008577号-19</div>
+
     <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="plugin/js/bootstrap-datetimepicker.min.js"></script>
     <script src="plugin/js/bootstrap-datetimepicker.zh-CN.js"></script>
@@ -704,24 +706,14 @@
 
     <script type="text/javascript">
         $(function() {
-            $(document).ready(function() {
-                //根据屏幕大小加载不同的js文件
-                (function() {
-                    if (window.screen.width < 1200) {
-                        loadJs('js/rem.js')
-                        loadJs('js/mobileIndex.js')
-                    } else {
-                        loadJs('js/index.js')
-                    }
-                })()
+            if ($("body").width() < 1200) {
+                loadJs('js/rem.js')
+                loadJs('js/mobileIndex.js')
+            } else {
+                loadJs('js/index.js')
+            }
 
-                function loadJs(src) {
-                    var head = document.getElementsByTagName('head')[0];
-                    var s = document.createElement("script");
-                    s.type = "text/javascript";
-                    s.src = src;
-                    head.appendChild(s);
-                }
+            $(document).ready(function() {
                 //jquery load方法加载公共头部
                 $(".header").load("header.html", function() { //加载完成后设置高亮
                     // $("#navigation_1").attr("style", "color: red");
@@ -729,7 +721,18 @@
                 });
                 $(".footer").load("footer.html");
             });
-            //服务模块
+
+            //监听屏幕大小的变化
+            $(window).resize(function() {
+                    if ($("body").width() < 1200) {
+                        loadJs('js/rem.js')
+                        loadJs('js/mobileIndex.js')
+                    } else {
+                        loadJs('js/index.js')
+                    }
+
+                })
+                //服务模块
             $('.serve > .row').on('click', 'div', function() {
                     $(this).addClass('action')
                     $(this).siblings().removeClass('action')

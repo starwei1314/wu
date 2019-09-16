@@ -25,9 +25,9 @@
         }
         // 重置侧边栏禁止点击状态
         .noneContent {
-          background: none;
-          pointer-events: none;
-          cursor: not-allowed;
+          background-image: none;
+          // pointer-events: none;
+          // cursor: not-allowed;
           &:hover {
             color: black;
             border-left: none;
@@ -73,6 +73,13 @@
         padding-left: 40px;
         font-size: 14px;
         color: #333;
+      }
+      .navContent li {
+        &.currentDd{
+          a{
+            color:#fff;
+          }
+        }
       }
     }
     .mainContent {

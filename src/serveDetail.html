@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="plugin/css/reset.css">
+    <link rel="stylesheet" href="styles/helpDetail.css">
+</head>
+
+<body>
+    <div class="main clearfix ">
+        <div class="navSub fl">
+            <div class="subNavBox">
+                <a href="Index.html"><img src="images/logo.png" alt=""></a>
+                <h1>服务</h1>
+                <div>
+                    <div class="subNav" data-fid='0'>证卡服务</div>
+                    <ul class="navContent ">
+                        <li><a href="#" data-sid="0">借阅证件办理</a></li>
+                        <li><a href="#" data-sid="1">借阅证件使用</a></li>
+                        <li><a href="#" data-sid="2">借阅证件信息变更</a></li>
+                        <li><a href="#" data-sid="3">借阅证件挂失与补办</a></li>
+                        <li><a href="#" data-sid="4">办理离校手续</a></li>
+                        <li><a href="#" data-sid="5">联系方式</a></li>
+                    </ul>
+                    <div class="subNav" data-fid='1'>借阅服务</div>
+                    <ul class="navContent">
+                        <li><a href="#" data-sid="0">馆藏分布</a></li>
+                        <li><a href="#" data-sid="1">借阅规则</a></li>
+                        <li><a href="#" data-sid="2">借阅权限</a></li>
+                        <li><a href="#" data-sid="3">借阅流程</a></li>
+                        <li><a href="#" data-sid="4">逾期和赔偿</a></li>
+                        <li><a href="#" data-sid="5">电子阅读器</a></li>
+                        <li><a href="#" data-sid="6">馆际借阅</a></li>
+                        <li><a href="#" data-sid="7">常见问题</a></li>
+                    </ul>
+                    <div class="subNav" data-fid='2'> 阅读推荐</div>
+                    <ul class="navContent">
+                        <li><a href="#" data-sid="0">借阅排行榜</a></li>
+                        <li><a href="#" data-sid="1">推荐书目</a></li>
+                        <li><a href="#" data-sid="2">小布搜书</a></li>
+                    </ul>
+                    <div class="subNav" data-fid='3'> 视听服务</div>
+                    <ul class="navContent">
+
+                    </ul>
+                    <div class="subNav" data-fid='4'> 预约服务</div>
+                    <ul class="navContent">
+                        <li><a href="#" data-sid="0">预约上门服务</a></li>
+                        <li><a href="#" data-sid="1">研修室预约</a></li>
+                        <li><a href="#" data-sid="2">预约专题讲座</a></li>
+                        <li><a href="#" data-sid="3">座位预约</a></li>
+                    </ul>
+                    <div class="subNav" data-fid="5"> 教学培训</div>
+                    <ul class="navContent">
+                        <li><a href="#" data-sid="0">培训讲座</a></li>
+                        <li><a href="#" data-sid="1">课程教学</a></li>
+                        <li><a href="#" data-sid="2">新生培训</a></li>
+                        <li><a href="#" data-sid="3">网络培训</a></li>
+                        <li><a href="#" data-sid="0">小布微课</a></li>
+                    </ul>
+                    <div class="subNav" data-fid='6'> 文献传递</div>
+                    <ul class="navContent">
+
+                    </ul>
+                    <div class="subNav" data-fid='7'> 资源荐购</div>
+                    <ul class="navContent">
+
+                    </ul>
+                    <div class="subNav" data-fid='8'> 学科服务</div>
+                    <ul class="navContent">
+                        <li><a href="#" data-sid="0">学科服务平台</a></li>
+                        <li><a href="#" data-sid="1">学科服务简介</a></li>
+                        <li><a href="#" data-sid="2">学科知识服务</a></li>
+                        <li><a href="#" data-sid="3">信息素养教育</a></li>
+                        <li><a href="#" data-sid="4">资源荐购</a></li>
+                        <li><a href="#" data-sid="5">科研数据管理</a></li>
+                    </ul>
+                    <div class="subNav" data-fid='9'> 论文收录引用</div>
+                    <ul class="navContent">
+
+                    </ul>
+                    <div class="subNav" data-fid='10'> 科技查新</div>
+                    <ul class="navContent">
+
+                    </ul>
+                    <div class="subNav" data-fid='11'> 国际论文分析及投稿指南</div>
+                    <ul class="navContent">
+
+                    </ul>
+                    <div class="subNav" data-fid='12'> 博硕士论文提交</div>
+                    <ul class="navContent">
+
+                    </ul>
+                    <div class="subNav" data-fid='13'> 移动图书馆</div>
+                    <ul class="navContent">
+
+                    </ul>
+                    <div class="subNav" data-fid='14'> 自助服务</div>
+                    <ul class="navContent">
+
+                    </ul>
+                    <div class="subNav" data-fid='15'> 咨询服务</div>
+                    <ul class="navContent">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mainContent fl">
+            使用电子资源
+            <!-- 此处留作后台传入富文本 -->
+        </div>
+
+    </div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function() {
+            var fid, sid;
+            var navList = $('.navContent')
+            var subList = $('.subNav')
+                //跳转到详情页面获取参数高亮显示
+            fid = GetQueryString('fid')
+            sid = GetQueryString("sid")
+            for (var i = 0; i < subList.length; i++) {
+                if ($(subList[i]).attr('data-fid') == fid) {
+                    //如果当前选项没有子菜单则高亮显示一级菜单
+                    if ($(subList[i]).next('.navContent').children().length == 0) {
+                        $(subList[i]).addClass('currentDd')
+                    } else {
+                        $(subList[i]).addClass('currentDt currentDd').next(".navContent").slideToggle(300).siblings(".navContent").slideUp(500)
+                        var liList = $(subList[i]).next(".navContent").children('li')
+                        for (var j = 0; j < liList.length; j++) {
+                            if ($(liList[j]).children('a').attr("data-sid") == sid) {
+                                $(liList[j]).addClass('currentDd')
+                            }
+                        }
+                    }
+                }
+            }
+            //侧边栏运行
+            // 重置侧边栏
+            for (var i = 0; i < navList.length; i++) {
+                if (navList.eq(i).children().length == 0) {
+                    $(".subNav").eq(i).addClass("noneContent")
+                }
+            }
+            $(".subNav").click(function() {
+                if (!$(this).hasClass('noneContent')) {
+                    $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+                    $(this).toggleClass("currentDt").siblings(".subNav").removeClass("currentDt")
+                    $(this).next(".navContent").slideToggle(300).siblings(".navContent").slideUp(500)
+                } else {
+                    $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+                    fid = $(this).attr('data-fid')
+                        //没有子选项时此处发送ajax
+                    console.log(fid)
+
+                }
+            })
+            $(".navContent").on("click", "li", function() {
+                $(this).toggleClass("currentDd").siblings().removeClass("currentDd")
+                $(this).parent().siblings().children().removeClass("currentDd")
+                    //当用户在此处点击时，发送ajax请求
+                fid = $(this).parent().prev().attr('data-fid')
+                sid = $(this).children('a').attr('data-sid')
+                console.log(fid, sid)
+            })
+
+        })
+    </script>
+</body>
+
+</html>

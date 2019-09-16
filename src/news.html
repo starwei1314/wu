@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="header visible-lg"></div>
+    <div class="header "></div>
     <div class="main w">
         <div class="main-nav">
             <p><a href="Index.html"> 首页 </a> / 新闻公告 / <span class="firstmenu">通知公告 </span> / <span class="secondmenu">二级菜单</span></p>
@@ -25,14 +25,10 @@
             <div class="subNavBox fl">
                 <h1>新闻中心</h1>
                 <div>
-                    <div class="subNav "> <a href="#">通知公告</a> </div>
-
-                    <div class="subNav"><a href="#">资源动态</a> </div>
-
-                    <div class="subNav"> <a href="#">培训与活动</a> </div>
-
-                    <div class="subNav"> <a href="#">珞珈阅读广场</a> </div>
-
+                    <div class="subNav "> <a href="#" data-nid='0'>通知公告</a> </div>
+                    <div class="subNav"> <a href="#" data-nid='1'>资源动态</a> </div>
+                    <div class="subNav"> <a href="#" data-nid='2'>培训与活动</a> </div>
+                    <div class="subNav"> <a href="#" data-nid='3'>珞珈阅读广场</a> </div>
                 </div>
 
             </div>
@@ -94,6 +90,7 @@
                 });
                 $(".footer").load("footer.html");
             });
+
             //搜索栏运行
             /*----------------------------------
                     点击展开移出区域隐藏列表
@@ -114,12 +111,16 @@
                 var oVal = $(this).text();
                 $(this).parents('.listA-all').parents('.selectList').siblings('.selectVal').text(oVal).siblings('.xl-icon').toggleClass('sq-icon');
             });
-            //侧边栏运行
+            //侧边栏运行发送ajax请求，获取数据展示
             $(".subNav").click(function() {
+                    var nid = $(this).children('a').attr('data-nid')
                     $(".list_top").text($(this).text())
                     $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+                    $(".list_body > ul>li>a").attr("href", 'newsDetail.html?nid=' + nid)
                 })
-                //翻页功能,初始化翻页插件
+                // 获取跳转地址上的参数
+
+            //翻页功能,初始化翻页插件
             new Page({
                 id: 'pagination',
                 pageTotal: Math.ceil(20 / 10) || 1,

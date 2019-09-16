@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="header visible-lg"></div>
+    <div class="header "></div>
     <div class="main w">
         <div class="main-nav">
             <p><a href="Index.html"> 首页 </a> / 新闻公告 / <span class="firstmenu">通知公告 </span> / <span class="secondmenu">二级菜单</span></p>
@@ -24,13 +24,13 @@
             <div class="subNavBox fl">
                 <h1>新闻中心</h1>
                 <div>
-                    <div class="subNav ">通知公告</div>
+                    <div class="subNav" data-nid='0'>通知公告</div>
 
-                    <div class="subNav">资源动态</div>
+                    <div class="subNav" data-nid='1'> 资源动态</div>
 
-                    <div class="subNav">培训与活动</div>
+                    <div class="subNav" data-nid='2'>培训与活动</div>
 
-                    <div class="subNav">珞珈阅读广场</div>
+                    <div class="subNav" data-nid='3'>珞珈阅读广场</div>
 
                 </div>
 
@@ -85,6 +85,7 @@
     <div class="footer visible-lg"></div>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
     <script>
         $(function() {
             $(document).ready(function() {
@@ -94,6 +95,14 @@
                 });
                 $(".footer").load("footer.html");
             });
+            //页面初次进入获取url上的地址
+
+            var subList = $('.subNav')
+            for (var i = 0; i < subList.length; i++) {
+                if ($(subList[i]).attr('data-nid') == GetQueryString('nid')) {
+                    $(subList[i]).addClass('currentDd')
+                }
+            }
             //搜索栏运行
             /*----------------------------------
                     点击展开移出区域隐藏列表
