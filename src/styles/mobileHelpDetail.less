@@ -1,0 +1,112 @@
+.main {
+  width: 100%;
+  .navSub {
+    width: 100%;
+    height: 100%;
+    .subNavBox {
+      position: fixed;
+      width: 100%;
+      height: 0.88rem;
+      box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+      text-align: center;
+      background-color: rgba(42, 133, 113, 1);
+      button {
+        width: 0.44rem;
+        height: 0.3rem;
+        position: absolute;
+        left: 0.38rem;
+        top: 50%;
+        margin-top: -0.15rem;
+        background: url("../images/tab.png") no-repeat;
+        background-size: 100% 100%;
+        border: none;
+        outline: none;
+      }
+      .logoA {
+        display: inline-block;
+        height: 0.88rem;
+        .pcLogo {
+          display: none;
+        }
+        
+      }
+      .tabLan {
+        display: none;
+        text-align: left;
+        width: 30%;
+      background-color: rgba(118,195,182);
+      }
+      h1 {
+        display: none;
+      }
+      img {
+        height: 0.59rem;
+        margin-bottom: 0.14rem;
+        display: inline-block;
+      }
+      // 重置侧边栏禁止点击状态
+      .noneContent {
+        background-image: none;
+        // pointer-events: none;
+        // cursor: not-allowed;
+        &:hover {
+          color: black;
+          border-left: none;
+        }
+      }
+    }
+    .subNav {
+      border-bottom: solid 1px #e5e3da;
+      padding: 0.13rem;
+      cursor: pointer;
+      font-size: 0.16rem;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: rgba(51, 51, 51, 1);
+      background: url(../images/youjiantou.png) no-repeat;
+      background-position: 6% 50%;
+      text-indent: 2em;
+    }
+    .subNav:hover {
+      color: rgba(42, 133, 113, 1);
+      border-left: 4px solid rgba(42, 133, 113, 1);
+      &.currentDd {
+        color: #fff;
+        border-left: none;
+      }
+    }
+    .currentDd {
+      background-color: rgba(42, 133, 113, 1);
+      color: #fff;
+    }
+    .currentDt {
+      background-image: url(../images/jiantouxia.png);
+    }
+    .navContent {
+      display: none;
+      padding: 0.05rem;
+      border-bottom: solid 1px #e5e3da;
+    }
+    .navContent li a {
+      display: block;
+      padding: 0.15rem;
+      text-align: left;
+      padding-left: 0.4rem;
+      font-size: 0.14rem;
+      color: #333;
+    }
+    .navContent li {
+      &.currentDd {
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .mainContent {
+    width: 100%;
+    padding-top: 0.88rem;
+   
+  }
+}
+  

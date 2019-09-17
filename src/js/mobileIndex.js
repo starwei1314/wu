@@ -1,3 +1,3 @@
 $(".logo>button").click(function() {
-    $(this).siblings("ul").toggle()
+    $(this).siblings("ul").slideToggle(300)
 })

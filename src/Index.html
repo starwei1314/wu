@@ -598,8 +598,8 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="newbook">
-                        <div class="htmleaf-container">
 
+                        <div class="htmleaf-container">
                             <figure>
                                 <div class="mis-stage">
                                     <!-- The element to select and apply miSlider to - the class is optional -->
@@ -695,44 +695,40 @@
     </div>
     <div class="footer"></div>
     <div class="mobile">武汉大学图书馆 Copyright©2018 鄂ICP备09008577号-19</div>
-
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="plugin/js/bootstrap-datetimepicker.min.js"></script>
     <script src="plugin/js/bootstrap-datetimepicker.zh-CN.js"></script>
-    <script type="text/javascript" src="plugin/js/modernizr-custom.js"></script>
-    <script src="plugin/js/mislider.js"></script>
-
-    <script type="text/javascript">
+    <script type="text/javascript" id='jsCode'>
         $(function() {
-            if ($("body").width() < 1200) {
-                loadJs('js/rem.js')
-                loadJs('js/mobileIndex.js')
-            } else {
-                loadJs('js/index.js')
+            //监听媒体查询
+            function myFunction(x) {
+                if (x.matches) { // 媒体查询
+                    removejscssfile("rem.js", "js")
+                    removejscssfile("mobileIndex.js", "js")
+                    loadJs('plugin/js/modernizr-custom.js')
+                    loadJs("plugin/js/mislider.js")
+                    loadJs('js/index.js')
+                } else {
+                    removejscssfile("modernizr-custom.js", "js")
+                    removejscssfile("mislider.js", "js")
+                    removejscssfile("index.js", "js")
+                    loadJs('js/rem.js')
+                    loadJs('js/mobileIndex.js')
+                }
             }
-
+            var x = window.matchMedia("(min-width: 1200px)")
+            myFunction(x) // 执行时调用的监听函数
+            x.addListener(myFunction) // 状态改变时添加监听器
             $(document).ready(function() {
                 //jquery load方法加载公共头部
                 $(".header").load("header.html", function() { //加载完成后设置高亮
-                    // $("#navigation_1").attr("style", "color: red");
                     $("#navigation_1").addClass("activing").siblings().removeClass('activing')
                 });
                 $(".footer").load("footer.html");
             });
-
-            //监听屏幕大小的变化
-            $(window).resize(function() {
-                    if ($("body").width() < 1200) {
-                        loadJs('js/rem.js')
-                        loadJs('js/mobileIndex.js')
-                    } else {
-                        loadJs('js/index.js')
-                    }
-
-                })
-                //服务模块
+            //服务模块
             $('.serve > .row').on('click', 'div', function() {
                     $(this).addClass('action')
                     $(this).siblings().removeClass('action')
@@ -754,8 +750,6 @@
                 if ($("#dtp_input2").val() != "")
                     console.log($("#dtp_input2").val())
             })
-
-
         })
     </script>
 </body>

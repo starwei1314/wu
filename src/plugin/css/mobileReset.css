@@ -187,3 +187,9 @@ body {
 .fr {
     float: right;
 }
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}

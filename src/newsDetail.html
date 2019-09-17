@@ -7,14 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>新闻详情</title>
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugin/css/reset.css">
-    <link rel="stylesheet" href="plugin/css/common.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
     <link rel="stylesheet" href="plugin/fonts/iconfont.css">
-    <link rel="stylesheet" href="styles/newsDetail.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileNewsDetail.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/newsDetail.css" />
 </head>
 
 <body>
     <div class="header "></div>
+    <div class="top-header">
+        <a href="Index.html" class="logoA"><img class="pcLogo" src="images/logo.png" alt="">
+            <img src="images/logo2.png" class="moveLogo" alt="">
+        </a>
+        <button class="btn"></button>
+    </div>
     <div class="main w">
         <div class="main-nav">
             <p><a href="Index.html"> 首页 </a> / 新闻公告 / <span class="firstmenu">通知公告 </span> / <span class="secondmenu">二级菜单</span></p>
@@ -23,17 +32,12 @@
             <!-- 侧边栏 -->
             <div class="subNavBox fl">
                 <h1>新闻中心</h1>
-                <div>
+                <div class="tabLan">
                     <div class="subNav" data-nid='0'>通知公告</div>
-
                     <div class="subNav" data-nid='1'> 资源动态</div>
-
                     <div class="subNav" data-nid='2'>培训与活动</div>
-
                     <div class="subNav" data-nid='3'>珞珈阅读广场</div>
-
                 </div>
-
             </div>
             <div class="titleContent fl">
                 <!-- <div class="titleSearch">
@@ -95,7 +99,21 @@
                 });
                 $(".footer").load("footer.html");
             });
-            //页面初次进入获取url上的地址
+
+            function myFunction(x) {
+                // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                if (x.matches) { //大屏时移除
+                    removejscssfile("rem.js", "js")
+                    removejscssfile("mobileNewsDetail.js", "js")
+                } else { //小屏时加载
+                    loadJs('js/rem.js')
+                    loadJs('js/mobileNewsDetail.js')
+                }
+            }
+            var x = window.matchMedia("(min-width: 1200px)")
+            myFunction(x) // 执行时调用的监听函数
+            x.addListener(myFunction) // 状态改变时添加监听器
+                //页面初次进入获取url上的地址
 
             var subList = $('.subNav')
             for (var i = 0; i < subList.length; i++) {

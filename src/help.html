@@ -6,17 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>帮助中心</title>
-    <link rel="stylesheet" href="plugin/css/reset.css">
-    <link rel="stylesheet" href="styles/help.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileHelp.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/help.css" />
+
 </head>
 
 <body>
     <div class="main clearfix ">
         <div class="navSub fl">
             <div class="subNavBox">
-                <a href="Index.html"><img src="images/logo.png" alt=""></a>
+                <a href="Index.html" class="logoA"><img class="pcLogo" src="images/logo.png" alt="">
+                    <img src="images/logo2.png" class="moveLogo" alt="">
+                </a>
+                <button class="btn"></button>
                 <h1>帮助手册</h1>
-                <div>
+                <div class="tabLan">
                     <div class="subNav" data-fid='0'>新手上路</div>
                     <ul class="navContent ">
                         <li><a href="#" data-sid="0">新生入门PPT（配音版）</a></li>
@@ -159,10 +165,25 @@
             </div>
         </div>
     </div>
+
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/common.js"></script>
     <script>
         $(function() {
+            //初次进来加载相应的文件
+            function myFunction(x) {
+                // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                if (x.matches) { //大屏时移除
+                    removejscssfile("rem.js", "js")
+                    removejscssfile("mobileHelp.js", "js")
+                } else { //小屏时加载
+                    loadJs('js/rem.js')
+                    loadJs('js/mobileHelp.js')
+                }
+            }
+            var x = window.matchMedia("(min-width: 1200px)")
+            myFunction(x) // 执行时调用的监听函数
+            x.addListener(myFunction) // 状态改变时添加监听器
             var uid, fid;
             //侧边栏运行
             // 重置侧边栏禁止点击状态

@@ -7,15 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>新闻公告</title>
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugin/css/reset.css">
-    <link rel="stylesheet" href="plugin/css/common.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
     <link rel="stylesheet" href="plugin/css/pagination.css">
     <link rel="stylesheet" href="plugin/fonts/iconfont.css">
-    <link rel="stylesheet" href="styles/news.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileNews.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/news.css" />
 </head>
 
 <body>
-    <div class="header "></div>
+    <div class="header"></div>
+    <div class="top-header">
+        <a href="Index.html" class="logoA"><img class="pcLogo" src="images/logo.png" alt="">
+            <img src="images/logo2.png" class="moveLogo" alt="">
+        </a>
+        <button class="btn"></button>
+    </div>
     <div class="main w">
         <div class="main-nav">
             <p><a href="Index.html"> 首页 </a> / 新闻公告 / <span class="firstmenu">通知公告 </span> / <span class="secondmenu">二级菜单</span></p>
@@ -24,7 +33,7 @@
             <!-- 侧边栏 -->
             <div class="subNavBox fl">
                 <h1>新闻中心</h1>
-                <div>
+                <div class='tabLan'>
                     <div class="subNav "> <a href="#" data-nid='0'>通知公告</a> </div>
                     <div class="subNav"> <a href="#" data-nid='1'>资源动态</a> </div>
                     <div class="subNav"> <a href="#" data-nid='2'>培训与活动</a> </div>
@@ -81,6 +90,7 @@
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="plugin/js/pagination.js"></script>
+    <script src="js/common.js"></script>
     <script>
         $(function() {
             $(document).ready(function() {
@@ -91,11 +101,26 @@
                 $(".footer").load("footer.html");
             });
 
-            //搜索栏运行
-            /*----------------------------------
-                    点击展开移出区域隐藏列表
-              ----------------------------------*/
-            //外层select框
+            function myFunction(x) {
+                // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                if (x.matches) { //大屏时移除
+                    removejscssfile("rem.js", "js")
+                    removejscssfile("mobileNews.js", "js")
+                } else { //小屏时加载
+                    loadJs('js/rem.js')
+                    loadJs('js/mobileNews.js')
+                }
+            }
+            var x = window.matchMedia("(min-width: 1200px)")
+            myFunction(x) // 执行时调用的监听函数
+            x.addListener(myFunction) // 状态改变时添加监听器
+                //搜索栏运行
+                /*----------------------------------
+                        点击展开移出区域隐藏列表
+                  ----------------------------------*/
+                //外层select框
+            var word;
+            var cateType = '';
             var oDropDown = $('.select');
             //选择列表项
             var oChangeA = $('.listA');
@@ -109,18 +134,32 @@
 
             oChangeA.click(function() {
                 var oVal = $(this).text();
+                if (oVal == '全面搜索') {
+                    cateType = ''
+                } else {
+                    cateType = oVal
+                }
                 $(this).parents('.listA-all').parents('.selectList').siblings('.selectVal').text(oVal).siblings('.xl-icon').toggleClass('sq-icon');
+
             });
             //侧边栏运行发送ajax请求，获取数据展示
             $(".subNav").click(function() {
-                    var nid = $(this).children('a').attr('data-nid')
-                    $(".list_top").text($(this).text())
-                    $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
-                    $(".list_body > ul>li>a").attr("href", 'newsDetail.html?nid=' + nid)
-                })
-                // 获取跳转地址上的参数
+                var nid = $(this).children('a').attr('data-nid')
+                $(".list_top").text($(this).text())
+                $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+                $(".list_body > ul>li>a").attr("href", 'newsDetail.html?nid=' + nid)
+            })
 
-            //翻页功能,初始化翻页插件
+            $(".search_box span").click(function() {
+                    //查询功能
+                    word = $('.search_box input').val()
+                    console.log(word, cateType)
+                    $.ajax({
+                        url: '',
+                        type: 'get',
+                    })
+                })
+                //翻页功能,初始化翻页插件
             new Page({
                 id: 'pagination',
                 pageTotal: Math.ceil(20 / 10) || 1,
