@@ -1194,7 +1194,6 @@
 
     // Create a jQuery plugin ======================================================
     $.fn.miSlider = function(options) {
-
         // Enable multiple-slider support
         return this.each(function() {
             var stage = $(this);
@@ -1203,4 +1202,5 @@
             }
         });
     };
+
 })(jQuery, window, document, Math);

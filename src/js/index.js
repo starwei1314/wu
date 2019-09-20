@@ -1,7 +1,8 @@
 $('.banner-mao').on('click', 'li', function() {
-    $(this).addClass('now')
-    $(this).siblings().removeClass('now')
-})
+        $(this).addClass('now')
+        $(this).siblings().removeClass('now')
+    })
+    //
 
 //搜索栏运行
 /*----------------------------------
@@ -13,6 +14,7 @@ var oDropDown = $('.select');
 var oChangeA = $('.listA');
 oDropDown.click(function() {
     $(this).find('.selectList').toggle().siblings('.xl-icon').toggleClass('sq-icon');
+
 });
 
 oDropDown.mouseleave(function() {
@@ -25,12 +27,12 @@ oChangeA.click(function() {
 });
 
 function search() {
-    console.log(22222)
+
 }
 
 
 //书本轮播组件
-console.log('这里一直重复')
+
 var slider = $('.mis-stage').miSlider({
     //  The height of the stage in px. Options: false or positive integer. false = height is calculated using maximum slide heights. Default: false
     stageHeight: 330,

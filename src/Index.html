@@ -21,10 +21,23 @@
 </head>
 
 <body>
-    <div class="header " id='top'></div>
+    <div class="header w" id='top'></div>
     <!-- 广告图部分 -->
     <div class="banner ">
-        <!-- <img src="images/swiperbanner.png" alt=""> -->
+        <!-- 轮播图 -->
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="images/swiperbanner.png" alt="...">
+
+                </div>
+                <div class="item">
+                    <img src="images/swiperbanner.png" alt="...">
+
+                </div>
+            </div>
+        </div>
         <div class="coustomer ">
             <img src="images/customer.png" alt="">
             <ol class="banner-mao">
@@ -700,34 +713,37 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="plugin/js/bootstrap-datetimepicker.min.js"></script>
     <script src="plugin/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="plugin/js/modernizr-custom.js"></script>
+    <script src="plugin/js/mislider.js"></script>
     <script type="text/javascript" id='jsCode'>
         $(function() {
-            //监听媒体查询
-            function myFunction(x) {
-                if (x.matches) { // 媒体查询
-                    removejscssfile("rem.js", "js")
-                    removejscssfile("mobileIndex.js", "js")
-                    loadJs('plugin/js/modernizr-custom.js')
-                    loadJs("plugin/js/mislider.js")
-                    loadJs('js/index.js')
-                } else {
-                    removejscssfile("modernizr-custom.js", "js")
-                    removejscssfile("mislider.js", "js")
-                    removejscssfile("index.js", "js")
-                    loadJs('js/rem.js')
-                    loadJs('js/mobileIndex.js')
-                }
-            }
-            var x = window.matchMedia("(min-width: 1200px)")
-            myFunction(x) // 执行时调用的监听函数
-            x.addListener(myFunction) // 状态改变时添加监听器
             $(document).ready(function() {
-                //jquery load方法加载公共头部
-                $(".header").load("header.html", function() { //加载完成后设置高亮
-                    $("#navigation_1").addClass("activing").siblings().removeClass('activing')
+                //jquery load方法加载公共头部底部
+                $(".header").load("header.html", function() {
+                    //监听媒体查询
+                    function myFunction(x) {
+                        if (x.matches) { // 媒体查询
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileIndex.js", "js")
+                            removejscssfile("mobileHead.js", "js")
+                            loadJs('js/index.js')
+                            loadJs('js/head.js')
+                        } else {
+                            removejscssfile("index.js", "js")
+                            removejscssfile("head.js", "js")
+                            loadJs('js/rem.js')
+                            loadJs('js/mobileIndex.js')
+                            loadJs('js/mobileHead.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器                         
                 });
                 $(".footer").load("footer.html");
             });
+            $('.carousel').carousel()
+
             //服务模块
             $('.serve > .row').on('click', 'div', function() {
                     $(this).addClass('action')

@@ -1,5 +1,13 @@
 /* 页面头部 */
 
+.tabLan {
+    display: none;
+}
+
+.mobile {
+    display: none;
+}
+
 .top_note {
     width: 100%;
     background: rgba(246, 246, 246, 1);
@@ -9,8 +17,12 @@
     display: none;
 }
 
-button {
+.logo button {
     display: none;
+}
+
+.logo .navtabs {
+    border-bottom: none;
 }
 
 .header {
@@ -48,18 +60,100 @@ button {
     vertical-align: middle;
 }
 
-.logo ul li {
+.logo>ul {
+    float: right;
+}
+
+.logo>ul>li {
+    float: left;
+    font-size: 16px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
     width: 97px;
     height: 88px;
+    line-height: 88px;
+    cursor: pointer;
     text-align: center;
+}
+
+.logo>ul>li.activing {
+    background-color: #2A8571;
+    color: #fff;
+}
+
+.logo .content-item {
+    position: absolute;
+    z-index: 999;
+    color: #fff;
+    display: none;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+    background-color: #f2f2f2;
+}
+
+
+/* 瀑布流布局 */
+
+.brand-list .item {
+    position: absolute;
+    width: 25%;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.logo .content-item .flex-box {
+    width: 85%;
+    position: relative;
+}
+
+.logo .content-item img {
+    width: 100%;
+}
+
+.logo .content-item .item {
+    margin-left: 1%;
+    position: absolute;
+    width: 25%;
+    top: 0;
+    left: 0;
+}
+
+.logo .content-item .item>ul>li {
+    text-align: left;
+    line-height: 30px;
+}
+
+.logo .content-item h3 {
+    line-height: 48px;
+    border-bottom: 1px solid rgba(25, 95, 146, 1);
+    text-align: left;
+}
+
+.logo .content-item h3>a {
     font-size: 16px;
-    font-weight: Regular;
-    font-family: SourceHanSansCN-Regular;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(25, 95, 146, 1);
+}
+
+.logo .content-item .img-left {
+    width: 15%;
+    padding: 20px;
     float: left;
 }
 
-.logo ul li a {
-    color: #333;
+.logo .content-item .item ul>li a {
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
 }
 
 .login {
@@ -73,15 +167,6 @@ button {
     text-align: center;
     margin-top: 22px;
     margin-left: 10px;
-}
-
-.activing {
-    background: rgba(42, 133, 113, 1);
-    box-shadow: 0px 6px 6px 0px rgba(204, 204, 204, 0.3);
-}
-
-.activing a {
-    color: #fff!important;
 }
 
 

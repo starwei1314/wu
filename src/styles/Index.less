@@ -5,15 +5,14 @@
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
-.mobile{
-  display: none;
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+  line-height: 1;
+  height: 603px;
 }
 .banner {
   width: 100%;
   min-width: 1200px;
-  height: 603px;
-  background-image: url("../images/swiperbanner.png");
-  background-size: cover;
   position: relative;
   .coustomer {
     position: fixed;
@@ -29,6 +28,7 @@
         height: 24px;
         line-height: 24px;
         border-radius: 50%;
+        margin-left:50%;
         text-indent: 0;
         font-size: 12px;
         font-family: Source Han Sans CN;
@@ -135,7 +135,7 @@
         }
         /*--下拉选择列表样式--*/
         .selectList {
-          z-index: 999;
+          z-index: 100;
           display: none;
           width: 170px;
           border: 1px solid #cccccc;
@@ -471,7 +471,7 @@
       display: flex;
       justify-content: space-between;
       .serve-item {
-        width: 288px;
+      
         padding: 20px;
         background: rgba(255, 255, 255, 1);
         box-shadow: 0px 1px 18px 2px rgba(179, 206, 199, 0.5);
@@ -484,6 +484,9 @@
           margin-bottom: 10px;
         }
         .serve-wailian {
+          ul{
+            margin-right: 30px;
+          }
           li {
             a {
               font-size: 14px;

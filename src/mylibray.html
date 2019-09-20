@@ -8,10 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>我的图书馆</title>
-    <link rel="stylesheet" href="plugin/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="plugin/css/reset.css" />
-    <link rel="stylesheet" href="plugin/css/common.css" />
-    <link rel="stylesheet" href="styles/mylibray.css" />
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
+    <link rel="stylesheet" href="plugin/fonts/iconfont.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileMylibary.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/mylibray.css" />
 </head>
 
 <body>
@@ -42,7 +46,7 @@
                                     <span>读者等级</span>
                                     <img src="images/mylibray/dengji.png" alt="" /><img src="images/mylibray/dengji.png" alt="" />
                                 </li>
-                                <li><span>证卡有效期</span> 2019-9-11过期</li>
+                                <li><span>证卡有效期</span> <i>2019-02-02</i></li>
                             </ul>
                         </div>
                     </div>
@@ -227,7 +231,7 @@
                     <span>单位 ：本</span>
                 </div>
                 <div class="data-main">
-                    <div id="bookNum" style="width: 500px;height:250px;"></div>
+                    <div id="bookNum"></div>
                 </div>
             </div>
             <div class="data-right fr">
@@ -236,7 +240,7 @@
                     <span>单位 ：小时</span>
                 </div>
                 <div class="data-main">
-                    <div id="timeNum" style="width: 500px;height:250px;"></div>
+                    <div id="timeNum"></div>
                 </div>
             </div>
         </div>
@@ -361,173 +365,187 @@
     <div class="footer visible-lg"></div>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts-en.common.min.js"></script>
-    <script>
+    <script id='jsCode'>
         $(function() {
             $(document).ready(function() {
                 //jquery load方法加载公共头部
                 $(".header").load("header.html", function() {
-                    //加载完成后设置高亮
-                    $("#navigation_2")
-                        .addClass("activing")
-                        .siblings()
-                        .removeClass("activing");
-                    //echarts图表js
-                    var myChartBook = echarts.init(document.getElementById('bookNum'));
-                    // 指定图表的配置项和数据
-                    var legendArray = ['中外小说', '自然科学', '哲学'];
-                    var seriesArray = [{
-                        value: 20,
-                        name: '中外小说'
-                    }, {
-                        value: 10,
-                        name: '自然科学'
-                    }, {
-                        value: 20,
-                        name: '哲学'
-                    }];
-                    var optionBook = {
-                        tooltip: {
-                            trigger: 'item',
-                            formatter: " {c} ({d}%)"
-                        },
-                        legend: {
-                            orient: 'vertical',
-                            x: 'right',
-                            top: '50%',
-                            right: 10,
-                            data: legendArray,
-                            formatter: function(name) {
-                                var total = 0;
-                                var target;
-                                for (var i = 0, l = seriesArray.length; i < l; i++) {
-                                    total += seriesArray[i].value;
-                                    if (seriesArray[i].name == name) {
-                                        target = seriesArray[i].value;
-                                    }
-                                }
-                                var arr = [,
+                    //监听媒体查询
+                    function myFunction(x) {
+                        if (x.matches) { // 媒体查询
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileHead.js", "js")
+                            loadJs('js/head.js')
+                        } else {
 
-                                ]
-                                return '{a|' + name + '}' + '{b|' + ((target / total) * 100).toFixed(0) + '%' + '}' + '{b|' + target + '}'
-                            },
-                            textStyle: {
-                                rich: {
-                                    a: {
-                                        fontSize: 14,
-                                        fontFamily: "Source Han Sans CN",
-                                        fontWeight: 400,
-                                        color: "#333",
-                                        lineHeight: 20,
-                                        verticalAlign: "top",
-
-                                        padding: [0, 5, 5, 10]
-                                    },
-                                    b: {
-                                        fontSize: 14,
-                                        fontFamily: " Source Han Sans CN",
-                                        fontWeight: 400,
-                                        color: "#999",
-                                        padding: [0, 10, 0, 10],
-                                        lineHeight: 15
-                                    }
-                                }
-                            }
-                        },
-                        series: [{
-                            name: '',
-                            type: 'pie',
-                            radius: ['40%', '55%'],
-                            label: {
-                                normal: {
-                                    formatter: '{per|{d}%}  ',
-                                    rich: {}
-                                }
-                            },
-                            data: seriesArray,
-                            center: ["30%", "50%"],
-                        }]
-                    };
-                    //时间折线图
-                    var myChartTime = echarts.init(document.getElementById('timeNum'));
-                    var timeData = ['6-10', '6-11', '6-12', '6-13', '6-14', '6-15', '6-16']
-                    optionTime = {
-                        tooltip: {
-                            trigger: 'item',
-                            backgroundColor: "#38C790",
-                            position: "top",
-                            formatter: "{c}"
-                        },
-                        xAxis: {
-                            type: 'category',
-                            data: timeData,
-                            axisLine: {
-                                lineStyle: {
-                                    opacity: 0,
-                                }
-                            },
-                            splitLine: {
-                                lineStyle: {
-                                    // 使用深浅的间隔色
-                                    color: "#CCCCCC",
-                                }
-                            },
-                            axisTick: {
-                                show: false
-                            },
-                            axisLabel: {
-                                textStyle: {
-                                    color: "#D0D7E3",
-                                }
-                            }
-
-                        },
-                        yAxis: {
-                            type: 'value',
-                            max: 24,
-
-                            axisLine: {
-                                lineStyle: {
-                                    opacity: 0,
-                                }
-                            },
-                            splitLine: {
-                                lineStyle: {
-                                    // 使用深浅的间隔色
-                                    color: "#CCCCCC",
-                                }
-                            },
-                            axisTick: {
-                                show: false
-                            },
-                            axisLabel: {
-                                textStyle: {
-                                    color: "#D0D7E3",
-                                }
-                            }
-                        },
-                        series: [{
-                            label: {
-                                show: true,
-                                normal: {
-                                    formatter: '{per|{d}%}  ',
-                                    rich: {}
-                                }
-                            },
-                            data: [3, 5, 6, 11.5, 13, 18, 24],
-                            type: 'line',
-                            lineStyle: {
-                                color: "#38C790"
-                            },
-                            itemStyle: {
-                                color: "#38C790",
-                            },
-                        }]
-                    };
-                    // 使用刚指定的配置项和数据显示图表。
-                    myChartBook.setOption(optionBook);
-                    myChartTime.setOption(optionTime);
+                            removejscssfile("head.js", "js")
+                            loadJs('js/rem.js')
+                            loadJs('js/mobileHead.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器                         
                 });
+
+                //echarts图表js
+                var myChartBook = echarts.init(document.getElementById('bookNum'));
+                // 指定图表的配置项和数据
+                var legendArray = ['中外小说', '自然科学', '哲学'];
+                var seriesArray = [{
+                    value: 20,
+                    name: '中外小说'
+                }, {
+                    value: 10,
+                    name: '自然科学'
+                }, {
+                    value: 20,
+                    name: '哲学'
+                }];
+                var optionBook = {
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: " {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        x: 'right',
+                        top: '50%',
+                        right: 10,
+                        data: legendArray,
+                        formatter: function(name) {
+                            var total = 0;
+                            var target;
+                            for (var i = 0, l = seriesArray.length; i < l; i++) {
+                                total += seriesArray[i].value;
+                                if (seriesArray[i].name == name) {
+                                    target = seriesArray[i].value;
+                                }
+                            }
+                            var arr = [,
+
+                            ]
+                            return '{a|' + name + '}' + '{b|' + ((target / total) * 100).toFixed(0) + '%' + '}' + '{b|' + target + '}'
+                        },
+                        textStyle: {
+                            rich: {
+                                a: {
+                                    fontSize: 14,
+                                    fontFamily: "Source Han Sans CN",
+                                    fontWeight: 400,
+                                    color: "#333",
+                                    lineHeight: 20,
+                                    verticalAlign: "top",
+
+                                    padding: [0, 5, 5, 10]
+                                },
+                                b: {
+                                    fontSize: 14,
+                                    fontFamily: " Source Han Sans CN",
+                                    fontWeight: 400,
+                                    color: "#999",
+                                    padding: [0, 10, 0, 10],
+                                    lineHeight: 15
+                                }
+                            }
+                        }
+                    },
+                    series: [{
+                        name: '',
+                        type: 'pie',
+                        radius: ['40%', '55%'],
+                        label: {
+                            normal: {
+                                formatter: '{per|{d}%}  ',
+                                rich: {}
+                            }
+                        },
+                        data: seriesArray,
+                        center: ["30%", "50%"],
+                    }]
+                };
+                //时间折线图
+                var myChartTime = echarts.init(document.getElementById('timeNum'));
+                var timeData = ['6-10', '6-11', '6-12', '6-13', '6-14', '6-15', '6-16']
+                optionTime = {
+                    tooltip: {
+                        trigger: 'item',
+                        backgroundColor: "#38C790",
+                        position: "top",
+                        formatter: "{c}"
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: timeData,
+                        axisLine: {
+                            lineStyle: {
+                                opacity: 0,
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                // 使用深浅的间隔色
+                                color: "#CCCCCC",
+                            }
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: "#D0D7E3",
+                            }
+                        }
+
+                    },
+                    yAxis: {
+                        type: 'value',
+                        max: 24,
+
+                        axisLine: {
+                            lineStyle: {
+                                opacity: 0,
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                // 使用深浅的间隔色
+                                color: "#CCCCCC",
+                            }
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: "#D0D7E3",
+                            }
+                        }
+                    },
+                    series: [{
+                        label: {
+                            show: true,
+                            normal: {
+                                formatter: '{per|{d}%}  ',
+                                rich: {}
+                            }
+                        },
+                        data: [3, 5, 6, 11.5, 13, 18, 24],
+                        type: 'line',
+                        lineStyle: {
+                            color: "#38C790"
+                        },
+                        itemStyle: {
+                            color: "#38C790",
+                        },
+                    }]
+                };
+                // 使用刚指定的配置项和数据显示图表。
+                myChartBook.setOption(optionBook);
+                myChartTime.setOption(optionTime);
+
                 $(".footer").load("footer.html");
             });
             $(".main-serve>ul").on("click", "li", function() {

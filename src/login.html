@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
+    <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileLogin.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/login.css" />
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="main">
+        <div class="interface">
+            <h2>登录我的图书馆</h2>
+            <div class="interface-form">
+                <p>
+                    <span>读者证号(学工号)：</span><input type="text" name="username">
+                </p>
+                <p>
+                    <span>图书馆密码：</span><input type="password" name="password">
+                </p>
+                <div>
+                    <button class="loginNow">登录</button> <a href="#">忘记密码</a>
+                </div>
+            </div>
+            <div class="trdLog">
+                <div><span><img src="images/weibologin.png" alt=""></span><span><img src="images/weixinlogin.png" alt=""></span><span><img src="images/QQ.png" alt=""></span></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/common.js"></script>
+    <script id='jsCode'>
+        function myFunction(x) {
+            if (x.matches) { // 媒体查询
+                removejscssfile("rem.js", "js")
+                removejscssfile("mobileIndex.js", "js")
+            } else {
+                loadJs('js/rem.js')
+                loadJs('js/mobileLogin.js')
+            }
+        }
+        var x = window.matchMedia("(min-width: 1200px)")
+        myFunction(x) // 执行时调用的监听函数
+        x.addListener(myFunction) // 状态改变时添加监听器
+        $(document).ready(function() {
+            //jquery load方法加载公共头部
+            $(".header").load("header.html", function() { //加载完成后设置高亮
+                $("#navigation_1").addClass("activing").siblings().removeClass('activing')
+            });
+            $(".footer").load("footer.html");
+            //登录按钮提交事件
+            $('.loginNow').click(function() {
+                var userName, password;
+                userName = $('input[name=username]').val()
+                password = $('input[name=password]').val()
+                    //此处获取信息，发送ajax请求
+            })
+            $('.trdLog>div').on('click', 'span', function() {
+                //当点击第三方登录时请求接口事件处理
+            })
+        });
+    </script>
+</body>
+
+</html>

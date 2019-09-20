@@ -3,7 +3,9 @@ body {
 }
 
 .main {
+  padding-top: 0.88rem;
   .main-tab {
+    display: none;
     cursor: pointer;
 
     p {
@@ -23,12 +25,12 @@ body {
     margin-bottom: 18px;
 
     .profile {
+      padding: 10px 0 33px;
       span {
-        font-size: 20px;
+        font-size: 34px;
         font-family: Source Han Sans CN;
         font-weight: 400;
         color: rgba(51, 51, 51, 1);
-
         img {
           vertical-align: middle;
         }
@@ -38,7 +40,7 @@ body {
           font-family: PingFang SC;
           font-weight: 400;
           margin-left: 10px;
-
+          display: none;
           a {
             color: rgba(42, 133, 113, 1);
             display: inline-block;
@@ -55,14 +57,19 @@ body {
 
     div {
       .profile-left {
+        padding: 10px;
+        float: none;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 11px 1px rgba(204, 204, 204, 0.5);
+        border-radius: 6px;
         p {
-          font-size: 20px;
+          font-size: 36px;
           font-family: Source Han Sans CN;
           font-weight: 400;
           color: rgba(51, 51, 51, 1);
-
+          padding: 20px 10px;
           &:nth-child(2) {
-            font-size: 14px;
+            font-size: 25px;
             font-family: Source Han Sans CN;
             font-weight: 300;
             color: rgba(153, 153, 153, 1);
@@ -70,32 +77,35 @@ body {
         }
 
         .touxiang {
-          width: 70px;
-          height: 70px;
+          width: 124px;
+          height: 125px;
           border-radius: 50%;
-          background: skyblue;
+          background-color: skyblue;
           margin-right: 20px;
         }
-
-        ul>li {
-          font-size: 17px;
+        ul {
+          margin-top: 18px;
+        }
+        ul > li {
+          margin-top: 20px;
+          font-size: 29px;
           font-family: Source Han Sans CN;
           font-weight: 400;
-          color: rgba(254, 0, 0, 1);
+          color: rgba(51, 51, 51, 1);
 
           span {
-            font-size: 14px;
-            font-family: Source Han Sans CN;
-            font-weight: 300;
+            font-size: 25px;
+            font-family: PingFang SC;
+            font-weight: 400;
             color: rgba(153, 153, 153, 1);
             margin-right: 10px;
           }
-          i{
+          i {
             font-style: normal;
-            font-size:16px;
-            font-family:Source Han Sans CN;
-            font-weight:400;
-            color:rgba(254,0,0,1);
+            font-size: 29px;
+            font-family: Source Han Sans CN;
+            font-weight: 400;
+            color: rgba(254, 0, 0, 1);
           }
           img {
             margin-left: 5px;
@@ -105,20 +115,23 @@ body {
     }
 
     .profile-right {
+      float: none;
+      margin-top: 0.38rem;
       ul {
-        margin-left: 20px;
-
         li {
           float: left;
-          margin-left: 10px;
-          width: 120px;
-          height: 174px;
+          padding: 34px 0 21px 0;
+          margin-right: 2%;
+          margin-top: 30px;
+          width: 32%;
+          height: 300px;
           background: rgba(247, 249, 249, 1);
           border-radius: 4px;
           text-align: center;
-          padding: 34px 0 21px 0;
           position: relative;
-
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
           div {
             font-size: 18px;
             font-family: PingFang SC;
@@ -135,21 +148,25 @@ body {
           }
 
           .messageicon {
-            margin-bottom: 14px;
+            margin-top: 30px;
+            margin-bottom: 33px;
+            img {
+              width: 63px;
+            }
           }
 
           p {
-            font-size: 14px;
+            margin-top: 33px;
+            font-size: 24px;
             font-family: Source Han Sans CN;
             font-weight: 400;
             color: rgba(51, 51, 51, 1);
-            margin-top: 13px;
             opacity: 0.99;
           }
 
           .more {
             position: absolute;
-            top: 5px;
+            top: 10px;
             right: 12px;
           }
         }
@@ -163,11 +180,11 @@ body {
     border-radius: 4px;
     margin-bottom: 19px;
 
-    ul>li {
+    ul > li {
       float: left;
-      width: 171px;
+      width: 25%;
       height: 150px;
-      border-right: 1px solid rgba(230, 240, 238, 1);
+
       text-align: center;
 
       &:nth-last-child(1) {
@@ -191,11 +208,10 @@ body {
 
         p {
           margin-top: 13px;
-          font-size: 16px;
+          font-size: 24px;
           font-family: Source Han Sans CN;
           font-weight: 400;
           color: rgba(51, 51, 51, 1);
-          margin-top: 13px;
         }
       }
     }
@@ -310,20 +326,22 @@ body {
 
   .data-display {
     margin-top: 19px;
-
+    padding: 30px;
     .data-left {
-      #bookNum{
-        width: 500px;
-        height: 250px;
-      }
       .data-top {
         border-bottom: 4px solid #f4f7fb;
+      }
+      #bookNum{
+        width: 100%;
+        height: 250px;
       }
     }
 
     .data-left,
     .data-right {
-      width: 48%;
+      box-shadow: 0px 2px 9px 1px rgba(204, 204, 204, 0.5);
+      margin-bottom: 30px;
+      width: 100%;
       height: 335px;
       box-shadow: 0px 2px 9px 1px rgba(204, 204, 204, 0.5);
       background-color: #f7f9f9;
@@ -336,6 +354,7 @@ body {
       color: rgba(51, 51, 51, 1);
       padding: 13px 42px;
       border-bottom: 4px solid #f4f7fb;
+
       span {
         font-size: 20px;
         font-family: Source Han Sans CN;
@@ -351,19 +370,20 @@ body {
     }
 
     .data-right {
-      #timeNum{
-        width: 500px;
-        height: 250px;
-      }
+        #timeNum{
+            width: 100%;
+            height: 250px;
+          }
     }
   }
 
   .book-display {
     margin-top: 19px;
     margin-bottom: 76px;
-
+    padding: 30px;
     .book-left,
     .book-right {
+        float:none;
       height: 501px;
       background: rgba(255, 255, 255, 1);
       box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
@@ -385,14 +405,15 @@ body {
     }
 
     .book-left {
-      width: 65%;
+      width: 100%;
+      margin-bottom: 30px;
       ul {
         display: flex;
         justify-content: space-between;
         margin-top: 20px;
         li {
-          &.choosenow{
-            border:1px solid rgba(173,224,213,1);
+          &.choosenow {
+            border: 1px solid rgba(173, 224, 213, 1);
           }
           .book-intro {
             cursor: pointer;
@@ -401,8 +422,8 @@ body {
             height: 369px;
             text-align: center;
             margin-top: 20px;
-            figure{
-              margin-top:10px;
+            figure {
+              margin-top: 10px;
             }
             h4 {
               font-size: 16px;
@@ -423,38 +444,40 @@ body {
       }
     }
     .book-right {
-      width: 33%;
-      .book-table{
+      width: 100%;
+      .book-top{
+          
+      }
+      .book-table {
         width: 100%;
         padding: 10px 38px;
-        table{
-          width:100%;
+        table {
+          width: 100%;
           margin-top: 10px;
-          th{
-            font-size:14px;
-            color:#999999;
+          th {
+            font-size: 14px;
+            color: #999999;
             font-family: SourceHanSansCN-Regular;
             text-align: center;
           }
-          tr{
-            height:35px;
-            font-size:14px;
-            color:#999999;
+          tr {
+            // height: 35px;
+            font-size: 14px;
+            color: #999999;
             font-family: SourceHanSansCN-Regular;
             text-align: center;
             line-height: 35px;
             border-bottom: 1px solid rgba(238,238,238,1);
-            td{
-              &:nth-child(2){
-                a{
-                  color:#2A8571;
-                  
+            td {
+              &:nth-child(2) {
+                a {
+                    
+                  color: #2a8571;
                 }
               }
             }
           }
         }
-        
       }
     }
   }
