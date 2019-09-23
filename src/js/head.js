@@ -1,25 +1,26 @@
 var menuLi = $('.logo>ul>li');
-
-menuLi.mouseenter(function() {
+var currentLi = ''; //事件触发是否为当前元素
+menuLi.mouseenter(function(e) {
     $(this).addClass('activing').siblings().removeClass('activing')
     $(this).children('.content-item').show()
-        // 判断该元素的事件是否为第一次进入
-    $('.flex-box').waterfall()
+    $('.flex-box').waterfall() //初始化瀑布流
+    ecurrentLi = e.currentTarget
+    console.log($('.content-item:visible .item ul'))
 })
 menuLi.mouseleave(function() {
     $(this).removeClass('activing')
     $(this).children('.content-item').hide()
 })
 document.querySelector('.login').onclick = function() {
-        window.location.href = '';
-    }
-    // 瀑布流插件
-    // pannysp 2013.4.9
+    window.location.href = '';
+}
+
+// 瀑布流插件
 $.fn.waterfall = function(options) {
     var df = {
         item: '.item',
         margin: 30,
-        addfooter: true
+        addfooter: false
     };
     options = $.extend(df, options);
     return this.each(function() {

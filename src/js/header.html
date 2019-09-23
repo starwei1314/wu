@@ -1,0 +1,184 @@
+<div class="top_note">
+    <div class="clearfix top_head w ">
+        <ul class="clearfix fr ">
+            <li><a href="#">相关链接</a></li>
+            <li><a href="#">旧版入口</a></li>
+            <li><a href="#">工作网</a></li>
+            <li><a href="#">English</a></li>
+        </ul>
+    </div>
+</div>
+<div class="clearfix w  logo">
+    <img src="${site.sitePath}src/src/images/logo.png" class="pcLogo">
+    <img src="${site.sitePath}src/src/images/logo2.png" alt="" class="moveLogo">
+    <button></button>
+    <div class="login fr">登录我的图书馆</div>
+    <ul class='pc'>
+        <#-- parentId:父分类ID,typeId:分类类型ID,allowContribute:允许投稿[ "true":是, "false":否],pageIndex:页码,count:每页数据条数 -->
+            <@_categoryList>
+                <#list page.list as a>
+                    <li>${a.name}
+                        <div class="content-item clearfix">
+                            <div class="img-left">
+                                <img src="${site.sitePath}src/src/${a.imgPath}" alt="">
+                            </div>
+                            <div class="fl flex-box" id="brand-waterfall">
+                                <@_categoryList parentId=a.id>
+                                    <#list page.list as b>
+                                        <div class="item">
+                                            <h3><a href="${b.url}">${b.name}</a> </h3>
+                                            <ul class="clearfix">
+                                                <@_categoryList parentId=b.id>
+                                                    <#list page.list as c>
+                                                        <li> <a href="${c.url}">${c.name}</a> </li>
+                                                    </#list>
+                                                </@_categoryList>
+                                            </ul>
+                                        </div>
+                                    </#list>
+                                </@_categoryList>
+                            </div>
+                        </div>
+                    </li>
+                </#list>
+            </@_categoryList>
+    </ul>
+    <div class="navSub">
+        <div class="tabLan">
+            <div class="subNav" data-fid='0'>新手上路</div>
+            <ul class="navContent ">
+                <li><a href="#" data-sid="0">新生入门PPT（配音版）</a>
+                    <div class="third">
+                        <div class="thd-item"><a href="#">新生1</a></div>
+                        <div class="thd-item"><a href="#">新生1</a></div>
+                        <div class="thd-item"><a href="#">新生1</a></div>
+                    </div>
+                </li>
+                <li><a href="#" data-sid="1">使用电子资源</a>
+                    <div class="third">
+                        <div class="thd-item"><a href="#">新生1</a></div>
+                    </div>
+                </li>
+                <li><a href="#" data-sid="2">借阅权限</a>
+                    <div class="third"></div>
+                </li>
+            </ul>
+            <div class="subNav" data-fid='1'>上网/自习/研修</div>
+            <ul class="navContent">
+                <li><a href="#" data-sid="0">图书馆上网</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="1">自习场所</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="2">研修室预约</a>
+                    <div class="third"></div>
+                </li>
+            </ul>
+            <div class="subNav" data-fid='2'> 失物招领</div>
+            <ul class="navContent">
+                <li><a href="#" data-sid="0">失物招领</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="1">寻物启事</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="2">使用说明</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="3">管理员登陆</a>
+                    <div class="third"></div>
+                </li>
+            </ul>
+            <div class="subNav" data-fid='3'> 校外访问</div>
+            <ul class="navContent">
+                <li><a href="#" data-sid="0">访问须知</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="1">访问方式</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="2">上网方式的确认</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="3">浏览器代理设置</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="4">定制版浏览器下载</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="5">校外访问注意事项</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="6">校外访问FAQ</a>
+                    <div class="third"></div>
+                </li>
+            </ul>
+            <div class="subNav" data-fid="4"> 移动图书馆</div>
+            <ul class="navContent">
+
+            </ul>
+            <div class="subNav" data-fid='5'> 自助服务</div>
+            <ul class="navContent">
+                <li><a href="#" data-sid="0">自助借书</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="1">自助还书</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="2">自助文印</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="3">座位预约</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="4">自助存包</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="5">自助刷卡选号上机</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="6">电子图书借阅机</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="7">高拍仪</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="8">其它自助设备</a>
+                    <div class="third"></div>
+                </li>
+            </ul>
+            <div class="subNav" data-fid='6'> 学习中心</div>
+            <ul class="navContent">
+
+            </ul>
+            <div class="subNav" data-fid='7'> 工具与软件</div>
+            <ul class="navContent">
+                <li><a href="#" data-sid="0">数据库校外访问浏览器定制版</a></li>
+                <li><a href="#" data-sid="1">自助服务软件</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="2">电子阅读软件</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="3">数据库客户端安装软件</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="4">个人参考文献管理工具</a>
+                    <div class="third"></div>
+                </li>
+                <li><a href="#" data-sid="5">统计软件</a>
+                    <div class="third"></div>
+                </li>
+            </ul>
+            <div class="subNav" data-fid='8'> 图书分类查询</div>
+            <ul class="navContent">
+
+            </ul>
+            <div class="subNav" data-fid='9'> 常见问题解答（FAQ）</div>
+            <ul class="navContent">
+
+            </ul>
+        </div>
+    </div>
+</div>

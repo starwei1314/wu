@@ -33,7 +33,7 @@
             <!-- 侧边栏 -->
             <div class="subNavBox fl">
                 <h1>新闻中心</h1>
-                <div class='tabLan'>
+                <div class='tabSide'>
                     <div class="subNav "> <a href="#" data-nid='0'>通知公告</a> </div>
                     <div class="subNav"> <a href="#" data-nid='1'>资源动态</a> </div>
                     <div class="subNav"> <a href="#" data-nid='2'>培训与活动</a> </div>
@@ -95,30 +95,34 @@
         $(function() {
             $(document).ready(function() {
                 //jquery load方法加载公共头部
-                $(".header").load("header.html", function() { //加载完成后设置高亮
-                    $("#navigation_3").addClass("activing").siblings().removeClass('activing')
+                $(".header").load("header.html", function() {
+                    function myFunction(x) {
+                        // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                        if (x.matches) { //大屏时移除
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileHead.js", "js")
+                            loadJs('js/head.js')
+                            removejscssfile("mobileNews.js", "js")
+                        } else { //小屏时加载
+                            loadJs('js/rem.js')
+                            removejscssfile("head.js", "js")
+                            loadJs('js/mobileHead.js')
+                            loadJs('js/mobileNews.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器
                 });
                 $(".footer").load("footer.html");
             });
 
-            function myFunction(x) {
-                // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
-                if (x.matches) { //大屏时移除
-                    removejscssfile("rem.js", "js")
-                    removejscssfile("mobileNews.js", "js")
-                } else { //小屏时加载
-                    loadJs('js/rem.js')
-                    loadJs('js/mobileNews.js')
-                }
-            }
-            var x = window.matchMedia("(min-width: 1200px)")
-            myFunction(x) // 执行时调用的监听函数
-            x.addListener(myFunction) // 状态改变时添加监听器
-                //搜索栏运行
-                /*----------------------------------
-                        点击展开移出区域隐藏列表
-                  ----------------------------------*/
-                //外层select框
+
+            //搜索栏运行
+            /*----------------------------------
+                    点击展开移出区域隐藏列表
+              ----------------------------------*/
+            //外层select框
             var word;
             var cateType = '';
             var oDropDown = $('.select');

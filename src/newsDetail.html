@@ -32,7 +32,7 @@
             <!-- 侧边栏 -->
             <div class="subNavBox fl">
                 <h1>新闻中心</h1>
-                <div class="tabLan">
+                <div class="tabSide">
                     <div class="subNav" data-nid='0'>通知公告</div>
                     <div class="subNav" data-nid='1'> 资源动态</div>
                     <div class="subNav" data-nid='2'>培训与活动</div>
@@ -40,27 +40,6 @@
                 </div>
             </div>
             <div class="titleContent fl">
-                <!-- <div class="titleSearch">
-                    <div class="search clearfix">
-                        <div class="select fl">
-                            存放选择的值
-                            <span class="selectVal" onselectstart="return false">全面搜索</span>
-                            放置icon
-                            <i class="xl-icon"></i>
-                            选择项
-                            <div class="selectList">
-                                <div class="listA-all">
-                                    <a href="javascript:;" class="listA">全面搜索</a>
-                                    <a href="javascript:;" class="listA">通知公告</a>
-                                    <a href="javascript:;" class="listA">资源动态</a>
-                                    <a href="javascript:;" class="listA">培训与活动</a>
-                                    <a href="javascript:;" class="listA">珞珈阅读广场</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="search_box fl"><i class="iconfont icon-sousuo"></i><input type="text" placeholder="请输入关键词"><span> 查询</span></div>
-                    </div>
-                </div> -->
                 <div class="titleList">
                     <div class="list_top">新闻中心</div>
                     <div class="list_body">
@@ -94,26 +73,30 @@
         $(function() {
             $(document).ready(function() {
                 //jquery load方法加载公共头部
-                $(".header").load("header.html", function() { //加载完成后设置高亮
-                    $("#navigation_3").addClass("activing").siblings().removeClass('activing')
+                $(".header").load("header.html", function() {
+                    function myFunction(x) {
+                        // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                        if (x.matches) { //大屏时移除
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileNewsDetail.js", "js")
+                            removejscssfile("mobileHead.js", "js")
+                            loadJs('js/head.js')
+                        } else { //小屏时加载
+                            removejscssfile("head.js", "js")
+                            loadJs('js/mobileHead.js')
+                            loadJs('js/rem.js')
+                            loadJs('js/mobileNewsDetail.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器
                 });
                 $(".footer").load("footer.html");
             });
 
-            function myFunction(x) {
-                // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
-                if (x.matches) { //大屏时移除
-                    removejscssfile("rem.js", "js")
-                    removejscssfile("mobileNewsDetail.js", "js")
-                } else { //小屏时加载
-                    loadJs('js/rem.js')
-                    loadJs('js/mobileNewsDetail.js')
-                }
-            }
-            var x = window.matchMedia("(min-width: 1200px)")
-            myFunction(x) // 执行时调用的监听函数
-            x.addListener(myFunction) // 状态改变时添加监听器
-                //页面初次进入获取url上的地址
+
+            //页面初次进入获取url上的地址
 
             var subList = $('.subNav')
             for (var i = 0; i < subList.length; i++) {

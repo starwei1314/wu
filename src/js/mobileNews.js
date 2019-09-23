@@ -1,3 +1,3 @@
 document.querySelector('.btn').onclick = function() {
-    $(".tabLan").slideToggle(500)
+    $(".tabSide").slideToggle(500)
 }

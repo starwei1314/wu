@@ -726,14 +726,16 @@
                             removejscssfile("rem.js", "js")
                             removejscssfile("mobileIndex.js", "js")
                             removejscssfile("mobileHead.js", "js")
-                            loadJs('js/index.js')
                             loadJs('js/head.js')
+                            loadJs('js/index.js')
+
                         } else {
                             removejscssfile("index.js", "js")
                             removejscssfile("head.js", "js")
+                            loadJs('js/mobileHead.js')
                             loadJs('js/rem.js')
                             loadJs('js/mobileIndex.js')
-                            loadJs('js/mobileHead.js')
+
                         }
                     }
                     var x = window.matchMedia("(min-width: 1200px)")
