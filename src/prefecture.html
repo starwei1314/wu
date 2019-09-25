@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+    <title>网络课堂__学生专区</title>
+    <style>
+        #bottom tr:hover {
+            background: #58bbff;
+            vertical-align: middle;
+            text-align: center;
+            border: 0;
+            width: 100%
+        }
+    </style>
+    <link href="static/css/style2013.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/quickpath.css" rel="stylesheet" type="text/css" />
+    <script src="static/js/jquery-1.7.1.min.js"></script>
+
+
+    <script>
+        function confirmuser() {
+            //document.Outline.action="http://opac.lib.whu.edu.cn/F/";
+
+            if ($("#bor_id").val() == "") {
+                alert("请输入注册名或证号！");
+                return false;
+            }
+            if ($("#bor_verification").val() == "") {
+                alert("请输入登录密码！");
+                return false;
+            }
+
+            $("#Outline").submit();
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        var timeout = 500;
+        var closetimer = 0;
+        var ddmenuitem = 0;
+
+        // open hidden layer
+        function mopen(id) {
+            // cancel close timer
+            mcancelclosetime();
+
+            // close old layer
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+            // get new layer and show it
+            ddmenuitem = document.getElementById(id);
+            ddmenuitem.style.visibility = 'visible';
+
+        }
+        // close showed layer
+        function mclose() {
+            if (ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+        }
+
+        // go close timer
+        function mclosetime() {
+            closetimer = window.setTimeout(mclose, timeout);
+        }
+
+        // cancel close timer
+        function mcancelclosetime() {
+            if (closetimer) {
+                window.clearTimeout(closetimer);
+                closetimer = null;
+            }
+        }
+
+        // close layer when click-out
+        document.onclick = mclose;
+        // -->
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            var mainw = document.documentElement.clientWidth * 0.5 + 480;
+            var mainh = document.documentElement.clientHeight * 0.55 + 175;
+            var loginw = document.documentElement.clientWidth - 300;
+            $("#main_m").css("height", mainh);
+            $("#main_m").css("width", mainw);
+            $("#qtest").css("width", loginw);
+            $(".div_mouseover").mouseout(function() {
+                $(this).hide();
+                var div_id = $(this).attr("id");
+                div_id = div_id.replace(/over/, 'out');
+                $("#" + div_id).show();
+
+            });
+            $(".div_mouseout").mouseover(function() {
+                $(this).hide();
+                var div_id = $(this).attr("id");
+                div_id = div_id.replace(/out/, 'over');
+                $("#" + div_id).show();
+
+            });
+        })
+    </script>
+
+
+    <script language="JavaScript">
+        <!--
+        function MM_swapImgRestore() { //v3.0
+            var i, x, a = document.MM_sr;
+            for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+
+        function MM_preloadImages() { //v3.0
+            var d = document;
+            if (d.images) {
+                if (!d.MM_p) d.MM_p = new Array();
+                var i, j = d.MM_p.length,
+                    a = MM_preloadImages.arguments;
+                for (i = 0; i < a.length; i++)
+                    if (a[i].indexOf("#") != 0) {
+                        d.MM_p[j] = new Image;
+                        d.MM_p[j++].src = a[i];
+                    }
+            }
+        }
+
+        function MM_findObj(n, d) { //v4.0
+            var p, i, x;
+            if (!d) d = document;
+            if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document;
+                n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n];
+            for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && document.getElementById) x = document.getElementById(n);
+            return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i, j = 0,
+                x, a = MM_swapImage.arguments;
+            document.MM_sr = new Array;
+            for (i = 0; i < (a.length - 2); i += 3)
+                if ((x = MM_findObj(a[i])) != null) {
+                    document.MM_sr[j++] = x;
+                    if (!x.oSrc) x.oSrc = x.src;
+                    x.src = a[i + 2];
+                }
+        }
+        //-->
+    </script>
+</head>
+
+<body>
+
+    <div class="page_y">
+        <div align="center">
+
+
+            <div id=main_m>
+                <div id=head><img src=static/picture/title_s.png /></div>
+                <div class=content_q>
+                    <div class=content_shadow_lm>
+
+                        <div class=content_sm>
+                            <div class=content_mhead>
+                                <div class="student">
+                                    <img src=static/picture/icon_wlkt_img.gif />
+                                    <div class=content_mtitle>网络课堂</div>
+                                </div>
+                            </div>
+                            <div class=content_mtext>
+
+                                <ul class="ul_img">
+                                    <li><b><a href=/web/index.asp?obj_id=805 target=_blank>小布微课</a>
+<p>武汉大学图书馆原创的系列微课程，以3-5分钟的短视频教会大家如何更好利用图书馆，如何提高信息素养。
+</li>
+	<li><b><a href=/web/index.asp?obj_id=517 target=_blank>数据库在线课堂</a>
+<p>每学期数据库商提供的一系列在线讲座课程。
+</li>
+<li><b><a href=/web/index.asp?obj_id=517 target=_blank>本馆在线课程</a>
+<p>武汉大学图书馆提供的部分信息素养课程的在线视频。
+</li>
+<li><b><a href=/web/index.asp?obj_id=674 target=_blank>武汉大学精品课程</a>
+<p>武汉大学各院系的精品课程网站，包括国家级、省级和校级精品课程。
+</li>
+<li><b><a href=http://www.lib.whu.edu.cn/dc/urlto.asp?id=786 target=_blank>超星学术视频</a>
+<p>超星学术视频邀请国内外知名专家学者、学术权威，通过影像技术将他们多年学术研究成果系统地记录、保存并传播。使稀缺的学术大师、名师资源打破时空的界限，为全国高校师生和科研人员共享，将学界名家推向校园、推向社会。目前有理学、工学、哲学、文学、医学等系列，参加拍摄的名师、专家学者已经达到800余名。
+</li>
+<li><b><a href=/web/index.asp?obj_id=623 target=_blank>网上开放课程</a>
+<p>搜集了“国家精品课程资源网”、“麻省理工学院开放式课程网页”等国内外网上优质的教学视频资源。
+</li></ul>                  
+                  </div>
+				</div>
+				
+				
+				<div class=content_iconsbg></div>
+				<div class=content_icons><ul id=box_icons>
+                	<li><div class=content_boxm style="width:63px;height:63px"></div></li>
+                	<li id="ydtj_mouseout" class="div_mouseout" style=""><a href=/web/index.asp?obj_id=484 target="_blank"><div class=content_boxm><div class="box_ydtj"><img src="static/picture/icon_ydtj_img.gif" alt="阅读推荐" border="0" />          	
+                	</div></div></a></li>
+                	<li id="ydtj_mouseover" class="div_mouseover" style="display:none"><a href=/web/index.asp?obj_id=484 target="_blank"><div class=content_boxm><div class="box_ydtj"><div class="content_icons_title">阅读推荐</div>          	
+                	</div></div></a></li>
+                	<li id="jyfw_mouseout" class="div_mouseout" style=""><a href=/web/quickpath/stu_jyfw.asp>
+                	<div class=content_boxm ><div class="box_c1" style="width:63px;height:63px"><img src="static/picture/icon_jyfw_img.gif" alt="借阅服务" />          	
+                	</div></div></a></li>
+                	<li id="jyfw_mouseover" class="div_mouseover" style="display:none"><a href=/web/quickpath/stu_jyfw.asp><div class=content_boxm><div class="box_c1"><div class="content_icons_title">借阅服务</div>          	
+                	</div></div></a></li>
+                	<li id="wlkt_mouseout" class="div_mouseout" style=""><a href=/web/quickpath/stu_wlkt.asp>
+                	<div class=content_boxm><div class="box_c2" style="width:63px;height:63px"><img src="static/picture/icon_wlkt_img.gif" alt="网络课堂" />         	
+                	</div></div></a></li>
+                	<li id="wlkt_mouseover" class="div_mouseover" style="display:none"><a href=/web/quickpath/stu_wlkt.asp><div class=content_boxm><div class="box_c2"><div class="content_icons_title">网络课堂</div>          	
+                	</div></div></a></li>
+                	<li id="swzl_mouseout" class="div_mouseout" style=""><a href=/web/index.asp?obj_id=653>
+                	<div class=content_boxm><div class="box_c3" style="width:63px;height:63px"><img src="static/picture/icon_swzl_img.gif" alt="失物招领" />          	
+                	</div></div></a></li>
+                	<li id="swzl_mouseover" class="div_mouseover" style="display:none"><a href=/web/index.asp?obj_id=653 target="_blank"><div class=content_boxm><div class="box_c3"><div class="content_icons_title">失物招领</div>          	
+                	</div></div></a></li>
+                	<li id="wxcd_mouseout" class="div_mouseout" style=""><a href=/web/index.asp?obj_id=213>
+                	<div class=content_boxm><div class="box_c1" style="width:63px;height:63px"><img src="static/picture/icon_wxcd_img.gif" alt="文献传递" />    	
+                	</div></div></a></li>
+                	<li id="wxcd_mouseover" class="div_mouseover" style="display:none"><a href=/web/index.asp?obj_id=213 target="_blank"><div class=content_boxm><div class="box_c4"><div class="content_icons_title">文献传递</div>          	
+                	</div></div></a></li>
+                	<li id="cysjk_mouseout" class="div_mouseout" style=""><a href=/web/index.asp?obj_id=652>
+                	<div class=content_boxm><div class="box_c5" style="width:63px;height:63px"><img src="static/picture/icon_cysjk_img.gif" alt="常用数据库" />          	
+                	</div></div></a></li>
+                	<li id="cysjk_mouseover" class="div_mouseover" style="display:none"><a href=/web/index.asp?obj_id=652 target="_blank"><div class=content_boxm><div class="box_c5"><div class="content_icons_title2">常 用<br>数据库</div></div></div></a></li>
+                    
+                	<li id="wyjg_mouseout" class="div_mouseout" style=""><a href=/web/index.asp?obj_id=488>
+                	<div class=content_boxm><div class="box_c6" style="width:63px;height:63px"><img src="static/picture/icon_wyjg_img.gif" alt="我要荐购" />          	
+                	</div></div></a></li>
+                	<li id="wyjg_mouseover" class="div_mouseover" style="display:none"><a href=/web/index.asp?obj_id=488 target="_blank"><div class=content_boxm><div class="box_c6"><div class="content_icons_title">我要荐购</div>          	
+                	</div></div></a></li>
+                    
+                	<li id="swzx_mouseout" class="div_mouseout" style=""><a href=/web/index.asp?obj_id=310>
+                	<div class=content_boxm><div class="box_c7" style="width:63px;height:63px"><img src="static/picture/icon_swzx_img.gif" alt="上网自习" />          	
+                	</div></div></a></li>
+                	<li id="swzx_mouseover" class="div_mouseover" style="display:none"><a href=/web/index.asp?obj_id=310 target="_blank"><div class=content_boxm><div class="box_c7"><div class="content_icons_title">上网自习</div>          	
+                	</div></div></a></li>
+                	<li id="yxsyy_mouseout" class="div_mouseout" style=""><a href=/web/index.asp?obj_id=456>
+                	<div class=content_boxm><div class="box_c8" style="width:63px;height:63px"><img src="static/picture/icon_yxsyy_img.gif" alt="研修室预约" />          	
+                	</div></div></a></li>
+                	<li id="yxsyy_mouseover" class="div_mouseover" style="display:none"><a href=/web/index.asp?obj_id=456 target="_blank"><div class=content_boxm><div class="box_c8"><div class="content_icons_title2">研修室<br>预 约</div>          	
+                	</div></div></a></li>
+                	<li id="nwwd_mouseout" class="div_mouseout" style=""><a href=/web/index.asp?obj_id=479>
+                	<div class=content_boxm><div class="box_c9" style="width:63px;height:63px"><img src="static/picture/icon_nwwd_img.gif" alt="你问我答" />          	
+                	</div></div></a></li>
+                	<li id="nwwd_mouseover" class="div_mouseover" style="display:none"><a href=/web/index.asp?obj_id=479 target="_blank"><div class=content_boxm><div class="box_c9"><div class="content_icons_title">你问我答</div>          	
+                	</div></div></a></li>
+                	<li id="joinus_mouseout" class="div_mouseout" style=""><a href=/web/quickpath/stu_joinus.asp>
+                	<div class=content_boxm><div class="box_c10" style="width:63px;height:63px"><img src="static/picture/icon_joinus_img.gif" alt="加入我们" style="width:37px;height:30px;border:0;margin-top:5px" />
+                	</div></div></a></li>
+                	<li id="joinus_mouseover" class="div_mouseover" style="display:none"><a href=/web/quickpath/stu_joinus.asp><div class=content_boxm><div class="box_c10"><div class="content_icons_title">加入我们</div>          	
+                	</div></div></a></li>
+                	
+        </ul></div>
+				
+				
+		</div></div>
+		
+		
+		
+</div>
+
+
+
+		
+<!--悬浮区：专区名称lable，登录信息，底部菜单条-->		
+<!-- <div id=lable class="student">
+		<div class=labletext><span><a href=/web/quickpath/student.asp>学生专区</a></span></div>
+</div>
+
+
+<table style="width:100%;margin-top:20px;margin-right:10px;z-index:1000" ><tr><td><div id=qtest >&nbsp;</div>	</td><td align=right>
+
+					
+
+
+<script type="text/javascript" src="static/js/qc_loader.js" data-appid="100314563" ></script>
+
+ <form name="Outline" id="Outline" action="http://metalib.lib.whu.edu.cn:80/pds" method="POST" target="_self">
+					<input type=hidden value=login name=func>
+			 <input type="hidden" name="calling_system" value="idp_proxy">
+			 <input type="hidden" name="term1" value="short">
+			 <input type="hidden" name="selfreg" value="">
+			 <input type=hidden name=institute value="WHU">
+			 <input type="hidden" name="url" value="http://apps.lib.whu.edu.cn/idp_proxy/bor_auth_agent.asp?goto=http://www.lib.whu.edu.cn/web/quickpath/stu_wlkt.asp&sp=http%3A%2F%2Fwww.hub.calis.edu.cn%3A8090%2Famconsole%2FAuthServices%2F242010%3Fverb%3Dsplogin&idp=242010">
+					<div id=login_quickpath><ul class="login_bg_s">
+					<li><div class=q_username><input type=text name="bor_id" id="bor_id" value=" 一卡通卡号"  onclick="this.value='';" /></div></li>	
+					<li><div class=q_loginpass><input type=password name="bor_verification" id="bor_verification" title="新生初始密码身份证后6位" value=""  onkeypress="if(event.keyCode==13) confirmuser()"></div></li>	
+					<li><div class=q_login_button><input type=button value="登 录"  onclick="javascript:confirmuser()" style="cursor:hand">&nbsp;&nbsp;<input type=button value="忘记密码"></div></li>	
+					<li><div class=q_login_qq><a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&state=0AC1DE16DB897BFD137B1D5B3141919F&client_id=100314563&redirect_uri=http%3A%2F%2Fapps%2Elib%2Ewhu%2Eedu%2Ecn%2Fweb%2Fqqlogin%2Fcallback%2Easp%3Furl%3Dhttp%3A%2F%2Fwww%2Elib%2Ewhu%2Eedu%2Ecn%2Fweb%2Fquickpath%2Fstu%5Fwlkt%2Easp"><img src=images/login_qq_s.gif /></a></div></ul>		
+				<div class=login_tail>&nbsp;</div>
+</div>
+				</form> 
+
+
+</td></tr></table> -->
+
+<div id=bottom class=student>
+<table>
+	<tr>
+		<td>
+			<a href=/web/default.asp ><img src=static/picture/icon_sy.gif alt="首页" ><span>首页</span></a>
+			<a href=/web/index.asp?obj_id=608><img src=static/picture/icon_zy.gif alt="资源"><span>资源</span></a>
+			<a href=/web/index.asp?obj_id=604><img src=static/picture/icon_fw.gif alt="服务"><span>服务</span></a>
+			<!--<a href=#><img src=images/icon_tg.gif alt="推广&互动"><span>推广&互动</span></a>-->
+			<a href=/web/index.asp?obj_id=612><img src=static/picture/icon_gk.gif alt="概况"><span>概况</span></a>
+			<a href=/web/index.asp?obj_id=611><img src=static/picture/icon_help.gif alt="帮助"><span class=last>帮助</span></a>
+			<a href=/web/index.asp?obj_id=566><img src=static/picture/icon_phone.gif alt="移动图书馆"><span>移动图书馆</span></a>
+		</td>
+
+</tr></table>
+
+
+</div>
+
+
+
+</div>
+</div>
+
+</body>
+</html>

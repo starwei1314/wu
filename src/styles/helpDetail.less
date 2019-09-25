@@ -1,104 +1,145 @@
-.header{
-  display: none!important;
+.header,
+.btn {
+  display: none !important;
 }
 
 .main {
-    min-width: 1200px;
-    .navSub {
-      width: 17%;
-      min-width: 248px;
-      .subNavBox {
-        width: 100%;
-        background: rgba(255, 255, 255, 1);
-        box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
-        border-radius: 4px;
-        padding-top: 20px;
-        .moveLogo{
-          display: none;
-        }
-        .tabLan{
-          display: block!important;
-        }
-        h1 {
-          text-align: center;
-          font-size: 24px;
-          font-family: Source Han Sans CN;
-          font-weight: bold;
-          color: rgba(42, 133, 113, 1);
-          border-bottom: solid 1px #e5e3da;
-          padding: 27px 26px;
-        }
-        img {
-          width: 90%;
-          display: inline-block;
-          margin-left: 4%;
-        }
-        // 重置侧边栏禁止点击状态
-        .noneContent {
-          background-image: none;
-          // pointer-events: none;
-          // cursor: not-allowed;
-          &:hover {
-            color: black;
-            border-left: none;
-          }
-        }
+  min-width: 1200px;
+  .navSub {
+    width: 20%;
+    .subNavBox {
+      width: 100%;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+      border-radius: 4px;
+      padding-top: 20px;
+      .moveLogo {
+        display: none;
       }
-      .subNav {
-        border-bottom: solid 1px #e5e3da;
-        padding: 13px;
-        cursor: pointer;
-        font-size: 16px;
+      .tabSide {
+        display: block !important;
+      }
+      h1 {
+        text-align: center;
+        font-size: 24px;
         font-family: Source Han Sans CN;
-        font-weight: 400;
-        color: rgba(51, 51, 51, 1);
-        background: url(../images/youjiantou.png) no-repeat;
-        background-position: 6% 50%;
-        text-indent: 2em;
-      }
-      .subNav:hover {
+        font-weight: bold;
         color: rgba(42, 133, 113, 1);
-        border-left: 4px solid rgba(42, 133, 113, 1);
-        &.currentDd {
-          color: #fff;
+        border-bottom: solid 1px #e5e3da;
+        padding: 27px 26px;
+        background-image: none !important;
+      }
+      img {
+        width: 90%;
+        display: inline-block;
+        margin-left: 4%;
+      }
+      // 重置侧边栏禁止点击状态
+      .noneContent {
+        background-image: none;
+        // pointer-events: none;
+        // cursor: not-allowed;
+        &:hover {
+          color: black;
           border-left: none;
         }
       }
-      .currentDd {
-        background-color: rgba(42, 133, 113, 1);
-        color: #fff;
-      }
-      .currentDt {
-        background-image: url(../images/jiantouxia.png);
-      }
-      .navContent {
-        display: none;
-        padding: 5px;
-        border-bottom: solid 1px #e5e3da;
-      }
-      .navContent li a {
+    }
+    .subNav {
+      border-bottom: solid 1px #e5e3da;
+
+      cursor: pointer;
+      font-size: 16px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: rgba(51, 51, 51, 1);
+      background: url(../images/youjiantou.png) no-repeat;
+      background-position: 6% 50%;
+      text-indent: 2em;
+      a {
+        font-size: 16px;
+        padding: 13px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
         display: block;
-        padding: 15px;
-        text-align: left;
-        padding-left: 40px;
-        font-size: 14px;
-        color: #333;
+        width: 100%;
       }
-      .navContent li {
-        &.currentDd{
-          a{
-            color:#fff;
-          }
+    }
+    .subNav:hover {
+      color: rgba(42, 133, 113, 1);
+      border-left: 4px solid rgba(42, 133, 113, 1);
+      &.currentDd {
+        color: #fff;
+        border-left: none;
+      }
+    }
+    .currentDd {
+      background-color: rgba(42, 133, 113, 1);
+      color: #fff;
+    }
+    .currentDt {
+      background-image: url(../images/jiantouxia.png)!important;
+      background-repeat: no-repeat;
+      background-position: 6% 50%;
+    }
+    
+    .navContent {
+      display: none;
+      padding: 5px;
+      border-bottom: solid 1px #e5e3da;
+      li {
+        ol {
+          display: none;
         }
       }
     }
-    .mainContent {
-      width: 79%;
-      min-width: 948px;
-      background-color: #F7F9F9;
-      padding-top: 82px;
-      text-align: center;
-     
+    //四级子菜单修改样式区
+    .navContent > li > a {
+      display: block;
+      padding: 15px;
+      text-align: left;
+      padding-left: 40px;
+      font-size: 14px;
+      color: #333;
+      background: url(../images/youjiantou.png) no-repeat;
+      background-position: 6% 50%;
+    }
+
+    ol a {
+      display: block;
+      padding: 15px;
+      text-align: left;
+      padding-left: 40px;
+      font-size: 14px;
+      color: #333;
+      text-indent: 1em;
+    }
+    .navContent li {
+      &.currentDd {
+        a {
+          color: #fff;
+        }
+      }
     }
   }
-  
+  .mainContent {
+    width: 80%;
+    padding-top: 82px;
+    h1 {
+      font-size: 36px;
+      font-weight: bolder;
+      color: rgba(42, 133, 113, 1);
+      font-family: Source Han Sans CN;
+      text-align: center;
+    }
+    &>div {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}
+body{
+  background-color: #f7f9f9;
+
+}

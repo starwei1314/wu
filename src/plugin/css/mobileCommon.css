@@ -2,6 +2,10 @@
     display: none;
 }
 
+.noneContent {
+    background: none!important;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -96,6 +100,9 @@
     text-align: left;
     width: 30%;
     background-color: rgba(118, 195, 182);
+    min-width: 150px;
+    position: absolute;
+    top: 0.88rem;
 }
 
 .navSub .subNav {
@@ -107,6 +114,7 @@
     font-weight: 400;
     color: #333;
     background: url(../../images/youjiantou.png) no-repeat;
+    background-size: inherit;
     background-position: 6% 50%;
     text-indent: 2em
 }

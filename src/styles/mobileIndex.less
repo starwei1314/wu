@@ -3,7 +3,6 @@
 .wailian-extend {
   display: none;
 }
-
 .carousel-inner>.item>a>img, .carousel-inner>.item>img {
   line-height: 1;
   height: 3.85rem;
@@ -14,7 +13,7 @@
 .mobile {
   height: 0.64rem;
   background: rgba(84, 84, 84, 1);
-  font-size: 18px;
+  font-size: 0.18rem;
   font-family: Microsoft YaHei;
   font-weight: 300;
   color: rgba(255, 255, 255, 1);
@@ -53,7 +52,7 @@
       }
       p {
         padding-top: 0.21rem;
-        font-size: 18px;
+        font-size: 0.18rem;
         font-family: SourceHanSansCN-Regular;
         color: #333333;
         text-align: center;
@@ -69,13 +68,13 @@
 
         line-height: 0.59rem;
         height: 0.59rem;
-        font-size: 16px;
+        font-size: 0.16rem;
         margin-top: 0.14rem;
         color: #333;
       }
       &:last-child {
         p {
-          font-size: 20px;
+          font-size: 0.2rem;
         }
       }
     }
@@ -184,7 +183,7 @@
       }
       .news-right {
         div {
-          font-size: 12px;
+          font-size: 0.12rem;
         }
       }
     }
@@ -197,7 +196,7 @@
         .container {
           width: 2.3rem;
           min-width: 170px;
-          top: 0.2rem;
+          bottom: -0.05rem;
           position: relative;
           .input-group-addon {
             padding: 0.06rem 0.12rem;
@@ -225,6 +224,33 @@
         }
       }
       .news_foot {
+        .carousel-indicators{
+          bottom:unset;
+          top:-0.42rem;
+          left:0;
+          margin-left: 0;
+           li {
+            display: inline-block;
+            width: 0.32rem;
+            height: 0.32rem;
+            text-indent: 0;
+            cursor: pointer;
+            border-radius: 0;
+            text-align: center;
+            line-height: 0.32rem;
+            border:1px solid rgba(42,133,113,1);
+            color:rgba(42,133,113,1);
+            margin-top:0;
+            &:first-child{
+                   padding-bottom: 0;
+                   margin-bottom: 0;
+            }
+            &.active{
+             background-color:rgba(42,133,113,1);
+             color:#fff;
+            }
+        }
+        }
         img {
           width: 100%;
           height: 100%;

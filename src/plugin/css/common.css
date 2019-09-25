@@ -1,5 +1,9 @@
 /* 页面头部 */
 
+.disable {
+    cursor: not-allowed;
+}
+
 .tabLan {
     display: none;
 }

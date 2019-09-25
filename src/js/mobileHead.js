@@ -1,15 +1,22 @@
 document.querySelector(".logo>button").onclick = function() {
     $(this).siblings(".navSub").children('.tabLan').slideToggle(300)
 }
-var uid, fid;
-//侧边栏运行
 var navList = $('.navContent')
+    // 侧边栏禁止状态
 for (var i = 0; i < navList.length; i++) {
     if (navList.eq(i).children().length == 0) {
         $(".subNav").eq(i).addClass("noneContent")
     }
 }
-$(".tabLan").on('click', '.subNav', function() {
+var uid, fid;
+//侧边栏运行
+
+for (var i = 0; i < navList.length; i++) {
+    if (navList.eq(i).children().length == 0) {
+        $(".subNav").eq(i).addClass("noneContent")
+    }
+}
+$(".tabLan").off('click', '.subNav').on('click', '.subNav', function() {
     if (!$(this).hasClass('noneContent')) {
         $(this).next(".navContent").slideToggle(300).siblings(".navContent").slideUp(500)
     } else {

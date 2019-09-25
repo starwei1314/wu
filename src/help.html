@@ -22,27 +22,27 @@
                 </a>
                 <button class="btn"></button>
                 <h1>帮助手册</h1>
-                <div class="tabLan">
-                    <div class="subNav" data-fid='0'>新手上路</div>
+                <div class="tabSide">
+                    <div class="subNav" data-fid='0'><a href="#">新手上路</a> </div>
                     <ul class="navContent ">
                         <li><a href="#" data-sid="0">新生入门PPT（配音版）</a></li>
                         <li><a href="#" data-sid="1">使用电子资源</a></li>
                         <li><a href="#" data-sid="2">借阅权限</a></li>
                     </ul>
-                    <div class="subNav" data-fid='1'>上网/自习/研修</div>
+                    <div class="subNav" data-fid='1'> <a href="#">上网/自习/研修</a> </div>
                     <ul class="navContent">
                         <li><a href="#" data-sid="0">图书馆上网</a></li>
                         <li><a href="#" data-sid="1">自习场所</a></li>
                         <li><a href="#" data-sid="2">研修室预约</a></li>
                     </ul>
-                    <div class="subNav" data-fid='2'> 失物招领</div>
+                    <div class="subNav" data-fid='2'> <a href="#">失物招领</a></div>
                     <ul class="navContent">
                         <li><a href="#" data-sid="0">失物招领</a></li>
                         <li><a href="#" data-sid="1">寻物启事</a></li>
                         <li><a href="#" data-sid="2">使用说明</a></li>
                         <li><a href="#" data-sid="3">管理员登陆</a></li>
                     </ul>
-                    <div class="subNav" data-fid='3'> 校外访问</div>
+                    <div class="subNav" data-fid='3'> <a href="#">校外访问</a></div>
                     <ul class="navContent">
                         <li><a href="#" data-sid="0">访问须知</a></li>
                         <li><a href="#" data-sid="1">访问方式</a></li>
@@ -52,11 +52,11 @@
                         <li><a href="#" data-sid="5">校外访问注意事项</a></li>
                         <li><a href="#" data-sid="6">校外访问FAQ</a></li>
                     </ul>
-                    <div class="subNav" data-fid="4"> 移动图书馆</div>
+                    <div class="subNav" data-fid="4"> <a href="#">移动图书馆</a></div>
                     <ul class="navContent">
 
                     </ul>
-                    <div class="subNav" data-fid='5'> 自助服务</div>
+                    <div class="subNav" data-fid='5'> <a href="#">自助服务</a></div>
                     <ul class="navContent">
                         <li><a href="#" data-sid="0">自助借书</a></li>
                         <li><a href="#" data-sid="1">自助还书</a></li>
@@ -68,11 +68,11 @@
                         <li><a href="#" data-sid="7">高拍仪</a></li>
                         <li><a href="#" data-sid="8">其它自助设备</a></li>
                     </ul>
-                    <div class="subNav" data-fid='6'> 学习中心</div>
+                    <div class="subNav" data-fid='6'> <a href="#">学习中心</a></div>
                     <ul class="navContent">
 
                     </ul>
-                    <div class="subNav" data-fid='7'> 工具与软件</div>
+                    <div class="subNav" data-fid='7'> <a href="#">工具与软件</a></div>
                     <ul class="navContent">
                         <li><a href="#" data-sid="0">数据库校外访问浏览器定制版</a></li>
                         <li><a href="#" data-sid="1">自助服务软件</a></li>
@@ -81,11 +81,11 @@
                         <li><a href="#" data-sid="4">个人参考文献管理工具</a></li>
                         <li><a href="#" data-sid="5">统计软件</a></li>
                     </ul>
-                    <div class="subNav" data-fid='8'> 图书分类查询</div>
+                    <div class="subNav" data-fid='8'><a href="#">图书分类查询</a> </div>
                     <ul class="navContent">
 
                     </ul>
-                    <div class="subNav" data-fid='9'> 常见问题解答（FAQ）</div>
+                    <div class="subNav" data-fid='9'><a href="#">常见问题解答（FAQ）</a> </div>
                     <ul class="navContent">
 
                     </ul>
@@ -196,7 +196,7 @@
             //禁止结束
             $(".subNav").click(function() {
                 $(".list_top").text($(this).text())
-                $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+                    // $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")取消父级菜单的高亮显示
                 $(this).toggleClass("currentDt").siblings(".subNav").removeClass("currentDt")
                 if (!$(this).hasClass('noneContent')) {
                     $(this).next(".navContent").slideToggle(300).siblings(".navContent").slideUp(500)

@@ -30,9 +30,7 @@ function search() {
 
 }
 
-
-//书本轮播组件
-
+// //书本轮播组件
 var slider = $('.mis-stage').miSlider({
     //  The height of the stage in px. Options: false or positive integer. false = height is calculated using maximum slide heights. Default: false
     stageHeight: 330,

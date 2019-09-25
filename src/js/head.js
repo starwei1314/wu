@@ -5,7 +5,20 @@ menuLi.mouseenter(function(e) {
     $(this).children('.content-item').show()
     $('.flex-box').waterfall() //初始化瀑布流
     ecurrentLi = e.currentTarget
-    console.log($('.content-item:visible .item ul'))
+        //获取导航栏点击事件，二级菜单无子集则跳转页面，有子集不允许跳转
+    var items = $('.content-item:visible .item')
+
+    for (var j = 0; j < items.length; j++) {
+        //有子选项则A标签跳转为空
+        if ($(items[j]).children('ul').children().length != 0) {
+            $(items[j]).children('h3').children('a').attr('href', "javascript:void(0)")
+            $(items[j]).children('h3').addClass('disable')
+            $(items[j]).children('h3').children('a').addClass('disable')
+        }
+    }
+    items.on('click', 'h3', function() {
+
+    })
 })
 menuLi.mouseleave(function() {
     $(this).removeClass('activing')
@@ -14,6 +27,9 @@ menuLi.mouseleave(function() {
 document.querySelector('.login').onclick = function() {
     window.location.href = '';
 }
+
+
+
 
 // 瀑布流插件
 $.fn.waterfall = function(options) {
