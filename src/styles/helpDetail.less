@@ -1,4 +1,4 @@
-.header,
+
 .btn {
   display: none !important;
 }
@@ -7,11 +7,14 @@
   min-width: 1200px;
   .navSub {
     width: 20%;
+    .logoA{
+      display: none;
+    }
     .subNavBox {
       width: 100%;
       background: rgba(255, 255, 255, 1);
-      box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
-      border-radius: 4px;
+      // box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+      // border-radius: 4px;
       padding-top: 20px;
       .moveLogo {
         display: none;
@@ -126,16 +129,18 @@
   .mainContent {
     width: 80%;
     padding-top: 82px;
+    text-align: center;
     h1 {
       font-size: 36px;
       font-weight: bolder;
       color: rgba(42, 133, 113, 1);
       font-family: Source Han Sans CN;
       text-align: center;
+      margin-bottom: 50px;
     }
     &>div {
-      width: 80%;
-      margin: auto;
+      display: inline-block
+     
     }
   }
 }

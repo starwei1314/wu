@@ -3,12 +3,13 @@
 .wailian-extend {
   display: none;
 }
-.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+.carousel-inner > .item > a > img,
+.carousel-inner > .item > img {
   line-height: 1;
   height: 3.85rem;
 }
-.third{
-  display:none;
+.third {
+  display: none;
 }
 .mobile {
   height: 0.64rem;
@@ -21,7 +22,7 @@
   line-height: 0.64rem;
 }
 .banner {
- padding-top: 0.88rem;
+  padding-top: 0.88rem;
   .coustomer {
     display: none;
   }
@@ -37,7 +38,7 @@
         display: block;
       }
       text-align: center;
-      padding: 0.1rem 0;
+      padding: 0.2rem 0;
       &.action {
         background-color: #2a8571;
         img {
@@ -51,7 +52,7 @@
         }
       }
       p {
-        padding-top: 0.21rem;
+        padding-top: 0.15rem;
         font-size: 0.18rem;
         font-family: SourceHanSansCN-Regular;
         color: #333333;
@@ -62,20 +63,13 @@
           display: none;
         }
       }
-
       span {
         display: inline-block;
-
         line-height: 0.59rem;
         height: 0.59rem;
         font-size: 0.16rem;
         margin-top: 0.14rem;
         color: #333;
-      }
-      &:last-child {
-        p {
-          font-size: 0.2rem;
-        }
       }
     }
   }
@@ -99,11 +93,17 @@
     margin-bottom: 0;
     &:last-child {
       float: right;
+      a {
+        font-size: 0.14rem;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+      }
     }
     a {
-      padding: 0.1rem 0.2rem;
+      padding: 0.15rem 0.22rem;
       height: 0.46rem;
-      line-height: 0.26rem;
+      line-height: 0.16rem;
       border: none;
       color: #333333;
       border-radius: 0;
@@ -142,6 +142,11 @@
               font-weight: 400;
               color: rgba(51, 51, 51, 1);
               margin-bottom: 0.2rem;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
             }
             p {
               font-size: 0.14rem;
@@ -194,7 +199,7 @@
       .news_top {
         margin-top: 0.1rem;
         .container {
-          width: 2.3rem;
+          width: 1.5rem;
           min-width: 170px;
           bottom: -0.05rem;
           position: relative;
@@ -224,12 +229,12 @@
         }
       }
       .news_foot {
-        .carousel-indicators{
-          bottom:unset;
-          top:-0.42rem;
-          left:0;
+        .carousel-indicators {
+          bottom: unset;
+          top: -0.42rem;
+          left: 0;
           margin-left: 0;
-           li {
+          li {
             display: inline-block;
             width: 0.32rem;
             height: 0.32rem;
@@ -238,18 +243,18 @@
             border-radius: 0;
             text-align: center;
             line-height: 0.32rem;
-            border:1px solid rgba(42,133,113,1);
-            color:rgba(42,133,113,1);
-            margin-top:0;
-            &:first-child{
-                   padding-bottom: 0;
-                   margin-bottom: 0;
+            border: 1px solid rgba(42, 133, 113, 1);
+            color: rgba(42, 133, 113, 1);
+            margin-top: 0;
+            &:first-child {
+              padding-bottom: 0;
+              margin-bottom: 0;
             }
-            &.active{
-             background-color:rgba(42,133,113,1);
-             color:#fff;
+            &.active {
+              background-color: rgba(42, 133, 113, 1);
+              color: #fff;
             }
-        }
+          }
         }
         img {
           width: 100%;
@@ -606,7 +611,7 @@
                 to avoid some browser shinking bugs */
   // max-width: 270px;
   /*  for really small screens make width 100% */
-  width:80%;
+  width: 80%;
   /*  Make image round */
   /* border-radius: 135px; */
   border: none;

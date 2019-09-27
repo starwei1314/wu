@@ -166,11 +166,17 @@
     line-height: 44px;
     border: 1px solid rgba(42, 133, 113, 1);
     border-radius: 2px;
-    color: #2A8571;
-    font-family: SourceHanSansCN-Regular;
-    text-align: center;
     margin-top: 22px;
     margin-left: 10px;
+    text-align: center;
+}
+
+.login a {
+    font-size: 14px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: rgba(42, 133, 113, 1);
+    line-height: 48px;
 }
 
 

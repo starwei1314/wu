@@ -195,8 +195,8 @@ textarea {
 /** 重置表格元素 **/
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+    border-collapse: unset!important;
+    border-spacing: unset!important;
 }
 
 

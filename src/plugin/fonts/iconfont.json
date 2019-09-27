@@ -1,0 +1,100 @@
+{
+  "id": "1387785",
+  "name": "武大图书馆",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "900144",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "1015108",
+      "name": "眼睛",
+      "font_class": "yanjing",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "1110410",
+      "name": "下 箭头大",
+      "font_class": "jiantou8",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "1330789",
+      "name": "右箭头",
+      "font_class": "youjiantou",
+      "unicode": "e75e",
+      "unicode_decimal": 59230
+    },
+    {
+      "icon_id": "3978382",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "6335402",
+      "name": "日历",
+      "font_class": "rili",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "6684310",
+      "name": "微信登录",
+      "font_class": "weixindenglu",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "9186714",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "9917257",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    },
+    {
+      "icon_id": "10727982",
+      "name": "学生",
+      "font_class": "xuesheng-copy",
+      "unicode": "e767",
+      "unicode_decimal": 59239
+    },
+    {
+      "icon_id": "10728001",
+      "name": "教师",
+      "font_class": "jiaoshi-copy",
+      "unicode": "e769",
+      "unicode_decimal": 59241
+    },
+    {
+      "icon_id": "10728014",
+      "name": "博士后出站申请",
+      "font_class": "boshihouchuzhanshenqing-copy",
+      "unicode": "e76a",
+      "unicode_decimal": 59242
+    },
+    {
+      "icon_id": "10728047",
+      "name": "校友系统",
+      "font_class": "xiaoyouxitong-copy-copy",
+      "unicode": "e76c",
+      "unicode_decimal": 59244
+    }
+  ]
+}

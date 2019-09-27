@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
     <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileReset.css">
     <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
     <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileHelpDetail.css" />
     <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/helpDetail.css" />
 </head>
 
 <body>
+    <div class="header w"></div>
     <div class="main clearfix ">
         <div class="navSub fl">
             <div class="subNavBox">
@@ -108,8 +110,10 @@
         </div>
         <div class="mainContent fl">
             <h1>交通文书</h1>
-            <div></div>
-            <!-- 此处留作后台传入富文本 -->
+            <div>
+
+            </div>
+
         </div>
 
     </div>
@@ -117,19 +121,29 @@
     <script src="js/common.js"></script>
     <script id='jsCode'>
         $(function() {
-            function myFunction(x) {
-                // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
-                if (x.matches) { //大屏时移除
-                    removejscssfile("rem.js", "js")
-                    removejscssfile("mobileHelpDetail.js", "js")
-                } else { //小屏时加载
-                    loadJs('js/rem.js')
-                    loadJs('js/mobileHelpDetail.js')
-                }
-            }
-            var x = window.matchMedia("(min-width: 1200px)")
-            myFunction(x) // 执行时调用的监听函数
-            x.addListener(myFunction) // 状态改变时添加监听器
+
+            $(document).ready(function() {
+                //jquery load方法加载公共头部底部
+                $(".header").load("header.html", function() {
+                    //监听媒体查询
+                    function myFunction(x) {
+                        // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                        if (x.matches) { //大屏时移除
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileHelpDetail.js", "js")
+                            loadJs('js/head.js')
+                        } else { //小屏时加载
+                            loadJs('js/rem.js')
+                            loadJs('js/mobileHelpDetail.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器
+
+                });
+            });
+
 
             var fid;
             var navList = $('.navContent')
@@ -141,7 +155,7 @@
             for (var h = 0; h < allList.length; h++) {
                 if (fid == $(allList[h]).attr('data-fid')) {
                     if ($(allList[h]).parent().prev())
-                        $(allList[h]).addClass('currentDd').parent().slideToggle().prev().addClass('currentDt')
+                        $(allList[h]).addClass('currentDd').parent().show().prev().addClass('currentDt')
                     $(allList[h]).addClass('currentDd').parent().parent().parent().show()
                 }
             }
@@ -201,11 +215,13 @@
                 if ($(this).children('a').hasClass('noneContent')) {
                     //当二级菜单栏无子集时不显示箭头
                     $(this).addClass("currentDd").siblings().removeClass("currentDd")
+                } else {
+                    $(this).children('a').toggleClass('currentDt')
                 }
                 //点击展开子菜单，
                 $(this).children('ol').slideToggle(500)
                 $(this).siblings().children('ol').slideUp(500)
-                $(this).children('a').toggleClass('currentDt')
+
                 $(this).siblings().children('a').removeClass('currentDt')
             })
 

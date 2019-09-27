@@ -1,15 +1,17 @@
 .main {
   position: relative;
 }
-.row{
+.row {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+.carousel-inner > .item > a > img,
+.carousel-inner > .item > img {
   line-height: 1;
   height: 603px;
 }
+// 之上为插件样式重置
 .banner {
   width: 100%;
   min-width: 1200px;
@@ -28,7 +30,7 @@
         height: 24px;
         line-height: 24px;
         border-radius: 50%;
-        margin-left:50%;
+        margin-left: 50%;
         text-indent: 0;
         font-size: 12px;
         font-family: Source Han Sans CN;
@@ -47,11 +49,10 @@
           font-family: Source Han Sans CN;
           font-weight: 400;
           background: rgba(42, 133, 113, 1);
-          a{
-            color:#fff;
+          a {
+            color: #fff;
           }
         }
-        
       }
     }
   }
@@ -74,8 +75,10 @@
         height: 46px;
         line-height: 26px;
         border: none;
-        color: #333333; 
-        font-family: SourceHanSansCN-Regular;
+        color: #333333;
+        font-size: 16px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
       }
     }
     .nav-tabs > li.active {
@@ -106,16 +109,15 @@
           line-height: 50px;
           font-size: 14px;
           color: #666666;
-          padding-left: 10px;
+          padding-left: 20px;
           background: rgba(255, 255, 255, 1);
           border: 1px solid rgba(221, 221, 221, 1);
-          border-radius: 4px;
         }
         .selectVal {
-          font-size: 18px;
+          font-size: 16px;
           font-family: Source Han Sans CN;
           font-weight: 300;
-          color: rgba(170, 170, 170, 1);
+          color: #6b8191;
         }
         .xl-icon {
           position: absolute;
@@ -197,6 +199,9 @@
             text-indent: 2em;
             font-size: 16px;
             font-family: MicrosoftYaHei;
+            &::-webkit-input-placeholder {
+              color: #acc0d2;
+            }
           }
           span {
             display: inline-block;
@@ -258,12 +263,18 @@
           padding: 0 17px;
           border: 1px solid rgba(255, 255, 255, 1);
           margin-left: 10px;
-          color: #fff;
+          a {
+            color: #fff;
+            font-size: 14px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+          }
         }
       }
     }
   }
 }
+//服务模块
 .serve-box {
   position: relative;
   top: -130px;
@@ -279,7 +290,7 @@
           display: block;
         }
         text-align: center;
-        padding: 10px 0px;
+        padding: 20px 0px;
         border-right: 1px solid rgba(238, 238, 238, 1);
         border-bottom: 1px solid rgba(238, 238, 238, 1);
         &.action {
@@ -295,11 +306,12 @@
           }
         }
         p {
-          padding-top: 21px;
-          font-size: 18px;
-          font-family: SourceHanSansCN-Regular;
-          color: #333333;
+          padding-top: 15px;
           text-align: center;
+          font-size: 18px;
+          font-family: Source Han Sans CN;
+          font-weight: 400;
+          color: rgba(51, 51, 51, 1);
         }
         img {
           &:nth-of-type(2) {
@@ -315,17 +327,11 @@
           font-size: 16px;
           color: #333;
         }
-        &:last-child {
-          border-bottom: none;
-          margin-top: 11px;
-          p {
-            padding-top: 0px;
-          }
-        }
       }
     }
   }
 }
+// 新闻模块
 .news {
   .news-title {
     font-size: 36px;
@@ -340,15 +346,24 @@
     margin-bottom: 0;
     &:last-child {
       float: right;
+      a {
+        font-size: 14px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+      }
     }
     a {
-      padding: 10px 20px;
+      padding: 15px 22px;
       height: 46px;
-      line-height: 26px;
+      line-height: 16px;
       border: none;
       color: #333333;
       border-radius: 0;
       margin-right: 0;
+      font-size: 22px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
     }
   }
 
@@ -358,7 +373,9 @@
   .nav-tabs > li.active > a {
     background: rgba(42, 133, 113, 1);
     color: #fff;
-    font-family: SourceHanSansCN-Regular;
+    font-size: 22px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
   }
   .nav-tabs > li.active > a,
   .nav-tabs > li.active > a:focus,
@@ -367,7 +384,7 @@
   }
   .tab-content {
     padding-top: 30px;
-    height: 233px;
+    height: 295px;
     li {
       margin-top: 10px;
       &:first-child {
@@ -383,6 +400,11 @@
               font-weight: 400;
               color: rgba(51, 51, 51, 1);
               margin-bottom: 20px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
             }
             p {
               font-size: 14px;
@@ -409,6 +431,9 @@
           }
         }
       }
+      a:hover{
+          color: rgba(42, 133, 113, 1);
+      }
       .news-left {
         width: 80%;
         p {
@@ -419,6 +444,9 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          &:hover{
+            color: rgba(42, 133, 113, 1);
+          }
         }
       }
     }
@@ -426,12 +454,32 @@
   .today-active {
     .tab-content {
       .news_top {
-        margin-top: 10px;
+        margin-top: -10px;
         .container {
-          width: 230px;
+          width: 180px;
           top: 10px;
           position: relative;
+          .form-control{
+            padding-left: 35px;
+            background-color:#fff;
+            &::-webkit-input-placeholder{
+              padding-left:20px;
+              color:#ccc;
+            }
+          }
+          .input-group-addon{
+             position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 990;
+        padding:9px 0;
+           background-color:unset;
+     border:none; 
+     border-radius: 0;
+          }
         }
+       
         ul > li {
           width: 34px;
           height: 34px;
@@ -447,12 +495,18 @@
         }
       }
       .news_foot {
-        .carousel-indicators{
-          bottom:unset;
-          top:-42px;
-          left:0;
+        .carousel {
+          width: 100%;
+          margin: auto;
+          display: inherit;
+        }
+        .carousel-indicators {
+          bottom: unset;
+          top: -42px;
+          left: 0;
           margin-left: 0;
-           li {
+          width:unset;
+          li {
             display: inline-block;
             width: 32px;
             height: 32px;
@@ -461,31 +515,36 @@
             border-radius: 0;
             text-align: center;
             line-height: 32px;
-            border:1px solid rgba(42,133,113,1);
-            color:rgba(42,133,113,1);
-            margin-top:0;
-            &:first-child{
-                   padding-bottom: 0;
-                   margin-bottom: 0;
+            border: 1px solid rgba(42, 133, 113, 1);
+            color: rgba(42, 133, 113, 1);
+            margin-top: 0;
+            &:first-child {
+              padding-bottom: 0;
+              margin-bottom: 0;
             }
-            &.active{
-             background-color:rgba(42,133,113,1);
-             color:#fff;
+            &.active {
+              background-color: rgba(42, 133, 113, 1);
+              color: #fff;
             }
-        }
+          }
         }
         img {
-          height: 139px;
-          width:100%;
+          height: 220px;
+          width: 100%;
         }
       }
     }
   }
 }
 // 热门服务部分
+.hotServeBox{
+   margin-top:100px;
+  background-image: url("../images/bg(1).png");
+  background-size:100% 100%;
+}
 .hotserve {
-  margin-top: 100px;
-  padding-bottom: 56px;
+  padding-top: 80px;
+  padding-bottom: 76px;
   .hot-title {
     font-size: 36px;
     font-family: Source Han Sans CN;
@@ -499,7 +558,6 @@
       display: flex;
       justify-content: space-between;
       .serve-item {
-      
         padding: 20px;
         background: rgba(255, 255, 255, 1);
         box-shadow: 0px 1px 18px 2px rgba(179, 206, 199, 0.5);
@@ -512,10 +570,14 @@
           margin-bottom: 10px;
         }
         .serve-wailian {
-          ul{
+          ul {
             margin-right: 30px;
           }
           li {
+            max-width:120px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow :ellipsis;
             a {
               font-size: 14px;
               font-family: Source Han Sans CN;
@@ -528,10 +590,10 @@
     }
   }
   .wailian-extend {
+    margin-top:20px;
     padding: 20px;
     background: rgba(255, 255, 255, 1);
     border-radius: 4px;
-    background-image: url('../images/bg(1).png');
     div {
       border-bottom: 1px dotted rgba(204, 204, 204, 1);
       padding: 20px 0;
@@ -575,14 +637,14 @@
         padding-left: 20px;
         margin-bottom: 50px;
         flex-grow: 1;
-        
+
         a {
           display: block;
           position: relative;
-          img{
+          img {
             width: 100%;
           }
-          .shade{
+          .shade {
             width: 100%;
             height: 100%;
             background-color: #333333;
@@ -623,11 +685,57 @@
       margin-bottom: 30px;
       display: inline-block;
     }
-.navCenter{
-  text-align: center;
-}
+    .navCenter {
+      text-align: center;
+    }
     .tab-content {
       height: 360px;
+
+      .tab-pane {
+        height: 100%;
+        overflow: hidden;
+      }
+      .slider-center {
+        width: 1000px;
+        margin-left: 100px;
+      }
+      .slick-slide img {
+        display: inline-block;
+        width: 130px;
+        height: 180px;
+      }
+      .slick-current {
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 3px 14px 1px rgba(204, 204, 204, 0.5);
+        height: 330px;
+      }
+      .slick-track {
+        height: 360px;
+      }
+      .slick-arrow {
+        width: 30px;
+        height: 72px;
+        background: #2a8571;
+        border: 1px solid rgba(221, 221, 221, 1);
+        border-radius: 10px;
+      }
+      .slick-initialized .slick-slide {
+        width: 175px;
+        height: 331px;
+        figure {
+          margin-top: 20px;
+          figcaption {
+            margin-top: 34px;
+            h4 {
+              font-size: 16px;
+              font-family: Microsoft YaHei;
+              font-weight: 400;
+              color: rgba(0, 0, 0, 1);
+              line-height: 48px;
+            }
+          }
+        }
+      }
     }
     .nav-tabs > li > a {
       font-size: 22px;

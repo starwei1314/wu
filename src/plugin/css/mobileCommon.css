@@ -18,7 +18,7 @@
 }
 
 .login {
-    width: 1.35rem;
+    width: 1.00rem;
     height: 0.44rem;
     line-height: 0.44rem;
     border: 1px solid #fff;
@@ -30,6 +30,11 @@
     top: 50%;
     right: 0.2rem;
     margin-top: -0.22rem;
+}
+
+.login a {
+    font-size: 0.14rem;
+    color: #fff;
 }
 
 .pcLogo {
