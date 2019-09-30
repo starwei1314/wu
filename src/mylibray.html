@@ -182,6 +182,7 @@
                 <img src="images/mylibray/xujie.png" alt="" /> 续借/已借
             </div>
             <div class="table">
+                <button class="allSelect">全部续借</button>
                 <table class="detail_tb">
                     <thead>
                         <tr class="fied_header">
@@ -290,7 +291,7 @@
                                 <figcaption>
                                     <h4>心理营养</h4>
                                     <p>作者：成果</p>
-                                    <p>浏览次数：117</p>
+                                    <p>浏览次数:117</p>
                                 </figcaption>
                             </figure>
                         </li>
@@ -300,7 +301,7 @@
                                 <figcaption>
                                     <h4>心理营养</h4>
                                     <p>作者：成果</p>
-                                    <p>浏览次数：117</p>
+                                    <p>浏览次数:117</p>
                                 </figcaption>
                             </figure>
                         </li>
@@ -310,7 +311,7 @@
                                 <figcaption>
                                     <h4>心理营养</h4>
                                     <p>作者：成果</p>
-                                    <p>浏览次数：117</p>
+                                    <p>浏览次数:117</p>
                                 </figcaption>
                             </figure>
                         </li>
@@ -320,7 +321,7 @@
                                 <figcaption>
                                     <h4>心理营养</h4>
                                     <p>作者：成果</p>
-                                    <p>浏览次数：117</p>
+                                    <p>浏览次数:117</p>
                                 </figcaption>
                             </figure>
                         </li>
@@ -426,7 +427,6 @@
                         },
                         legend: {
                             orient: 'vertical',
-
                             top: '50%',
                             right: "5%",
                             data: legendArray,
@@ -439,9 +439,7 @@
                                         target = seriesArray[i].value;
                                     }
                                 }
-                                var arr = [,
-
-                                ]
+                                var arr = [];
                                 return '{a|' + name + '}' + '{b|' + ((target / total) * 100).toFixed(0) + '%' + '}' + '{b|' + target + '}'
                             },
                             textStyle: {
@@ -479,7 +477,9 @@
                             },
                             data: seriesArray,
                             center: ["30%", "50%"],
-                        }]
+                        }],
+                        //此处需要写入随机颜色
+                        color: ["#F78196", "#82CAFF", '#C49BFD']
                     };
                     //时间折线图
                     var myChartTime = echarts.init(document.getElementById('timeNum'));
@@ -572,7 +572,6 @@
                             removejscssfile("head.js", "js")
                             loadJs('js/rem.js')
                             loadJs('js/mobileHead.js')
-                            console.log(myChartBook)
                             myChartBook.resize()
                             myChartTime.resize()
                         }
@@ -589,10 +588,17 @@
                     .siblings()
                     .removeClass("action");
             });
+
+
             // 表格全选反选
             $("#number").click(function() {
                 var isChecked = $("#number").prop("checked");
                 $("#tbody input").prop("checked", isChecked);
+                if ($("#tbody input").prop('checked') == true) {
+                    $('.allSelect').show()
+                } else {
+                    $('.allSelect').hide()
+                }
             });
 
             // 单独选项控制全选
@@ -601,8 +607,10 @@
                 var checkedLength = $("#tbody input:checked").length;
                 if (allLength == checkedLength) {
                     $("#number").prop("checked", true);
+                    $('.allSelect').show()
                 } else {
                     $("#number").prop("checked", false);
+                    $('.allSelect').hide()
                 }
             });
             //点击其中一项时，高亮显示
@@ -612,6 +620,14 @@
                     .siblings()
                     .removeClass("now");
             });
+            //点击全部续借时，与后台交互，并刷新页面
+            $('.allSelect').click(function() {
+                    window.location.reload()
+                })
+                // 单独点击续借时
+            $('.detail_tb tr ').on('click', 'button', function() {
+                window.location.reload()
+            })
             $(".book-main>ul").on("click", "li", function() {
                 $(this)
                     .addClass("choosenow")

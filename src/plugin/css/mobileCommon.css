@@ -77,7 +77,7 @@
 
 .logo .pc li {
     height: 0.5rem;
-    background-color: rgba(42, 133, 113, 1);
+    background-color: #2a8571;
     line-height: 0.3rem;
 }
 
@@ -103,36 +103,37 @@
 .tabLan {
     display: none;
     text-align: left;
-    width: 30%;
-    background-color: rgba(118, 195, 182);
+    width: 100%;
+    background-color: #2a8571;
     min-width: 150px;
     position: absolute;
     top: 0.88rem;
 }
 
 .navSub .subNav {
-    border-bottom: solid 1px #e5e3da;
     padding: .13rem;
     cursor: pointer;
     font-size: .16rem;
     font-family: Source Han Sans CN;
     font-weight: 400;
-    color: #333;
+    color: #fff;
     background: url(../../images/youjiantou.png) no-repeat;
     background-size: inherit;
     background-position: 6% 50%;
     text-indent: 2em
 }
 
-.navSub .subNav:hover {
+
+/* .navSub .subNav:hover {
     color: #2a8571;
     border-left: 4px solid #2a8571
-}
+} */
 
-.navSub .subNav:hover.currentDd {
+
+/* .navSub .subNav:hover.currentDd {
     color: #fff;
     border-left: 0
-}
+} */
 
 .navSub .currentDd {
     background-color: #2a8571;
@@ -146,7 +147,12 @@
 .navSub .navContent {
     display: none;
     padding: .05rem;
-    border-bottom: solid 1px #e5e3da
+    text-indent: 2em;
+    /* border-bottom: solid 1px #e5e3da */
+}
+
+.navSub .navContent .third {
+    text-indent: 4em;
 }
 
 .navSub .navContent li a {
@@ -155,7 +161,7 @@
     text-align: left;
     padding-left: .4rem;
     font-size: .14rem;
-    color: #333
+    color: #fff;
 }
 
 .navSub .navContent li.currentDd a {

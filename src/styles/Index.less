@@ -5,7 +5,9 @@
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
-
+.glyphicon-calendar:before {
+  color: #ced2d8 !important;
+}
 .carousel-inner > .item > a > img,
 .carousel-inner > .item > img {
   line-height: 1;
@@ -293,6 +295,9 @@
         padding: 20px 0px;
         border-right: 1px solid rgba(238, 238, 238, 1);
         border-bottom: 1px solid rgba(238, 238, 238, 1);
+        &:nth-child(6n) {
+          border-right: 0;
+        }
         &.action {
           background-color: #2a8571;
           img {
@@ -387,6 +392,9 @@
     height: 295px;
     li {
       margin-top: 10px;
+      h4{
+        display:none;
+      }
       &:first-child {
         border-bottom: 1px solid rgba(221, 221, 221, 1);
         padding-bottom: 10px;
@@ -395,6 +403,7 @@
           .news-left {
             width: 80%;
             h4 {
+              display: block;
               font-size: 22px;
               font-family: Source Han Sans CN;
               font-weight: 400;
@@ -425,14 +434,16 @@
               color: rgba(51, 51, 51, 1);
             }
             div {
+              display: block;
+              margin-top:10px;
               font-size: 12px;
               background: rgba(238, 238, 238, 1);
             }
           }
         }
       }
-      a:hover{
-          color: rgba(42, 133, 113, 1);
+      a:hover {
+        color: rgba(42, 133, 113, 1);
       }
       .news-left {
         width: 80%;
@@ -444,9 +455,14 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          &:hover{
+          &:hover {
             color: rgba(42, 133, 113, 1);
           }
+        }
+      }
+      .news-right{
+        div{
+          display:inline-block;
         }
       }
     }
@@ -459,27 +475,28 @@
           width: 180px;
           top: 10px;
           position: relative;
-          .form-control{
+          padding-right: 0;
+          .form-control {
             padding-left: 35px;
-            background-color:#fff;
-            &::-webkit-input-placeholder{
-              padding-left:20px;
-              color:#ccc;
+            background-color: #fff;
+            &::-webkit-input-placeholder {
+              padding-left: 20px;
+              color: #ccc;
             }
           }
-          .input-group-addon{
-             position: absolute;
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 990;
-        padding:9px 0;
-           background-color:unset;
-     border:none; 
-     border-radius: 0;
+          .input-group-addon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 990;
+            padding: 9px 0;
+            background-color: unset;
+            border: none;
+            border-radius: 0;
           }
         }
-       
+
         ul > li {
           width: 34px;
           height: 34px;
@@ -505,7 +522,7 @@
           top: -42px;
           left: 0;
           margin-left: 0;
-          width:unset;
+          width: unset;
           li {
             display: inline-block;
             width: 32px;
@@ -537,10 +554,10 @@
   }
 }
 // 热门服务部分
-.hotServeBox{
-   margin-top:100px;
+.hotServeBox {
+  margin-top: 100px;
   background-image: url("../images/bg(1).png");
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
 .hotserve {
   padding-top: 80px;
@@ -571,13 +588,14 @@
         }
         .serve-wailian {
           ul {
-            margin-right: 30px;
+            margin: 0 15px;
+            float: left;
           }
           li {
-            max-width:120px;
+            max-width: 100px;
             overflow: hidden;
             white-space: nowrap;
-            text-overflow :ellipsis;
+            text-overflow: ellipsis;
             a {
               font-size: 14px;
               font-family: Source Han Sans CN;
@@ -590,7 +608,7 @@
     }
   }
   .wailian-extend {
-    margin-top:20px;
+    margin-top: 20px;
     padding: 20px;
     background: rgba(255, 255, 255, 1);
     border-radius: 4px;
@@ -605,12 +623,28 @@
         justify-content: space-between;
         .extend-item {
           flex-grow: 1;
+          width: 20%;
           h4 {
             font-size: 18px;
             font-family: Source Han Sans CN;
             font-weight: 400;
             color: rgba(42, 133, 113, 1);
             margin-bottom: 10px;
+          }
+          ol {
+            li {
+              a {
+                width: 100%;
+                display: inline-block;
+                font-family: Source Han Sans CN-Light;
+                font-weight: 300;
+                color: rgba(51, 51, 51, 1);
+                font-size: 14px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
           }
         }
       }
@@ -685,8 +719,29 @@
       margin-bottom: 30px;
       display: inline-block;
     }
+    .nav-tabs > li {
+      margin-right: 55px;
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+    }
     .navCenter {
       text-align: center;
+      .readerMore {
+        a {
+          display: block;
+          margin: 10px auto;
+          width: 123px;
+          height: 28px;
+          line-height: 28px;
+          text-align: center;
+          font-size: 14px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          color: rgba(51, 51, 51, 1);
+          border: 1px solid rgba(51, 51, 51, 1);
+        }
+      }
     }
     .tab-content {
       height: 360px;
@@ -706,18 +761,28 @@
       }
       .slick-current {
         background: rgba(255, 255, 255, 1);
-        box-shadow: 0px 3px 14px 1px rgba(204, 204, 204, 0.5);
+        box-shadow: 0px 3px 8px 1px rgba(204, 204, 204, 0.5);
         height: 330px;
+      }
+      .slick-prev:before,
+      .slick-next:before {
+        color: #ccc;
+      }
+      .slick-prev,
+      .slick-next {
+        background: white;
       }
       .slick-track {
         height: 360px;
+        padding-top: 10px;
       }
       .slick-arrow {
         width: 30px;
         height: 72px;
-        background: #2a8571;
         border: 1px solid rgba(221, 221, 221, 1);
-        border-radius: 10px;
+        &:hover {
+          background: #2a8571;
+        }
       }
       .slick-initialized .slick-slide {
         width: 175px;

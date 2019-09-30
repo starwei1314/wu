@@ -41,7 +41,7 @@
     }
     .subNav {
       border-bottom: solid 1px #e5e3da;
-      padding: 13px;
+      
       cursor: pointer;
       font-size: 18px;
       font-family: Source Han Sans CN;
@@ -50,10 +50,14 @@
       background: url(../images/youjiantou.png) no-repeat;
       background-position: 95% 50%;
       a{
+        display:block;
+        width:100%;
+        height:100%;
+        padding: 13px;
         font-size:18px;
-font-family:Source Han Sans CN;
-font-weight:400;
-color:rgba(51,51,51,1);
+        font-family:Source Han Sans CN;
+        font-weight:400;
+        color:rgba(51,51,51,1);
       }
     }
     .subNav:hover {
@@ -240,6 +244,7 @@ color:rgba(51,51,51,1);
             font-family: Source Han Sans CN;
             font-weight: 400;
             border-bottom: 1px dashed rgba(221,221,221,1);
+            box-sizing:content-box;
             a{
                 display: block;
                color: rgba(51, 51, 51, 1); 
@@ -250,7 +255,10 @@ color:rgba(51,51,51,1);
                }
                &:hover{
                 background:rgba(249,251,251,1);
-                   color:#2A8571;
+                color:#2A8571;
+                span{
+                  color:#2A8571
+                }
                }
             }
             

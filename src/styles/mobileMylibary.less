@@ -1,7 +1,10 @@
-body {
-  background-color: #f7f9f9;
+// body {
+//   background-color: #f7f9f9;
+// }
+.third {
+  display: none;
 }
-
+// 之上为样式的重置
 .main {
   padding-top: 0.88rem;
   .main-tab {
@@ -57,7 +60,7 @@ body {
 
     div {
       .profile-left {
-        padding: 0.1rem;
+        padding: 0.3rem;
         float: none;
         background: rgba(255, 255, 255, 1);
         box-shadow: 0px 0px 11px 1px rgba(204, 204, 204, 0.5);
@@ -133,22 +136,22 @@ body {
             margin-right: 0;
           }
           div {
-            font-size: 0.18rem;
+            font-size: 0.31rem;
             font-family: PingFang SC;
             font-weight: bold;
             color: #999999;
 
             span {
-              font-size: 0.24rem;
+              font-size: 0.42rem;
               font-family: PingFang SC;
               font-weight: bold;
               color: rgba(51, 51, 51, 1);
-              margin-right: 0.05rem;
+              margin-right:0.1rem;
             }
           }
 
           .messageicon {
-            margin-top: 0.3rem;
+            margin-top: 0.6rem;
             margin-bottom: 0.33rem;
             img {
               width: 0.63rem;
@@ -175,10 +178,10 @@ body {
   }
 
   .main-serve {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
-    border-radius: 4px;
-    margin-bottom: 0.19rem;
+    // background: rgba(255, 255, 255, 1);
+    // box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+    // border-radius: 4px;
+    margin-bottom: 1.00rem;
 
     ul > li {
       float: left;
@@ -191,15 +194,15 @@ body {
         border-right: none;
       }
 
-      &.action {
-        background: rgba(230, 240, 238, 1);
-        box-shadow: 0px 2px 6px 0px rgba(129, 200, 200, 0.5);
-        border-radius: 4px;
-      }
+      // &.action {
+      //   background: rgba(230, 240, 238, 1);
+      //   box-shadow: 0px 2px 6px 0px rgba(129, 200, 200, 0.5);
+      //   border-radius: 4px;
+      // }
 
       .serve-center {
         height: 100%;
-        padding-top: 0.22rem;
+        padding-top: 0.42rem;
 
         a {
           height: 100%;
@@ -210,7 +213,7 @@ body {
         }
 
         p {
-          margin-top: 0.13rem;
+          margin-top: 0.2rem;
           font-size: 0.24rem;
           font-family: Source Han Sans CN;
           font-weight: 400;
@@ -223,11 +226,11 @@ body {
   .main-table {
     padding: 0.18rem 0.38rem;
     background: rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
-    border-radius: 4px;
-
+    .allSelect{
+      display:none;
+    }
     .table-head {
-      font-size: 0.22rem;
+      font-size: 0.34rem;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: rgba(51, 51, 51, 1);
@@ -248,13 +251,17 @@ body {
       .mobileBooks {
         display: block;
         li{
-          margin-bottom:0.1rem;
+          margin-bottom:0.4rem;
+          &:nth-child(1){
+            margin-top:0.3rem;
+          }
         }
         h3 {
           font-size: 0.28rem;
           font-family: Source Han Sans CN;
           font-weight: 400;
           color: rgba(51, 51, 51, 1);
+          margin-bottom:0.2rem;
         }
         p {
           font-size: 0.24rem;
@@ -279,7 +286,6 @@ body {
 
   .data-display {
     margin-top: 0.19rem;
-    // padding: 0.30rem;
     width: 100%;
     .data-left {
       .data-top {
@@ -287,18 +293,17 @@ body {
       }
       #bookNum {
         width: 100%;
-        height: 250px;
+        height: 350px;
       }
     }
 
     .data-left,
     .data-right {
-      box-shadow: 0px 2px 9px 1px rgba(204, 204, 204, 0.5);
+      width:90%;
+      float:none;
+      margin: auto;
       margin-bottom: 0.3rem;
-      width: 100%;
-
       box-shadow: 0px 2px 9px 1px rgba(204, 204, 204, 0.5);
-      background-color: #f7f9f9;
     }
 
     .data-top {
@@ -306,7 +311,7 @@ body {
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: rgba(51, 51, 51, 1);
-      padding: 0.13rem 0.42rem;
+      padding: 0.23rem 0.42rem;
       border-bottom: 4px solid #f4f7fb;
 
       span {
@@ -326,7 +331,7 @@ body {
     .data-right {
       #timeNum {
         width: 100%;
-        height: 250px;
+        height: 350px;
       }
     }
   }
@@ -338,17 +343,17 @@ body {
     .book-left,
     .book-right {
       float: none;
-      height: 5.01rem;
+      // height: 5.01rem;
       background: rgba(255, 255, 255, 1);
       box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
       border-radius: 4px;
 
       .book-top {
-        font-size: 0.22rem;
+        font-size: 0.34rem;
         font-family: Source Han Sans CN;
         font-weight: 400;
         color: rgba(51, 51, 51, 1);
-        padding: 0.13rem 0.42rem;
+        padding: 0.23rem 0.42rem;
         border-bottom: 1px solid rgba(225, 238, 236, 1);
 
         img {
@@ -366,9 +371,7 @@ body {
         justify-content: space-around;
         margin-top: 0.2rem;
         li {
-          width: 23%;
-          &.choosenow {
-          }
+          width:20%;
           .book-intro {
             cursor: pointer;
             display: block;
@@ -381,10 +384,12 @@ body {
               width: 100%;
               right: 50%;
               transform: translateX(50%);
-              bottom: 0.1rem;
+              top: 2.2rem;
             }
             img {
-              width: 100%;
+              width: 1.5rem;
+              max-width:90%;
+              height:2rem;
             }
             h4 {
               font-size: 0.16rem;
@@ -399,6 +404,7 @@ body {
               font-family: Microsoft YaHei;
               font-weight: 400;
               color: rgba(153, 153, 153, 1);
+              margin:0.1rem 0;
             }
           }
         }
@@ -415,18 +421,18 @@ body {
           width: 100%;
           margin-top: 0.1rem;
           th {
-            font-size: 0.14rem;
+            font-size: 0.24rem;
             color: #999999;
             font-family: SourceHanSansCN-Regular;
             text-align: center;
           }
           tr {
             // height: 35px;
-            font-size: 0.14rem;
+            font-size: 0.24rem;
             color: #999999;
             font-family: SourceHanSansCN-Regular;
             text-align: center;
-            line-height: 0.35rem;
+            line-height: 0.6rem;
             border-bottom: 1px solid rgba(238, 238, 238, 1);
             td {
               &:nth-child(2) {

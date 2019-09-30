@@ -27,7 +27,7 @@
     </div>
     <div class="main w">
         <div class="main-nav">
-            <p><a href="Index.html"> 首页 </a> / 新闻公告 / <span class="firstmenu">通知公告 </span> / <span class="secondmenu">二级菜单</span></p>
+            <p><a href="Index.html"> 首页 </a> / <a href="news.html">新闻中心</a> / <a href="#" class="firstmenu">通知公告 </a></p>
         </div>
         <div class="main-user clearfix">
             <!-- 侧边栏 -->
@@ -39,7 +39,6 @@
                     <div class="subNav"> <a href="#" data-nid='2'>培训与活动</a> </div>
                     <div class="subNav"> <a href="#" data-nid='3'>珞珈阅读广场</a> </div>
                 </div>
-
             </div>
             <div class="titleContent fl">
                 <div class="titleSearch">
@@ -118,6 +117,23 @@
             });
 
 
+            //页面初次进来获取url,高亮展示侧边栏显示主标题文字
+            var hrefId = GetQueryString('id')
+            var secName = GetQueryString('dictionaryValues').substr(5)
+            if (secName != '') {
+                $(".list_top").text(secName)
+                $(".firstmenu").text(secName)
+            }
+
+            for (var i = 0; i < $('.subNav').length; i++) {
+                if (secName === $($('.subNav')[i]).children('a').text()) {
+                    $($('.subNav')[i]).addClass('currentDd')
+                }
+            }
+
+
+
+
             //搜索栏运行
             /*----------------------------------
                     点击展开移出区域隐藏列表
@@ -149,9 +165,8 @@
             //侧边栏运行发送ajax请求，获取数据展示
             $(".subNav").click(function() {
                 var nid = $(this).children('a').attr('data-nid')
-                $(".list_top").text($(this).text())
                 $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
-                $(".list_body > ul>li>a").attr("href", 'newsDetail.html?nid=' + nid)
+                $(".tabSide>div>a").attr("href", 'news.html?id=' + hrefId + '&dictionaryValues=type_' + $(this).children('a').text())
             })
 
             $(".search_box span").click(function() {

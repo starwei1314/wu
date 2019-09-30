@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="plugin/fonts/iconfont.css">
     <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileNewsDetail.css" />
     <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/newsDetail.css" />
+    <script src="plugin/fonts/iconfont.js"></script>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,17 +36,17 @@
     </div>
     <div class="main w">
         <div class="main-nav">
-            <p><a href="Index.html"> 首页 </a> / 新闻公告 / <span class="firstmenu">通知公告 </span> / <span class="secondmenu">二级菜单</span></p>
+            <p><a href="Index.html"> 首页 </a> / <a href="#"> 新闻中心</a> / <span class="firstmenu"> <a href="#">通知公告</a>  </span> </p>
         </div>
         <div class="main-user clearfix">
             <!-- 侧边栏 -->
             <div class="subNavBox fl">
                 <h1>新闻中心</h1>
                 <div class="tabSide">
-                    <div class="subNav" data-nid='0'>通知公告</div>
-                    <div class="subNav" data-nid='1'> 资源动态</div>
-                    <div class="subNav" data-nid='2'>培训与活动</div>
-                    <div class="subNav" data-nid='3'>珞珈阅读广场</div>
+                    <div class="subNav" data-nid='0'> <a href="#">通知公告</a> </div>
+                    <div class="subNav" data-nid='1'> <a href="#">资源动态</a> </div>
+                    <div class="subNav" data-nid='2'> <a href="#">培训与活动</a> </div>
+                    <div class="subNav" data-nid='3'> <a href="#">珞珈阅读广场</a> </div>
                 </div>
             </div>
             <div class="titleContent fl">
@@ -51,13 +61,31 @@
                             <span class="fr"> <i class="iconfont icon-yanjing "></i> 浏览次数    513</span>
                         </div>
                         <div class="artice">
-                            <p>
-                                各位读者：</br>
-                                接学校水电管理中心通知，为确保学校二次供水水质达到国家规定生活用水标准，将于 2019年7月9日（星期二）对工学部水池进行清洗消毒，届时工学部图书馆及周边教学楼均临时停水。受此影响工学分馆7月9日7：00起临时闭馆，17：30起恢复正常开放。由此带来的不便，请读者谅解！
-                                </br>
-                                图书馆 2019年7月8日
+                            <div class="share"> <span>分享到：</span>
+                                <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-QQ"></use>
+                                </svg>
+                                <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-weibo"></use>
+                                </svg>
+                                <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-weixindenglu"></use>
+                                </svg>
 
-                            </p>
+                            </div>
+                            <div class="artice_body">
+                                <p>
+                                    各位读者：</br>
+                                    接学校水电管理中心通知，为确保学校二次供水水质达到国家规定生活用水标准，将于 2019年7月9日（星期二）对工学部水池进行清洗消毒，届时工学部图书馆及周边教学楼均临时停水。受此影响工学分馆7月9日7：00起临时闭馆，17：30起恢复正常开放。由此带来的不便，请读者谅解！
+                                    </br>
+                                    图书馆 2019年7月8日
+
+                                </p>
+                            </div>
+                            <div class="artice_foot">
+                                <p><span>上一篇 :</span><a href="#">这是上一篇</a></p>
+                                <p><span>下一篇 :</span><a href="#">这是下一篇</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,7 +128,8 @@
 
             var subList = $('.subNav')
             for (var i = 0; i < subList.length; i++) {
-                if ($(subList[i]).attr('data-nid') == GetQueryString('nid')) {
+                console.log(222)
+                if ($(subList[i]).attr('data-nid') == GetQueryString('id')) {
                     $(subList[i]).addClass('currentDd')
                 }
             }

@@ -1,7 +1,10 @@
 .footer,
 .main,
-.wailian-extend {
+.wailian-extend,.readerMore {
   display: none;
+}
+.glyphicon-calendar:before {
+  color: #ced2d8 !important;
 }
 .carousel-inner > .item > a > img,
 .carousel-inner > .item > img {
@@ -31,6 +34,7 @@
   margin-left: 0;
   margin-right: 0;
 }
+// 之上为样式重置
 .serve-box {
   .row {
     .col-lg-2 {
@@ -86,7 +90,7 @@
     font-weight: bold;
     color: rgba(51, 51, 51, 1);
     text-align: center;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
   }
   .nav-tabs > li {
     background: rgba(255, 255, 255, 1);
@@ -94,18 +98,20 @@
     &:last-child {
       float: right;
       a {
-        font-size: 0.14rem;
+        font-size: 0.24rem;
         font-family: Source Han Sans CN;
         font-weight: 400;
-        color: rgba(51, 51, 51, 1);
+        color: #2a8571;
       }
     }
     a {
-      padding: 0.15rem 0.22rem;
-      height: 0.46rem;
-      line-height: 0.16rem;
+      padding: 0.15rem 0.2rem;
+      height: 0.54rem;
+      line-height: 0.24rem;
       border: none;
-      color: #333333;
+      font-size: 0.26rem;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
       border-radius: 0;
       margin-right: 0;
     }
@@ -116,8 +122,10 @@
   }
   .nav-tabs > li.active > a {
     background: rgba(42, 133, 113, 1);
-    color: #fff;
-    font-family: SourceHanSansCN-Regular;
+    font-size: 0.26rem;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
   }
   .nav-tabs > li.active > a,
   .nav-tabs > li.active > a:focus,
@@ -125,10 +133,11 @@
     border: none;
   }
   .tab-content {
-    //   padding-top: 0.3rem;
-
     li {
-      margin-top: 0.2rem;
+      margin-top: 0.25rem;
+      h4{
+        display:none;
+      }
       &:first-child {
         border-bottom: 1px solid rgba(221, 221, 221, 1);
         padding-bottom: 0.1rem;
@@ -137,6 +146,7 @@
           .news-left {
             width: 80%;
             h4 {
+              display:block;
               font-size: 0.22rem;
               font-family: Source Han Sans CN;
               font-weight: 400;
@@ -169,6 +179,8 @@
               margin-top: 0.15rem;
             }
             div {
+              display:block;
+              margin-top:0.1rem;
               background: rgba(238, 238, 238, 1);
             }
           }
@@ -177,7 +189,7 @@
       .news-left {
         width: 80%;
         p {
-          font-size: 0.14rem;
+          font-size: 0.18rem;
           font-family: Source Han Sans CN;
           font-weight: 400;
           color: rgba(51, 51, 51, 1);
@@ -187,8 +199,12 @@
         }
       }
       .news-right {
+        span{
+          font-size: 0.18rem;
+        }
         div {
-          font-size: 0.12rem;
+          font-size: 0.18rem;
+          display: inline-block;
         }
       }
     }
@@ -197,21 +213,31 @@
     margin-top: 0.2rem;
     .tab-content {
       .news_top {
-        margin-top: 0.1rem;
+        margin-top: 0.3rem;
         .container {
+          padding-right: 0;
           width: 1.5rem;
           min-width: 170px;
           bottom: -0.05rem;
           position: relative;
-          .input-group-addon {
-            padding: 0.06rem 0.12rem;
-            font-size: 0.14rem;
-            // border: 0;
-          }
           .form-control {
-            height: 0.4rem;
-            line-height: 0;
-            padding: 0.06rem 0.12rem;
+            padding-left: 0.35rem;
+            background-color: #fff;
+            &::-webkit-input-placeholder {
+              padding-left: 0.20rem;
+              color: #ccc;
+            }
+          }
+          .input-group-addon {
+            position: absolute;
+            left: 0.20rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 990;
+            padding: 0.09rem 0;
+            background-color: unset;
+            border: none;
+            border-radius: 0;
           }
         }
         ul > li {
@@ -234,6 +260,7 @@
           top: -0.42rem;
           left: 0;
           margin-left: 0;
+          width: unset;
           li {
             display: inline-block;
             width: 0.32rem;
@@ -287,7 +314,7 @@
         width: 46%;
         padding: 0.2rem;
         background: rgba(255, 255, 255, 1);
-        box-shadow: 0px 1px 18px 2px rgba(179, 206, 199, 0.5);
+        box-shadow: 0px 1px 0.18rem 2px rgba(179, 206, 199, 0.5);
         border-radius: 4px;
         flex-grow: 5;
         margin-top: 0.2rem;
@@ -302,8 +329,18 @@
           margin-bottom: 0.1rem;
         }
         .serve-wailian {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-around;
+          ul {
+            float: left;
+          }
           li {
             margin-top: 0.1rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 1rem;
             a {
               font-size: 0.18rem;
               font-family: Source Han Sans CN;
@@ -389,11 +426,14 @@
     .navCenter {
       text-align: center;
     }
-    //   .tab-content {
-    //     // height: 3.6rem;
-    //   }
+    .nav-tabs > li {
+      margin-right: 0.5rem;
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+    }
     .nav-tabs > li > a {
-      font-size: 0.22rem;
+      font-size: 0.24rem;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: rgba(51, 51, 51, 1);
@@ -404,7 +444,7 @@
     }
     .nav-tabs > li.active > a {
       background: rgba(42, 133, 113, 1);
-      font-size: 0.22rem;
+      font-size: 0.24rem;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: rgba(255, 255, 255, 1);
@@ -414,6 +454,32 @@
     .nav-tabs > li.active > a:hover {
       border: none;
       border-bottom: 1px solid rgba(42, 133, 113, 1);
+    }
+    .tab-content {
+      padding: 0 0.5rem;
+      .tab-pane {
+        &.active {
+          section {
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-between;
+            & > div {
+              width: 33%;
+              margin-top: 0.2rem;
+              h4 {
+                font-size: 0.22rem;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                color: rgba(0, 0, 0, 1);
+                margin: 0.15rem 0;
+              }
+              p {
+                margin-bottom: 0.1rem;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
