@@ -50,80 +50,66 @@
     }
     .subNav {
       border-bottom: solid 1px #e5e3da;
-
+      padding: 13px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 18px;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: rgba(51, 51, 51, 1);
       background: url(../images/youjiantou.png) no-repeat;
-      background-position: 6% 50%;
-      text-indent: 2em;
+      background-position: 95% 50%;
       a {
-        font-size: 16px;
-        padding: 13px;
+        font-size: 18px;
         font-family: Source Han Sans CN;
         font-weight: 400;
         color: rgba(51, 51, 51, 1);
-        display: block;
-        width: 100%;
+      }
+      &.currentDd{
+        a{color:#fff;}
       }
     }
-    .subNav:hover {
-      color: rgba(42, 133, 113, 1);
-      border-left: 4px solid rgba(42, 133, 113, 1);
-      &.currentDd {
-        color: #fff;
-        border-left: none;
-      }
-    }
-    .currentDd {
-      background-color: rgba(42, 133, 113, 1);
-      color: #fff;
-    }
-    .currentDt {
-      background-image: url(../images/jiantouxia.png)!important;
-      background-repeat: no-repeat;
-      background-position: 6% 50%;
-    }
-    
     .navContent {
       display: none;
       padding: 5px;
-      border-bottom: solid 1px #e5e3da;
-      li {
-        ol {
-          display: none;
+      // border-bottom: solid 1px #e5e3da;
+    }
+    .navContent li a {
+      display: block;
+      // padding: 15px;
+      text-align: left;
+      padding-left: 40px;
+      font-size: 14px;
+      color: #333;
+    }
+    .navContent li {
+      &.currentDd{
+        a{
+          // color:#fff;
         }
       }
     }
-    //四级子菜单修改样式区
-    .navContent > li > a {
-      display: block;
-      padding: 15px;
-      text-align: left;
-      padding-left: 40px;
-      font-size: 14px;
-      color: #333;
-      background: url(../images/youjiantou.png) no-repeat;
-      background-position: 6% 50%;
-    }
+    .subNav:hover {
+      a {
+        color: rgba(42, 133, 113, 1);
+      }
 
-    ol a {
-      display: block;
-      padding: 15px;
-      text-align: left;
-      padding-left: 40px;
-      font-size: 14px;
-      color: #333;
-      text-indent: 1em;
-    }
-    .navContent li {
+      border-left: 4px solid rgba(42, 133, 113, 1);
       &.currentDd {
+        border-left: none;
         a {
           color: #fff;
         }
       }
+    }
+    .currentDd {
+      background-color: rgba(42, 133, 113, 1);
+      a{
+         color: #fff;
+      }
+     
+    }
+    .currentDt {
+      background-image: url(../images/jiantouxia.png);
     }
   }
   .mainContent {
@@ -139,8 +125,8 @@
       margin-bottom: 50px;
     }
     &>div {
-      display: inline-block
-     
+      display: inline-block;
+      font-size:10.5pt;
     }
   }
 }

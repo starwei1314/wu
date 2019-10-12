@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阅读推荐</title>
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
+    <link rel="stylesheet" href="plugin/fonts/iconfont.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" type="text/css" href="styles/mobileRecommendDetail.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/booksRecommendDetail.css" />
+    <link rel="stylesheet" href="plugin/slicks/slick.css">
+    <link rel="stylesheet" href="plugin/slicks/slick-theme.css">
+    <script src="plugin/fonts/iconfont.js"></script>
+
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        
+        .slider {
+            width: 50%;
+            margin: 100px auto;
+        }
+        
+        .slick-slide {
+            margin: 0px 20px;
+        }
+        
+        .slick-slide img {
+            width: 100%;
+        }
+        
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+        
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+        
+        .slick-active {
+            opacity: .5;
+        }
+        
+        .slick-current {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header "></div>
+    <div class="top-header">
+        <a href="Index.html" class="logoA"><img class="pcLogo" src="images/logo.png" alt="">
+            <img src="images/logo2.png" class="moveLogo" alt="">
+        </a>
+        <button class="btn"></button>
+    </div>
+    <div class="main w">
+        <div class="main-nav">
+            <p><a href="Index.html"> 首页 </a> / <a href="#">阅读推荐</a> </p>
+        </div>
+        <div class="main-user clearfix">
+            <!-- 侧边栏 -->
+            <div class="subNavBox fl">
+                <h1>阅读推荐</h1>
+                <ul class="tabSide">
+                    <li class="subNav currentDd" data-nid='0'> <a href="#">阅读推荐</a> </li>
+                    <ul class="navContent ">
+                        <li><a href="#" data-sid="0">新生推荐</a></li>
+                        <li><a href="#" data-sid="1">推荐书目</a></li>
+                    </ul>
+                    <li class="subNav" data-nid='1'> <a href="#">十大借阅之星</a> </li>
+                    <ul class="navContent ">
+
+                    </ul>
+                    <li class="subNav" data-nid='2'> <a href="#">真人书单</a> </li>
+                    <ul class="navContent ">
+
+                    </ul>
+                </ul>
+            </div>
+            <div class="titleContent fl">
+                <div class="titleList">
+                    <div class="list_body">
+                        <div class="showTitle">第50期：中国古代四大名著</div>
+                        <div class="showPhoto">
+                            <div class="slider-for">
+                                <div> <img src="images/books/book (2).png"></div>
+                                <div> <img src="images/books/book (2).png"></div>
+                                <div> <img src="images/books/book (2).png"></div>
+                                <div> <img src="images/books/book (2).png"></div>
+                            </div>
+                            <div class="slider-nav">
+                                <div> <img src="images/books/book (2).png"></div>
+                                <div> <img src="images/books/book (2).png"></div>
+                                <div> <img src="images/books/book (2).png"></div>
+                                <div> <img src="images/books/book (2).png"></div>
+                            </div>
+                        </div>
+                        <div class="showIntroduce">
+                            讲述的是孙悟空、猪八戒、沙僧辅保大唐高僧玄奘去西天取经，师徒四人一路抢滩涉险，降妖伏怪，历经八十一难，取回真经，终修正果的故事。</div>
+                        <div class="recommendBook"><span>推荐书目 ： </span> 西游记，水浒，红楼梦，三国演义</div>
+                    </div>
+                    <div class="list_foot">
+                        <div id="pagination" class="pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer visible-lg"></div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src='plugin/slicks/slick.min.js'></script>
+    <script id='jsCode'>
+        $(function() {
+            $(document).ready(function() {
+                //jquery load方法加载公共头部
+                $(".header").load("header.html", function() {
+                    function myFunction(x) {
+                        // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                        if (x.matches) { //大屏时移除
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileNewsDetail.js", "js")
+                            removejscssfile("mobileHead.js", "js")
+                            loadJs('js/head.js')
+
+                        } else { //小屏时加载
+                            removejscssfile("head.js", "js")
+                            loadJs('js/mobileHead.js')
+                            loadJs('js/rem.js')
+                            loadJs('js/mobileNewsDetail.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器
+                });
+                $(".footer").load("footer.html");
+                // 详情轮播图
+                $('.slider-for').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    fade: true,
+                    asNavFor: '.slider-nav',
+                });
+                $('.slider-nav').slick({
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    asNavFor: '.slider-for',
+                    dots: false,
+                    centerMode: true,
+                    focusOnSelect: true,
+                });
+            });
+
+
+            //页面初次进入获取url上的地址
+
+            var subList = $('.subNav')
+            for (var i = 0; i < subList.length; i++) {
+                if ($(subList[i]).attr('data-nid') == GetQueryString('id')) {
+                    $(subList[i]).addClass('currentDd')
+                }
+            }
+            //侧边栏运行
+            $(".subNav").click(function() {
+                    $(".list_top").text($(this).text())
+                    $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+                })
+                // 重置侧边栏禁止点击状态
+            var navList = $('.navContent')
+            for (var i = 0; i < navList.length; i++) {
+                if (navList.eq(i).children().length == 0) {
+                    $(".subNav").eq(i).addClass("noneContent")
+                }
+            }
+            //禁止结束
+            $(".subNav").click(function(e) {
+                e.stopPropagation()
+                $(".list_top").text($(this).text())
+                    // $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")取消父级菜单的高亮显示
+                $(this).toggleClass("currentDt").siblings(".subNav").removeClass("currentDt")
+                if (!$(this).hasClass('noneContent')) {
+                    $(this).next(".navContent").slideToggle(300).siblings(".navContent").slideUp(500)
+                } else {
+                    fid = $(this).attr('data-fid') //没有子选项时页面需要跳转携带
+                    window.location.href = "booksRecommend.html?id=" + fid
+                }
+            })
+            $(".navContent").on("click", "li", function(e) {
+                e.stopPropagation()
+                sid = $(this).children("a").attr("data-sid")
+                fid = $(this).parent().prev(".subNav").attr('data-fid')
+                $(this).toggleClass("currentDd").siblings().removeClass("currentDd")
+                $(this).parent().siblings().children().removeClass("currentDd")
+                $(this).children('a').attr("href", 'booksRecommend.html?id=' + fid + "&sid=" + sid)
+            })
+
+        })
+    </script>
+
+</body>
+
+</html>

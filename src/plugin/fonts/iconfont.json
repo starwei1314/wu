@@ -55,6 +55,27 @@
       "unicode_decimal": 58936
     },
     {
+      "icon_id": "7450650",
+      "name": "右箭头",
+      "font_class": "youjiantou1",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "8078246",
+      "name": "arrow_down",
+      "font_class": "arrow_down",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "8078249",
+      "name": "arrow_upon",
+      "font_class": "arrow_upon",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "9186714",
       "name": "QQ",
       "font_class": "QQ",

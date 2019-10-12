@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>武汉大学图书馆</title>
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobile-bootstrap-datetimerpicker.min.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobile-bootstrap-datetimerpicker.min.css">
     <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileReset.css">
     <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
-    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileCommon.css">
     <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
     <link rel="stylesheet" href="plugin/fonts/iconfont.css">
-    <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileIndex.css" />
+    <link rel="stylesheet" media="screen and (max-width:1199px)" type="text/css" href="styles/mobileIndex.css" />
     <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/Index.css" />
     <link rel="stylesheet" href="plugin/slicks/slick.css">
     <link rel="stylesheet" href="plugin/slicks/slick-theme.css">
@@ -26,12 +26,29 @@
 <body>
     <div class="header w" id='top'></div>
     <!-- 广告图部分 -->
+
+    <!-- 10/08修改 -->
+    <div class="mobileBanner">
+        <div>全面搜索 <span class="glyphicon glyphicon-menu-up"></span></div>
+    </div>
+    <div class="mobileSearch">
+        <div class="searchKuang">
+            <div class="input-group-btn">
+                <button type="button" id="weight_select" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">馆藏目录<span class="caret ml5"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right menu_width" id="weight_unit">
+                    <li>馆藏目录</li>
+                    <li>珞珈学术</li>
+                </ul>
+            </div><input type="text" placeholder="请输入关键字搜索"><span class="jiansuo">检索</span></div>
+    </div>
+    <!-- 10/08修改结束 -->
+
     <div class="banner ">
         <!-- 轮播图 -->
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
+                <div class="item">
                     <img src="images/swiperbanner.png" alt="...">
 
                 </div>
@@ -42,7 +59,7 @@
             </div>
         </div>
         <div class="coustomer ">
-            <img src="images/customer.png" alt="">
+            <a href="#" target="_blank"><img src="images/customer.png" alt=""></a>
             <ol class="banner-mao">
                 <li class="now"><a href="#top">1</a></li>
                 <li><a href="#news">2</a></li>
@@ -58,7 +75,7 @@
             <div class="tab_search w">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#libraryCatalog" aria-controls="libraryCatalog" role="tab" data-toggle="tab">馆藏目录</a></li>
+                    <li role="presentation" class=""><a href="#libraryCatalog" aria-controls="libraryCatalog" role="tab" data-toggle="tab">馆藏目录</a></li>
                     <li role="presentation"><a href="#academicSearch" aria-controls="academicSearch" role="tab" data-toggle="tab">珞珈学术搜索</a></li>
                     <li role="presentation"><a href="#ebook" aria-controls="ebook" role="tab" data-toggle="tab">电子书刊</a></li>
                     <li role="presentation"><a href="#dataBase" aria-controls="dataBase" role="tab" data-toggle="tab">数据库</a></li>
@@ -67,7 +84,7 @@
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="libraryCatalog">
+                    <div role="tabpanel" class="tab-pane " id="libraryCatalog">
                         <div class="search clearfix">
                             <div class="select fl">
                                 <!--存放选择的值-->
@@ -403,7 +420,7 @@
                 <div>
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#note" aria-controls="note" role="tab" data-toggle="tab">通知公告</a></li>
+                        <li role="presentation" class=""><a href="#note" aria-controls="note" role="tab" data-toggle="tab">通知公告</a></li>
                         <li role="presentation"><a href="#resource" aria-controls="resource" role="tab" data-toggle="tab">资源动态</a></li>
                         <li role="presentation"><a href="#active" aria-controls="active" role="tab" data-toggle="tab">培训与活动</a></li>
                         <li>
@@ -412,7 +429,7 @@
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="note">
+                        <div role="tabpanel" class="tab-pane " id="note">
                             <ul>
                                 <li>
                                     <a href="#" class="clearfix">
@@ -492,14 +509,14 @@
                 <div>
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#today" aria-controls="today" role="tab" data-toggle="tab">近日活动</a></li>
+                        <li role="presentation" class=""><a href="#today" aria-controls="today" role="tab" data-toggle="tab">近日活动</a></li>
                         <li>
                             <a href="#">MORE →</a>
                         </li>
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="today">
+                        <div role="tabpanel" class="tab-pane " id="today">
                             <div>
                                 <div class="news_top clearfix">
                                     <!-- 接入jQuery时间控件 -->
@@ -521,14 +538,14 @@
                         <div id="carousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
-                                <li data-target="#carousel" data-slide-to="0" class="active">1</li>
+                                <li data-target="#carousel" data-slide-to="0" class="">1</li>
                                 <li data-target="#carousel" data-slide-to="1">2</li>
                                 <li data-target="#carousel" data-slide-to="2">3</li>
                             </ol>
 
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
-                                <div class="item active">
+                                <div class="item ">
                                     <img src="images/today.png">
                                 </div>
                                 <div class="item">
@@ -826,7 +843,7 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation"><a href="#newbook" aria-controls="newbook" role="tab" data-toggle="tab">新书通报</a></li>
-                    <li role="presentation" class="active"><a href="#recommendbook" aria-controls="recommendbook" role="tab" data-toggle="tab">推荐书目</a></li>
+                    <li role="presentation" class=""><a href="#recommendbook" aria-controls="recommendbook" role="tab" data-toggle="tab">推荐书目</a></li>
                     <li role="presentation"><a href="#otherresource" aria-controls="otherresource" role="tab" data-toggle="tab">其他资源</a></li>
                 </ul>
 
@@ -944,8 +961,9 @@
                                 </a>
                             </div>
                         </section>
+                        <div class="readerMore"><a href="#">More  →</a></div>
                     </div>
-                    <div role="tabpanel" class="tab-pane active" id="recommendbook">
+                    <div role="tabpanel" class="tab-pane" id="recommendbook">
                         <section class="slider-center slider">
                             <div>
                                 <a href="#" class="mis-container">
@@ -1056,10 +1074,123 @@
                                 </a>
                             </div>
                         </section>
+                        <div class="readerMore"><a href="#">More  →</a></div>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="otherresource">...3</div>
+                    <div role="tabpanel" class="tab-pane" id="otherresource">
+                        <section class="slider-center slider">
+                            <div>
+                                <a href="#" class="mis-container">
+                                    <figure>
+                                        <img src="images/mylibray/book1.png" alt="Pond with Lillies">
+                                        <figcaption>
+                                            <h4>心理营养</h4>
+                                            <p>作者：成果</p>
+                                            <p>浏览次数：117</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="mis-container">
+                                    <figure>
+                                        <img src="images/mylibray/book1.png" alt="Pond with Lillies">
+                                        <figcaption>
+                                            <h4>心理营养</h4>
+                                            <p>作者：成果</p>
+                                            <p>浏览次数：117</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="mis-container">
+                                    <figure>
+                                        <img src="images/mylibray/book1.png" alt="Pond with Lillies">
+                                        <figcaption>
+                                            <h4>心理营养</h4>
+                                            <p>作者：成果</p>
+                                            <p>浏览次数：117</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="mis-container">
+                                    <figure>
+                                        <img src="images/mylibray/book1.png" alt="Pond with Lillies">
+                                        <figcaption>
+                                            <h4>心理营养</h4>
+                                            <p>作者：成果</p>
+                                            <p>浏览次数：117</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="mis-container">
+                                    <figure>
+                                        <img src="images/mylibray/book1.png" alt="Pond with Lillies">
+                                        <figcaption>
+                                            <h4>心理营养</h4>
+                                            <p>作者：成果</p>
+                                            <p>浏览次数：117</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="mis-container">
+                                    <figure>
+                                        <img src="images/mylibray/book1.png" alt="Pond with Lillies">
+                                        <figcaption>
+                                            <h4>心理营养</h4>
+                                            <p>作者：成果</p>
+                                            <p>浏览次数：117</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="mis-container">
+                                    <figure>
+                                        <img src="images/mylibray/book1.png" alt="Pond with Lillies">
+                                        <figcaption>
+                                            <h4>心理营养</h4>
+                                            <p>作者：成果</p>
+                                            <p>浏览次数：117</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="mis-container">
+                                    <figure>
+                                        <img src="images/mylibray/book1.png" alt="Pond with Lillies">
+                                        <figcaption>
+                                            <h4>心理营养</h4>
+                                            <p>作者：成果</p>
+                                            <p>浏览次数：117</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="mis-container">
+                                    <figure>
+                                        <img src="images/mylibray/book1.png" alt="Pond with Lillies">
+                                        <figcaption>
+                                            <h4>心理营养</h4>
+                                            <p>作者：成果</p>
+                                            <p>浏览次数：117</p>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                        </section>
+                        <div class="readerMore"><a href="#">More  →</a></div>
+                    </div>
                 </div>
-                <div class="readerMore"><a href="#">More  →</a></div>
+
             </div>
         </div>
     </div>
@@ -1071,11 +1202,20 @@
     <script src="plugin/js/bootstrap-datetimepicker.min.js"></script>
     <script src="plugin/js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src='plugin/slicks/slick.min.js'></script>
-    <!-- <script src="plugin/js/modernizr-custom.js"></script>
-    <script src="plugin/js/mislider.js"></script> -->
+
 
     <script type="text/javascript" id='jsCode'>
         $(function() {
+
+            // tab切换默认第一个为当前状态
+            for (var l = 0; l < $(".tab-content").length; l++) {
+                $($(".tab-content")[l]).children('.tab-pane').eq(0).addClass("active")
+                $($(".nav-tabs")[l]).children('li').eq(0).addClass("active")
+            }
+            for (var m = 0; m < $(".carousel").length; m++) {
+                $($(".carousel-inner")[m]).children('.item').eq(0).addClass("active")
+                $($(".carousel-indicators")[m]).children('li').eq(0).addClass("active")
+            }
             $(document).ready(function() {
                 //jquery load方法加载公共头部底部
                 $(".header").load("header.html", function() {
@@ -1116,6 +1256,13 @@
                 });
                 $(".footer").load("footer.html");
             });
+            // 移动端搜索下拉
+            $('.btn').dropdown()
+            console.log($('#weight_select')[0].innerText)
+            $('.menu_width > li').on('click', function() {
+
+                $('#weight_select')[0].innerHTML = $(this).text() + '<span class="caret ml5"></span>'
+            })
             $('.navCenter a').click(function(e) {
                 //   书本推荐tab切换菜单时，销毁轮播组件，重新初始化
                 $('.slider-center').slick('unslick')

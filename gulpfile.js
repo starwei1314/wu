@@ -68,7 +68,7 @@ gulp.task('wdserver', function(done) {
         name: 'wd',
         root: './src',
         port: 4500,
-        host: '192.168.16.52',
+        host: '192.168.16.14',
         livereload: true
     })
     done()

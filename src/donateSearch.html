@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
+    <link rel="stylesheet" href="plugin/fonts/iconfont.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" type="text/css" href="styles/mobileDonateSearch.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/donateSearch.css" />
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="top-header">
+        <a href="Index.html" class="logoA"><img class="pcLogo" src="images/logo.png" alt="">
+            <img src="images/logo2.png" class="moveLogo" alt="">
+        </a>
+        <button class="btn"></button>
+    </div>
+    <div class="main w clearfix ">
+        <div class="tabSide fl">
+            <div class="subNavBox">
+                <!-- <a href="Index.html"><img src="images/logo.png" alt=""></a> -->
+                <h1>捐赠图书</h1>
+                <div>
+                    <div class="subNav"><a href="#">捐赠管理办法</a> </div>
+                    <div class="subNav"><a href="#">捐赠专题报道</a></div>
+                    <div class="subNav"><a href="#">捐赠目录查询</a> </div>
+                    <div class="subNav"> <a href="#">学生爱心捐赠</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="mainContent fl">
+            <h1>捐赠目录查询</h1>
+            <div class="content">
+                <div class="search clearfix">
+                    <div class="select fl">
+                        <!--存放选择的值-->
+                        <span class="selectVal" onselectstart="return false">捐赠者</span>
+                        <!--放置icon-->
+                        <i class="xl-icon"></i>
+                        <!--选择项-->
+                        <div class="selectList">
+                            <div class="listA-all">
+                                <a href="javascript:;" class="listA">捐赠者</a>
+                                <a href="javascript:;" class="listA">图书题名</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search_box fl"><input type="text" placeholder="请输入关键词搜索"><span class='check'> <img src="images/search.png" alt="" > 查询</span></div>
+                </div>
+                <div class="mobileSearch">
+                    <div class="searchKuang"><input type="text" placeholder="请输入捐赠者搜索"><span class="check">查询</span></div>
+                </div>
+                <iframe src="table.html" width="100%" height="500" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="footer visible-lg"></div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/common.js"></script>
+    <script id='jsCode'>
+        $(function() {
+            $(document).ready(function() {
+                //jquery load方法加载公共头部
+                $(".header").load("header.html", function() {
+                    function myFunction(x) {
+                        // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                        if (x.matches) { //大屏时移除
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileNewsDetail.js", "js")
+                            removejscssfile("mobileHead.js", "js")
+                            loadJs('js/head.js')
+                        } else { //小屏时加载
+                            removejscssfile("head.js", "js")
+                            loadJs('js/mobileHead.js')
+                            loadJs('js/rem.js')
+                            loadJs('js/mobileNewsDetail.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器
+                });
+                $(".footer").load("footer.html");
+            });
+            //侧边栏运行
+            // 重置侧边栏禁止点击状态
+            var navList = $('.navContent')
+            for (var i = 0; i < navList.length; i++) {
+                if (navList.eq(i).children().length == 0) {
+                    $(".subNav").eq(i).addClass("noneContent")
+                }
+            }
+            //禁止结束
+            $(".subNav").click(function() {
+                    $(".list_top").text($(this).text())
+                    $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+                })
+                //搜索栏运行
+            $('.check').off().on("click", function() {
+                    console.log($('.selectVal').text())
+                    console.log($(this).siblings('input').val())
+                })
+                /*----------------------------------
+                        点击展开移出区域隐藏列表
+                  ----------------------------------*/
+                //外层select框
+            var oDropDown = $('.select');
+            //选择列表项
+            var oChangeA = $('.listA');
+            oDropDown.click(function() {
+                $(this).find('.selectList').toggle().siblings('.xl-icon').toggleClass('sq-icon');
+
+            });
+
+            oDropDown.mouseleave(function() {
+                $(this).find('.selectList').hide().siblings('.xl-icon').removeClass('sq-icon');
+            });
+
+            oChangeA.click(function() {
+                var oVal = $(this).text();
+                $(this).parents('.listA-all').parents('.selectList').siblings('.selectVal').text(oVal).siblings('.xl-icon').toggleClass('sq-icon');
+            });
+        })
+    </script>
+</body>
+
+</html>

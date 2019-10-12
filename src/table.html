@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="plugin/css/pagination.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    table thead tr {
+        background-color: #2a8571;
+        padding: 5px;
+        color: #fff;
+    }
+    
+    table thead tr th {
+        padding: 15px;
+    }
+    
+    table tbody td {
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .pagination {
+        margin-top: 30px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>捐赠人</th>
+                <th>书名</th>
+                <th>册数</th>
+                <th>捐赠时间</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td>张三</td>
+                <td>2019/07/05</td>
+                <td>张思</td>
+                <td>张三</td>
+                <td>2019/07/05</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>2019/07/05</td>
+                <td>张四</td>
+                <td>2019/07/05</td>
+                <td>三生三世</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>2019/07/05</td>
+                <td>张四</td>
+                <td>2019/07/05</td>
+                <td>三生三世</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="pagination" class="pagination"></div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+
+    <script src="plugin/js/pagination.js"></script>
+    <script>
+        $(function() {
+            //翻页功能,初始化翻页插件
+            new Page({
+                id: 'pagination',
+                pageTotal: Math.ceil(20 / 10) || 1,
+                //必填,总页数
+                pageAmount: 10,
+                //每页多少条
+                dataTotal: 20,
+                //总共多少条数据
+                curPage: 1,
+                //初始页码,不填默认为1
+                pageSize: Math.ceil(20 / 10) || 1,
+                //分页个数,不填默认为5
+                showPageTotalFlag: false,
+                //是否显示数据统计,不填默认不显示
+                showSkipInputFlag: false,
+                //是否支持跳转,不填默认不显示
+                getPage: function getPage(page) {
+                    //获取当前页数,并发送请求
+                    console.log($(this))
+                    $(this)[0].curPage = page
+                    console.log($(this)[0].curPage)
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

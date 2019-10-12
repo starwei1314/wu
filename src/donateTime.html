@@ -6,15 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>帮助中心</title>
-    <link rel="stylesheet" href="plugin/css/reset.css">
-    <link rel="stylesheet" href="styles/donateTime.css">
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
+    <link rel="stylesheet" href="plugin/fonts/iconfont.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" type="text/css" href="styles/mobileDonateTime.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/donateTime.css" />
 </head>
 
 <body>
-    <div class="main clearfix ">
-        <div class="navSub fl">
+    <div class="header"></div>
+    <div class="top-header">
+        <a href="Index.html" class="logoA"><img class="pcLogo" src="images/logo.png" alt="">
+            <img src="images/logo2.png" class="moveLogo" alt="">
+        </a>
+        <button class="btn"></button>
+    </div>
+    <div class="main w clearfix ">
+        <div class="tabSide fl">
             <div class="subNavBox">
-                <a href="Index.html"><img src="images/logo.png" alt=""></a>
+                <!-- <a href="Index.html"><img src="images/logo.png" alt=""></a> -->
                 <h1>捐赠图书</h1>
                 <div>
                     <div class="subNav"><a href="#">捐赠管理办法</a> </div>
@@ -34,15 +47,39 @@
                     <li>2019年5月4日，纪念唐明邦先生逝世一周年的“《唐明邦学术思想探索》首发式暨捐书仪式与唐明邦学术思想研讨会”在图书馆报告厅举行。会上，唐明邦先生的弟子、义女唐梦华（王继红）女士向图书馆捐赠图书《易学源流举要》和《唐明邦学术思想探索》 2种15册。《易学源流举要》以唐先生1988年至1996年期间给中国哲学博士研究生讲课的讲稿为基础编撰而成。《唐明邦学术思想探索》是唐先生的学友、弟子研究其学术思想、回忆其精彩人生的文章结集。唐明邦（1925年1月23日-2018年5月4日），中国著名哲学家、中国哲学史专家、易学家、武汉大学中国哲学学科奠基人之一、武汉大学哲学学院教授、国学院顾问。</li>
                     <li> 2019年4月12日，我校已故人文社科资深教授曾令良的夫人钟晓红女士向图书馆捐赠曾令良遗留的一些教学科研资料、读书笔记等，多为国际法方面内容，共54件，其中手稿30件。曾令良（1956.3 - 2016.7.8）， 法学家，生前曾任武汉大学人文社会科学资深教授、教育部长江学者特聘教授、让-莫内欧洲联盟法讲席教授（Jean Monnet Chair of European Union Law），武汉大学国际法研究所（国家高端智库）执行理事长，《武汉大学学报》（哲学社会科学版）主编。</li>
                     <li>2019年3月，图书馆收到校宣传部赠书《乐山的回望——武汉大学西迁乐山八十周年纪念文集》，共计87册。该书是由校党委书记韩进主编，以纪念武汉大学西迁乐山八十周年，旨在传承和弘扬“教育报国、不畏牺牲；自强不息、艰苦奋斗；兼容并包、严谨求实；造福乡邦、服务社会”的“乐山精神”。该书在体例上分为西迁序曲、嘉州执教、乐山负笈、三江梦影、大佛那边五个部分，所收录的文章大多是由当时身处乐山的人记录的自己周边发生的事情，属于叙事性散文，回忆为主，文风朴实，却有着直抵人心的力量。</li>
-
                 </ul>
 
             </div>
         </div>
     </div>
+    <div class="footer visible-lg"></div>
     <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/common.js"></script>
     <script id='jsCode'>
         $(function() {
+            $(document).ready(function() {
+                //jquery load方法加载公共头部
+                $(".header").load("header.html", function() {
+                    function myFunction(x) {
+                        // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                        if (x.matches) { //大屏时移除
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileNewsDetail.js", "js")
+                            removejscssfile("mobileHead.js", "js")
+                            loadJs('js/head.js')
+                        } else { //小屏时加载
+                            removejscssfile("head.js", "js")
+                            loadJs('js/mobileHead.js')
+                            loadJs('js/rem.js')
+                            loadJs('js/mobileNewsDetail.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器
+                });
+                $(".footer").load("footer.html");
+            });
             //侧边栏运行
             // 重置侧边栏禁止点击状态
             var navList = $('.navContent')

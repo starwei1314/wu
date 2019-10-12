@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新书报道</title>
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" type="text/css" href="styles/mobileNewBooks.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/newBooks.css" />
+    <link rel="stylesheet" href="plugin/css/pagination.css">
+</head>
+
+<body>
+    <div class="header w"></div>
+    <div class="top-header">
+        <a href="Index.html" class="logoA"><img class="pcLogo" src="images/logo.png" alt="">
+            <img src="images/logo2.png" class="moveLogo" alt="">
+        </a>
+        <button class="btn"></button>
+    </div>
+    <div class="main clearfix w">
+        <div class="main_title">
+            <h2> <span>新书报道</span> </h2>
+            <p>网上新书报道将馆藏新书资源按语种（西文、中文）、时间（年月）、类目（分类表）进行整体通报。读者可浏览所有到馆新书基本书目信息，并查看所有新书的馆藏地点和实时借阅状况。</p>
+        </div>
+        <div class="navSub fl">
+            <div class="subNavBox">
+                <h1>新书报道</h1>
+                <ul class="tabSide">
+                    <li class="subNav" data-nid='0'> <a href="#">阅读推荐</a> </li>
+                    <ul class="navContent ">
+                        <li class="subNav noneContent" data-nid="211"> <a href="#">毛泽东思想</a> </li>
+                        <ul class="navContent">
+                        </ul>
+                        <li class="subNav noneContent" data-nid="212"> <a href="#">邓小平理论</a> </li>
+                        <ul class="navContent">
+                        </ul>
+                    </ul>
+                    <li class="subNav" data-nid='1'> <a href="#">十大借阅之星</a> </li>
+                    <ul class="navContent ">
+
+                    </ul>
+                    <li class="subNav" data-nid='2'> <a href="#">真人书单</a> </li>
+                    <ul class="navContent">
+                        <li class="subNav" data-nid="209"> <a href="#">收录类型</a> </li>
+                        <ul class="navContent" style="display: none;">
+                            <li class="subNav noneContent" data-nid="211"> <a href="#">毛泽东思想</a> </li>
+                            <ul class="navContent">
+                            </ul>
+                            <li class="subNav noneContent" data-nid="212"> <a href="#">邓小平理论</a> </li>
+                            <ul class="navContent">
+                            </ul>
+                            <li class="subNav" data-nid="216"> <a href="#">历史</a> </li>
+                            <ul class="navContent">
+                                <li class="subNav noneContent" data-nid="217"> <a href="#">中国历史</a> </li>
+                                <ul class="navContent">
+                                </ul>
+                                <li class="subNav noneContent" data-nid="218"> <a href="#">中国野史</a> </li>
+                                <ul class="navContent">
+                                </ul>
+                            </ul>
+                        </ul>
+                        <li class="subNav" data-nid="210"> <a href="#">收录年份</a> </li>
+                        <ul class="navContent">
+                            <li class="subNav noneContent" data-nid="214"> <a href="#">1998</a> </li>
+                            <ul class="navContent">
+                            </ul>
+                            <li class="subNav noneContent" data-nid="215"> <a href="#">2000</a> </li>
+                            <ul class="navContent">
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="mainContent fl">
+            <div class="template_content">
+                <div class="languageTab">
+                    <ul class="clearfix">
+                        <li class="actionNow">中文新书</li>
+                        <li>英文新书</li>
+                    </ul>
+                    <div class="allbooks">
+                        <table class="detail_tb">
+                            <thead>
+                                <tr class="fied_header">
+                                    <th width=310>书名</th>
+                                    <th width=140>作者</th>
+                                    <th width=310>出版信息</th>
+                                    <th width=200>索引号</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                <tr>
+                                    <td><a href="#">书名1</a></td>
+                                    <td>作者1</td>
+                                    <td>出版信息1</td>
+                                    <td>索引号1</td>
+
+                                </tr>
+                                <tr class="now">
+                                    <td><a href="#">书名2</a></td>
+                                    <td>作者2</td>
+                                    <td>出版信息2</td>
+                                    <td>索引号2</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">书名3</a></td>
+                                    <td>作者3</td>
+                                    <td>出版信息3</td>
+                                    <td>索引号3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="pagination" class="pagination"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="plugin/js/pagination.js"></script>
+
+    <script id='jsCode'>
+        $(function() {
+            $(document).ready(function() {
+                //jquery load方法加载公共头部底部
+                $(".header").load("header.html", function() {
+                    //监听媒体查询
+                    function myFunction(x) {
+                        // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                        if (x.matches) { //大屏时移除
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileNewsDetail.js", "js")
+                            loadJs('js/head.js')
+                        } else { //小屏时加载
+                            loadJs('js/rem.js')
+                            loadJs('js/mobileNewsDetail.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器
+
+                });
+            });
+            var fid;
+            var navList = $('.navContent')
+            var subList = $('.subNav')
+                //跳转到详情页面后获取参数高亮显示
+            fid = GetQueryString('id')
+                // 页面初次进入获取url地址参数以便记录是否已经选择类别
+            var categoryName, dateTime, language;
+            categoryName = GetQueryString('category');
+            dateTime = GetQueryString('time');
+            language = GetQueryString('language');
+            for (var h = 0; h < $('.languageTab>ul li').length; h++) {
+                if ($($('.languageTab>ul li')[h]).text() == language) {
+                    $($('.languageTab>ul li')[h]).addClass('actionNow').siblings().removeClass('actionNow')
+                }
+            }
+            var subList = $('.subNav')
+            for (var i = 0; i < subList.length; i++) {
+                if ($(subList[i]).attr('data-nid') == GetQueryString('id')) {
+                    $(subList[i]).addClass('currentDd')
+                }
+            }
+            // 重置侧边栏禁止点击状态
+            var navList = $('.navContent')
+            for (var i = 0; i < navList.length; i++) {
+                if (navList.eq(i).children().length == 0) {
+                    $(".subNav").eq(i).addClass("noneContent")
+                }
+            }
+
+            //禁止结束
+            $(".subNav").off().on('click', function(e) {
+                e.stopPropagation()
+                $(".list_top").text($(this).text())
+                $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+                $(this).toggleClass("currentDt").siblings(".subNav").removeClass("currentDt")
+                if (!$(this).hasClass('noneContent')) {
+                    $(this).next(".navContent").slideToggle(300).siblings(".navContent").slideUp(500)
+                } else {
+                    fid = $(this).attr('data-fid') //没有子选项时页面需要跳转携带
+                    window.location.href = "booksRecommend.html?id=" + fid
+                }
+            })
+            $(".navContent").off().on("click", "li", function(e) {
+                    e.stopPropagation()
+                    sid = $(this).children("a").attr("data-sid")
+                    fid = $(this).parent().prev(".subNav").attr('data-fid')
+                        // 由于后台使用递归，则不需要增加点击样式
+                        // $(this).toggleClass("currentDd").siblings().removeClass("currentDd")
+                    $(this).parent().siblings().children().removeClass("currentDd")
+                    $(this).children('a').attr("href", 'booksRecommend.html?id=' + fid + "&sid=" + sid)
+                })
+                //中英文切换书籍
+            $('.languageTab>ul').off().on('click', 'li', function() {
+                    $(this).toggleClass('actionNow').siblings().removeClass('actionNow')
+                    language = $(this).text()
+                    window.location.href = "http://192.168.16.14:4500/newBooks.html?category=" + categoryName + "&time=" + dateTime + "&language=" + language
+                })
+                // 翻页功能
+            new Page({
+                id: 'pagination',
+                pageTotal: Math.ceil(20 / 10) || 1,
+                //必填,总页数
+                pageAmount: 10,
+                //每页多少条
+                dataTotal: 20,
+                //总共多少条数据
+                curPage: 1,
+                //初始页码,不填默认为1
+                pageSize: Math.ceil(20 / 10) || 1,
+                //分页个数,不填默认为5
+                showPageTotalFlag: false,
+                //是否显示数据统计,不填默认不显示
+                showSkipInputFlag: false,
+                //是否支持跳转,不填默认不显示
+                getPage: function getPage(page) {
+                    //获取当前页数,并发送请求
+                    console.log($(this))
+                    $(this)[0].curPage = page
+                    console.log($(this)[0].curPage)
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -6,15 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>帮助中心</title>
-    <link rel="stylesheet" href="plugin/css/reset.css">
-    <link rel="stylesheet" href="styles/donate.css">
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
+    <link rel="stylesheet" href="plugin/fonts/iconfont.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" type="text/css" href="styles/mobileDonate.css" />
+    <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/donate.css" />
 </head>
 
 <body>
-    <div class="main clearfix ">
-        <div class="navSub fl">
+    <div class="header"></div>
+    <div class="top-header">
+        <a href="Index.html" class="logoA"><img class="pcLogo" src="images/logo.png" alt="">
+            <img src="images/logo2.png" class="moveLogo" alt="">
+        </a>
+        <button class="btn"></button>
+    </div>
+    <div class="main w clearfix ">
+        <div class="tabSide fl">
             <div class="subNavBox">
-                <a href="Index.html"><img src="images/logo.png" alt=""></a>
+                <!-- <a href="Index.html"><img src="images/logo.png" alt=""></a> -->
                 <h1>捐赠图书</h1>
                 <div>
                     <div class="subNav"><a href="#">捐赠管理办法</a> </div>
@@ -22,7 +35,6 @@
                     <div class="subNav"><a href="#">捐赠目录查询</a> </div>
                     <div class="subNav"> <a href="#">学生爱心捐赠</a></div>
                 </div>
-
             </div>
         </div>
         <div class="mainContent fl">
@@ -73,9 +85,37 @@
             </div>
         </div>
     </div>
+
+
+    </div>
+    <div class="footer visible-lg"></div>
     <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/common.js"></script>
     <script id='jsCode'>
         $(function() {
+            $(document).ready(function() {
+                //jquery load方法加载公共头部
+                $(".header").load("header.html", function() {
+                    function myFunction(x) {
+                        // 当页面进来时根据屏幕大小加载js文件并移除不需要的js文件
+                        if (x.matches) { //大屏时移除
+                            removejscssfile("rem.js", "js")
+                            removejscssfile("mobileNewsDetail.js", "js")
+                            removejscssfile("mobileHead.js", "js")
+                            loadJs('js/head.js')
+                        } else { //小屏时加载
+                            removejscssfile("head.js", "js")
+                            loadJs('js/mobileHead.js')
+                            loadJs('js/rem.js')
+                            loadJs('js/mobileNewsDetail.js')
+                        }
+                    }
+                    var x = window.matchMedia("(min-width: 1200px)")
+                    myFunction(x) // 执行时调用的监听函数
+                    x.addListener(myFunction) // 状态改变时添加监听器
+                });
+                $(".footer").load("footer.html");
+            });
             //侧边栏运行
             // 重置侧边栏禁止点击状态
             var navList = $('.navContent')

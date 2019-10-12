@@ -1,0 +1,231 @@
+.top-header {
+  display: none;
+}
+  .mobileSearch{
+    display:none;
+  }
+.main {
+  min-width: 1200px;
+  .tabSide {
+    width: 18%;
+    min-width: 216px;
+    .subNavBox {
+      width: 100%;
+      background: rgba(255, 255, 255, 1);
+      // box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+      // border-radius: 4px;
+      h1 {
+        text-align: center;
+        font-size: 24px;
+        font-family: Source Han Sans CN;
+        font-weight: bold;
+        color: rgba(42, 133, 113, 1);
+        border-bottom: solid 1px #e5e3da;
+        padding: 27px 26px;
+      }
+      img {
+        width: 90%;
+        display: inline-block;
+        margin-left: 4%;
+      }
+      // 重置侧边栏禁止点击状态
+      .noneContent {
+        background: none;
+        pointer-events: none;
+        cursor: not-allowed;
+        &:hover {
+          color: black;
+          border-left: none;
+        }
+      }
+    }
+    .subNav {
+      border-bottom: solid 1px #e5e3da;
+      text-indent: 2em;
+      a {
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        background-position: 6% 50%;
+        padding: 10px;
+      }
+    }
+    .subNav:hover {
+      color: rgba(42, 133, 113, 1);
+      border-left: 4px solid rgba(42, 133, 113, 1);
+      &.currentDd {
+        color: #fff;
+        border-left: none;
+      }
+    }
+    .currentDd {
+      background-color: rgba(42, 133, 113, 1);
+      a {
+        color: #fff;
+      }
+    }
+    .navContent {
+      display: none;
+      padding: 5px;
+      border-bottom: solid 1px #e5e3da;
+    }
+    .navContent li a {
+      display: block;
+      padding: 15px;
+      text-align: left;
+      padding-left: 40px;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+  .mainContent {
+    width: 82%;
+    min-height: 500px;
+    padding-top: 55px;
+    background-color: #f7f9f9;
+    h1 {
+      font-size: 34px;
+      font-family: Source Han Sans CN;
+      font-weight: bold;
+      color: rgba(51, 51, 51, 1);
+      text-align: center;
+    }
+    .content {
+      margin: 25px 30px;
+      .search {
+          margin: 20px;
+        .select {
+          cursor: pointer;
+          position: relative;
+          width: 20%;
+          height: 50px;
+          line-height: 50px;
+          font-size: 14px;
+          color: #666666;
+          padding-left: 20px;
+          background: rgba(255, 255, 255, 1);
+          border: 1px solid rgba(221, 221, 221, 1);
+        }
+        .selectVal {
+          font-size: 16px;
+          font-family: Source Han Sans CN;
+          font-weight: 300;
+          color: #6b8191;
+        }
+        .xl-icon {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-image: url("../images/xl-icon_03.png");
+          background-position: 4px 0px;
+          background-repeat: no-repeat;
+          right: 10px;
+          top: 14px;
+        }
+        .select:hover {
+          background-color: #f7f7f7;
+        }
+        .sq-icon {
+          background-position: 4px -33px;
+        }
+        /*--下拉选择列表样式--*/
+        .selectList {
+          z-index: 100;
+          display: none;
+          width: 170px;
+          border: 1px solid #cccccc;
+          border-radius: 6px;
+          position: absolute;
+          top: 49px;
+          left: 0px;
+        }
+        .listA {
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+          font-size: 18px;
+          font-family: Source Han Sans CN;
+          font-weight: 300;
+          color: rgba(170, 170, 170, 1);
+          text-align: center;
+          display: block;
+          background-color: #ffffff;
+        }
+        .listA:hover {
+          background-color: #f7f7f7;
+          color: rgba(42, 133, 113, 1);
+        }
+        .listA:first-child {
+          border-radius: 6px 6px 0 0;
+        }
+        .listA:last-child {
+          border-radius: 0 0 6px 6px;
+        }
+        /*-------------------------------------------------------------------------------------------------*/
+        .frameTriangle {
+          width: 10px;
+          height: 10px;
+          background-image: url(../images/xl-icon_03.png);
+          background-position: -1px -35px;
+          background-repeat: no-repeat;
+          display: block;
+          position: absolute;
+          top: -10px;
+          left: 95px;
+          background-color: #fff;
+        }
+        .dropDown {
+          position: relative;
+        }
+        .selectListNext {
+          top: 58px;
+        }
+        .search_box {
+          width: 50%;
+          margin-left: 15px;
+          position: relative;
+          input {
+            display: inline-block;
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            text-indent: 2em;
+            font-size: 16px;
+            font-family: MicrosoftYaHei;
+            &::-webkit-input-placeholder {
+              color: #acc0d2;
+            }
+          }
+          span {
+            display: inline-block;
+            width: 98px;
+            height: 38px;
+            line-height: 38px;
+            color: #fff;
+            background-color: #2a8571;
+            font-size: 16px;
+            font-family: MicrosoftYaHei;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -19px;
+            margin-right: 9px;
+            border-radius: 2px;
+            cursor: pointer;
+            img {
+              vertical-align: middle;
+              width: 20px;
+              margin-left: 19px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

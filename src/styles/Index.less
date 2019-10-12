@@ -13,6 +13,12 @@
   line-height: 1;
   height: 603px;
 }
+.mobileBanner{
+  display:none;
+}
+.mobileSearch{
+  display:none;
+}
 // 之上为插件样式重置
 .banner {
   width: 100%;
@@ -654,6 +660,7 @@
 //特色资源
 .special-serve {
   margin-top: 40px;
+ 
   .special-title {
     font-size: 36px;
     font-family: Source Han Sans CN;
@@ -728,10 +735,13 @@
     .navCenter {
       text-align: center;
       .readerMore {
+        position: absolute;
+        left: 50%;
+        margin-left: -62px;
         a {
           display: block;
           margin: 10px auto;
-          width: 123px;
+          width: 124px;
           height: 28px;
           line-height: 28px;
           text-align: center;

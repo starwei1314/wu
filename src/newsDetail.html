@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>新闻详情</title>
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileReset.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileReset.css">
     <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="plugin/css/reset.css" />
-    <link rel="stylesheet" media="screen and (max-width:1200px)" href="plugin/css/mobileCommon.css">
+    <link rel="stylesheet" media="screen and (max-width:1199px)" href="plugin/css/mobileCommon.css">
     <link rel="stylesheet" media="screen and (min-width:1200px)" href="plugin/css/common.css">
     <link rel="stylesheet" href="plugin/fonts/iconfont.css">
-    <link rel="stylesheet" media="screen and (max-width:1200px)" type="text/css" href="styles/mobileNewsDetail.css" />
+    <link rel="stylesheet" media="screen and (max-width:1199px)" type="text/css" href="styles/mobileNewsDetail.css" />
     <link rel="stylesheet" media="screen and (min-width:1200px)" type="text/css" href="styles/newsDetail.css" />
     <script src="plugin/fonts/iconfont.js"></script>
     <style>
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <div class="header "></div>
+    <div class="header"></div>
     <div class="top-header">
         <a href="Index.html" class="logoA"><img class="pcLogo" src="images/logo.png" alt="">
             <img src="images/logo2.png" class="moveLogo" alt="">
@@ -81,11 +81,19 @@
                                     图书馆 2019年7月8日
 
                                 </p>
+                                <!--    10/09 -->
+                                <p class="outLian">
+                                    <a href="#"> <span>外部链接 ： </span> 凸显演示</a>
+                                </p>
                             </div>
                             <div class="artice_foot">
-                                <p><span>上一篇 :</span><a href="#">这是上一篇</a></p>
-                                <p><span>下一篇 :</span><a href="#">这是下一篇</a></p>
+                                <p class="noteName">上两条同类新闻：</p>
+                                <p><span></span><a href="#">这是上一篇</a></p>
+                                <p><span></span><a href="#">这是下一篇</a></p>
+                                <!-- 下面跳转标签到新闻列表页面标签 -->
+                                <div class="close"> <a href="#">关闭当前页面</a> </div>
                             </div>
+                            <!-- 10/09 -->
                         </div>
                     </div>
                 </div>
@@ -97,6 +105,7 @@
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/share.js"></script>
     <script id='jsCode'>
         $(function() {
             $(document).ready(function() {
@@ -128,9 +137,24 @@
 
             var subList = $('.subNav')
             for (var i = 0; i < subList.length; i++) {
-                console.log(222)
                 if ($(subList[i]).attr('data-nid') == GetQueryString('id')) {
                     $(subList[i]).addClass('currentDd')
+                    $(subList[i]).parent('.navContent').css("display", "block")
+                }
+            }
+            //页面初次进来获取url,高亮展示侧边栏显示主标题文字
+
+            var secName = $('subNav >a')
+            if (secName != '') {
+                $(".list_top").text(secName)
+                $(".firstmenu").text(secName)
+            } else {
+                $(".firstmenu").text('')
+            }
+
+            for (var i = 0; i < $('.subNav').length; i++) {
+                if (secName === $($('.subNav')[i]).children('a').text()) {
+                    $($('.subNav')[i]).addClass('currentDd')
                 }
             }
             //搜索栏运行
@@ -159,6 +183,7 @@
                 $(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
 
             })
+
         })
     </script>
 </body>

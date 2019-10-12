@@ -1,0 +1,154 @@
+
+.top-header {
+    display: none;
+  }
+  .main {
+    .main-nav {
+      margin: 26px 0 19px 0;
+      p {
+        font-size: 14px;
+        font-family: Source Han Sans CN;
+        font-weight: 300;
+        color: rgba(170, 170, 170, 1);
+        a,
+        span {
+          font-size: 14px;
+          font-family: Source Han Sans CN;
+          font-weight: 300;
+          color: rgba(170, 170, 170, 1);
+        }
+      }
+    }
+    .noneContent{
+      background-image: unset!important;
+    }
+    .main-user {
+      .subNavBox {
+        width: 23%;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+        border-radius: 4px;
+        h1 {
+          text-align: center;
+          font-size: 24px;
+          font-family: Source Han Sans CN;
+          font-weight: bold;
+          color: rgba(42, 133, 113, 1);
+          border-bottom: solid 1px #e5e3da;
+          padding: 27px 26px;
+        }
+        .tabSide{
+            display:block!important;
+          }
+      }
+      .subNav {
+        border-bottom: solid 1px #e5e3da;
+        padding: 13px;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        background: url(../images/youjiantou.png) no-repeat;
+        background-position: 95% 50%;
+        a {
+          font-size: 18px;
+          font-family: Source Han Sans CN;
+          font-weight: 400;
+          color: rgba(51, 51, 51, 1);
+        }
+      }
+      .navContent {
+        display: none;
+        padding: 5px;
+        // border-bottom: solid 1px #e5e3da;
+      }
+      .navContent li a {
+        display: block;
+        // padding: 15px;
+        text-align: left;
+        padding-left: 40px;
+        font-size: 14px;
+        color: #333;
+      }
+      .navContent li {
+        &.currentDd{
+          a{
+            // color:#fff;
+          }
+        }
+      }
+      .subNav:hover {
+        a {
+          color: rgba(42, 133, 113, 1);
+        }
+  
+        border-left: 4px solid rgba(42, 133, 113, 1);
+        &.currentDd {
+          border-left: none;
+          a {
+            color: #fff;
+          }
+        }
+      }
+      .currentDd {
+        background-color: rgba(42, 133, 113, 1);
+        a{
+           color: #fff;
+        }
+       
+      }
+      .currentDt {
+        background-image: url(../images/jiantouxia.png);
+      }
+  
+      .titleContent {
+        width: 76%;
+        margin-left: 1%;
+      }
+      .titleList {
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 7px 1px rgba(204, 204, 204, 0.5);
+        border-radius: 4px;
+        min-height: 700px;
+        .list_body {
+          padding: 53px 0;
+            .showPhoto{
+                margin:auto;
+                width:50%;
+                .slider-for{
+                    margin-bottom:20px;
+                    img{
+                      width:100%;
+                      height:200px;
+                    }
+                }
+                .slider-nav{
+                  img{
+                    width:100%;
+                    height:100px;
+                  }
+                }
+            }
+            .showTitle{
+                font-size:32px;
+                font-weight: 600;
+                text-align: center;
+                text-indent: 2em;
+                margin-bottom:30px;
+            }
+            .showIntroduce,.recommendBook{
+                padding: 20px;
+                text-indent: 2em;
+                font-size:18px;
+            }
+        }
+        .list_foot{
+          text-align: center;
+          padding-bottom:40px;
+       }
+      }
+    }
+  }
+  
+  
